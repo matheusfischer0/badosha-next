@@ -48,7 +48,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <link rel="icon" href="favicon.png" sizes="32x32"/>
+          <link rel="icon" href="http://mhrtransportes.com.br/wp-content/uploads/2020/06/favicon.png" sizes="32x32"/>
 
           {/* <link rel="icon" href="https://rocketseat.com.br/favicon.ico" /> */}
         </Head>
