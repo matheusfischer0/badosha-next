@@ -1,5 +1,7 @@
 import Head from 'next/head'
 
+import { Container } from '../../styles/components/Form'
+
 const Form = () => {
   return (
     <>
@@ -66,6 +68,9 @@ const Form = () => {
           Enviar
         </button>
       </form>
+      <Container>
+        <h1>Hello world</h1>
+      </Container>
     </>
   )
 }
