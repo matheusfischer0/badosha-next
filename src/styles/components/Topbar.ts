@@ -1,11 +1,14 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  display:flex;
+  flex-direction: row;
+  justify-content:space-between;
   width: 100vw;
   height: 100px;
   background-color: ${props => props.theme.colors.topbar};
-  display: flex;
 `;
+
 export const Menu = styled.div`
   display: flex;
   flex-direction: row;
@@ -19,6 +22,6 @@ export const Menu = styled.div`
   }
 `;
 
-export const TopLogo = styled.img`
-  width:8rem;
+export const TopLogo = styled.div`
+  position:relative;
 `;

@@ -6,5 +6,13 @@ const theme = {
     topbar: '#fff'
   }
 }
+const theme2 = {
+  colors: {
+    background: '#000',
+    text: '#55595c',
+    primary: '#8257e6',
+    topbar: '#fff'
+  }
+}
 
 export default theme

@@ -69,7 +69,7 @@ const Form = () => {
         </button>
       </form>
       <Container>
-        <h1>Hello world</h1>
+        <h1></h1>
       </Container>
     </>
   )
