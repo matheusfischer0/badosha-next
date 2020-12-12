@@ -5,6 +5,8 @@ import Image from 'next/image'
 import Logo from '../../assets/logo-topbar.png'
 
 import { Container, TopLogo, Menu } from '../../styles/components/Topbar'
+import ActiveLink from '../ActiveLink/ActiveLink'
+import Navigator from '../Navigator/Navigator'
 
 const Topbar: React.FC = () => {
   return (
@@ -19,11 +21,7 @@ const Topbar: React.FC = () => {
           quality={100}
         />
       </TopLogo>
-      <Menu>
-        <Link href="/">Inicio</Link>
-        <Link href="/quem_somos">Quem somos</Link>
-        <Link href="/contato">Contato</Link>
-      </Menu>
+      <Navigator />
     </Container>
   )
 }

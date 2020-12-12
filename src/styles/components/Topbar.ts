@@ -4,8 +4,6 @@ export const Container = styled.div`
   display:flex;
   flex-direction: row;
   justify-content:space-between;
-  width: 100vw;
-  height: 100px;
   background-color: ${props => props.theme.colors.topbar};
 `;
 
@@ -24,4 +22,5 @@ export const Menu = styled.div`
 
 export const TopLogo = styled.div`
   position:relative;
+  padding: 10px 0px;
 `;
