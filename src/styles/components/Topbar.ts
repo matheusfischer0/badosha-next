@@ -22,5 +22,6 @@ export const Menu = styled.div`
 
 export const TopLogo = styled.div`
   position:relative;
+  cursor:pointer;
   padding: 10px 0px;
 `;

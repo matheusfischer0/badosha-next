@@ -1,17 +1,22 @@
 import React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 
 import Logo from '../../assets/logo-topbar.png'
 
 import { Container, TopLogo, Menu } from '../../styles/components/Topbar'
-import ActiveLink from '../ActiveLink/ActiveLink'
-import Navigator from '../Navigator/Navigator'
+import Navigator from './Navigator/Navigator'
+import { useRouter } from 'next/router'
 
 const Topbar: React.FC = () => {
+  const router = useRouter()
+
+  const handleRedirectToHome = () => {
+    router.push('/')
+  }
+
   return (
     <Container>
-      <TopLogo>
+      <TopLogo onClick={handleRedirectToHome}>
         <Image
           src={Logo}
           alt="MHR transportes logo"
