@@ -14,4 +14,5 @@ export default createGlobalStyle`
     color: ${props => props.theme.colors.text};
     font: 400 16px Roboto, sans-serif;
   }
+
 `

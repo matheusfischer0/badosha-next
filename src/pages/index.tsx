@@ -7,7 +7,7 @@ const Home: React.FC = () => {
   return (
     <Container>
       <Head>
-        <title>MHR - Transportes</title>
+        <title>Badosha Restaurante</title>
         <link
           rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"

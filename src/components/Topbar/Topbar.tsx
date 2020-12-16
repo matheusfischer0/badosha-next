@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-import Logo from '../../assets/logo-topbar.png'
+import Logo from '../../assets/logo_badosha.png'
 
 import { Container, TopLogo, Menu } from '../../styles/components/Topbar'
 import Navigator from './Navigator/Navigator'
@@ -19,12 +19,12 @@ const Topbar: React.FC = () => {
       <TopLogo onClick={handleRedirectToHome}>
         <Image
           src={Logo}
-          alt="MHR transportes logo"
+          alt="Badosha logo"
           layout={'fixed'}
-          width={151}
-          height={70}
+          width={99}
+          height={99}
           quality={100}
-        />
+         />
       </TopLogo>
       <Navigator />
     </Container>

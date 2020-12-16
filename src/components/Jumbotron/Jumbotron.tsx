@@ -11,7 +11,7 @@ const Jumbotron: React.FC = () => {
       {images.map(image => (
         <Image
           src={image.url}
-          alt="MHR transportes logo"
+          alt="Badosha logo"
           layout={'fixed'}
           width={151}
           height={70}

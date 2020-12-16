@@ -50,7 +50,7 @@ export default class MyDocument extends Document {
 
           <link
             rel="icon"
-            href="http://mhrtransportes.com.br/wp-content/uploads/2020/06/favicon.png"
+            href="../assets/logo_badosha.png"
             sizes="32x32"
           />
 

@@ -10,7 +10,8 @@ const Contato: React.FC = () => {
   return (
     <Container>
       <Head>
-        <title>MHR - Transportes</title>
+        <title>Badosha Restaurante</title>
+
       </Head>
       <Form></Form>
     </Container>
