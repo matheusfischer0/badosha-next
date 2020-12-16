@@ -50,11 +50,11 @@ export default class MyDocument extends Document {
 
           <link
             rel="icon"
-            href="../assets/logo_badosha.png"
+            href="./logo_badosha.png"
             sizes="32x32"
           />
 
-          {/* <link rel="icon" href="https://rocketseat.com.br/favicon.ico" /> */}
+
         </Head>
         <body>
           <Main />
