@@ -12,10 +12,11 @@ export const Menu = styled.div`
   flex-direction: row;
   align-items:center;
   justify-content:space-between;
+
   a {
     font-size: 24px;
     padding:0px 20px;
-    color: ${props => props.theme.colors.text};
+    color: ${props => props.theme.colors.menutext};
     text-decoration: none;
   }
 `;
@@ -24,4 +25,5 @@ export const TopLogo = styled.div`
   position:relative;
   cursor:pointer;
   padding: 10px 0px;
-`;
+  margin: 10px 20px;
+  `;

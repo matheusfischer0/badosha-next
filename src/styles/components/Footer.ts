@@ -6,40 +6,46 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row-reverse;
  `;
 export const Phone = styled.div`
   display: flex;
   align-items: center;
-  color: ${props => props.theme.colors.footerText};
+  color: ${props => props.theme.colors.pfooter};
+  margin-right: 25px;
+
   h3{
       margin-left: 10px;
-      color: ${props => props.theme.colors.pfooter};
   }
   p{
     margin: 0px 10px;
-    color: ${props => props.theme.colors.pfooter};
   }
 `;
 export const Address = styled.div`
   display: flex;
   align-items: center;
-  color: ${props => props.theme.colors.footerText};
+  color: ${props => props.theme.colors.pfooter};
+  margin-left: 25px;
   h3{
       margin-left: 10px;
-      color: ${props => props.theme.colors.pfooter};
   }
   p{
     margin: 0px 10px;
-    color: ${props => props.theme.colors.pfooter};
-  }
+      }
 `;
 export const Signature = styled.div`
   display: flex;
   align-items: center;
-  color: ${props => props.theme.colors.footerText};
-
+  color: ${props => props.theme.colors.pfooter};
+  margin-left: 25px;
   p{
+    padding-top: 10px;
     margin: 0px 10px;
-    color: ${props => props.theme.colors.pfooter};
+    font-size: 12px;
+
   }
+`;
+export const AdressContainer = styled.div`
+ flex-direction: column;
+ align;
 `;

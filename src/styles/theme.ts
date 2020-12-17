@@ -6,6 +6,7 @@ const theme = {
     topbar: '#fff',
     footer: '#6D6D6D',
     pfooter: '#E4D49D',
+    menutext: '#E4D49D',
     //
   }
 }

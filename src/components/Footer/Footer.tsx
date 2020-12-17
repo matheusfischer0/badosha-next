@@ -1,7 +1,7 @@
 import React from 'react'
 import {FaWhatsapp} from 'react-icons/fa'
 
-import { Container, Phone, Address,Signature} from '../../styles/components/Footer'
+import { Container, Phone, Address,Signature,AdressContainer} from '../../styles/components/Footer'
 
 const Footer: React.FC = () => {
   return (
@@ -21,6 +21,7 @@ const Footer: React.FC = () => {
           ></FaWhatsapp>
       </a>
       </Phone>
+      <AdressContainer>
       <Address>
         <h3>Endereço:</h3>
       <p>
@@ -28,8 +29,11 @@ const Footer: React.FC = () => {
      </p>
       </Address>
       <Signature>
-        <p>2020 | All rights reserved | This template was created by Ycaro Lehmkuhl e Matheus Fischer.</p>
+        <p>
+          2020 | All rights reserved | This template was created by Ycaro Lehmkuhl e Matheus Fischer.
+          </p>
       </Signature>
+      </AdressContainer>
     </Container>
 
   )
