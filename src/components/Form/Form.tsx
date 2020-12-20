@@ -57,7 +57,7 @@ const Form = () => {
         <div className="form-group">
           <textarea
             name="description"
-            rows="5"
+            rows={5}
             type="text"
             className="form-control"
             id="description"

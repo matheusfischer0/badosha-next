@@ -24,4 +24,5 @@ export const TopLogo = styled.div`
   position:relative;
   cursor:pointer;
   padding: 10px 0px;
+  margin-left: 30px;
 `;

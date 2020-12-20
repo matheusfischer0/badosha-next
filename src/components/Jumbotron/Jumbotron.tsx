@@ -4,7 +4,14 @@ import Image from 'next/image'
 import { Container, Banner } from '../../styles/components/Jumbotron'
 
 const Jumbotron: React.FC = () => {
-  const images = [{ url: '', title: '', subtitle: '', link: '' }]
+  const images = [
+    {
+      url: require('../../assets/sorvete.jpg'),
+      title: '',
+      subtitle: '',
+      link: ''
+    }
+  ]
 
   return (
     <Container>
@@ -12,9 +19,7 @@ const Jumbotron: React.FC = () => {
         <Image
           src={image.url}
           alt="Badosha logo"
-          layout={'fixed'}
-          width={151}
-          height={70}
+          layout={'fill'}
           quality={100}
         />
       ))}
