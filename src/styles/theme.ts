@@ -2,10 +2,15 @@ const theme = {
   colors: {
     background: '#fff',
     text: '#55595c',
-    primary: '#f09900',
-    primary2: '#6EC1E4',
-    topbar: '#fff'
+    primary: '#8257e6',
+    topbar: '#fff',
+    footer: '#6D6D6D',
+    pfooter: '#E4D49D',
+    menutext: '#E4D49D',
+    //
   }
 }
+
+
 
 export default theme
