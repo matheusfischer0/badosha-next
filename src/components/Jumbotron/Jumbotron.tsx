@@ -1,22 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import { Container, Banner } from '../../styles/components/Jumbotron'
 
+import useWindowSize from '../../hooks/UseWindowSize'
+
 const Jumbotron: React.FC = () => {
-  const images = [{ url: '', title: '', subtitle: '', link: '' }]
+  const [active, setActive] = useState(1)
+
+  const images = [
+    {
+      url: require('../../assets/sorvete.jpg'),
+      title: 'Sorvete no prato preto decorado',
+      subtitle: '',
+      link: 'Sorvete no prato preto decorado',
+      alt: 'Sorvete no prato preto decorado'
+    },
+    {
+      url: require('../../assets/pimentas.jpg'),
+      title: 'Sorvete no prato preto decorado',
+      subtitle: '',
+      link: 'Sorvete no prato preto decorado',
+      alt: 'Sorvete no prato preto decorado'
+    },
+    {
+      url: require('../../assets/oswladoaranha.jpg'),
+      title: 'Sorvete no prato preto decorado',
+      subtitle: '',
+      link: 'Sorvete no prato preto decorado',
+      alt: 'Sorvete no prato preto decorado'
+    }
+  ]
 
   return (
     <Container>
       {images.map(image => (
-        <Image
-          src={image.url}
-          alt="Badosha logo"
-          layout={'fixed'}
-          width={151}
-          height={70}
-          quality={100}
-        />
+        <Banner backgroundUrl={image.url} />
       ))}
     </Container>
   )

@@ -16,13 +16,13 @@ const Topbar: React.FC = () => {
     { path: '/', label: 'Inicio' },
     { path: '/quem_somos', label: 'Quem somos' },
     { path: '/orcamento', label: 'Cardápio' },
-    { path: '/contato', label: 'Contato' },
+    { path: '/contato', label: 'Contato' }
   ]
 
   return (
     <Menu>
-      {routes.map(route => (
-        <MenuItem>
+      {routes.map((route, i) => (
+        <MenuItem key={i}>
           <Link href={route.path}>
             <Item active={asPath === route.path}>{route.label}</Item>
           </Link>
