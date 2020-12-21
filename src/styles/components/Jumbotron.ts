@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display:flex;
-  position:'relative';
-  flex-direction: row;
-  justify-content:space-between;
-  background-color: ${props => props.theme.colors.topbar};
+  flex-direction:row;
+  width:100vw;
+  overflow: hidden;
+  z-index: -1;
 `;
 
 interface BannerProps {
@@ -13,8 +13,12 @@ interface BannerProps {
 
 }
 
-export const Banner = styled.image<BannerProps>`
+export const Banner = styled.div<BannerProps>`
   display:flex;
-  background-image:${props=>props.backgroundUrl};
-  background-repeat:no-repeat;
+  position:absolute;
+  flex:1;
+  height: 80vh;
+  width: 100vw;
+  background: url(${props => props.backgroundUrl}) no-repeat center center;
+  background-size:cover;
 `;
