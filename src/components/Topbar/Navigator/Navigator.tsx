@@ -15,7 +15,7 @@ const Topbar: React.FC = () => {
   const routes = [
     { path: '/', label: 'Inicio' },
     { path: '/quem_somos', label: 'Quem somos' },
-    { path: '/orcamento', label: 'Cardápio' },
+    { path: '/cardapio', label: 'Cardápio' },
     { path: '/contato', label: 'Contato' }
   ]
 

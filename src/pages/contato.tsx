@@ -11,7 +11,6 @@ const Contato: React.FC = () => {
     <Container>
       <Head>
         <title>Badosha Restaurante</title>
-
       </Head>
       <Form></Form>
     </Container>
