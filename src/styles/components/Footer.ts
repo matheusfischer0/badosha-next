@@ -48,5 +48,5 @@ export const Signature = styled.div`
 `;
 export const AdressContainer = styled.div`
  flex-direction: column;
- align;
+ align: ;
 `;
