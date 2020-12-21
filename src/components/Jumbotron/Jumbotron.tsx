@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
 
 import { Container, Banner } from '../../styles/components/Jumbotron'
 
 import useWindowSize from '../../hooks/UseWindowSize'
 
 const Jumbotron: React.FC = () => {
-  const [active, setActive] = useState(1)
-
   const images = [
     {
       url: require('../../assets/sorvete.jpg'),
@@ -34,8 +31,8 @@ const Jumbotron: React.FC = () => {
 
   return (
     <Container>
-      {images.map(image => (
-        <Banner backgroundUrl={image.url} />
+      {images.map((image, i) => (
+        <Banner key={i + image.title} backgroundUrl={image.url} />
       ))}
     </Container>
   )

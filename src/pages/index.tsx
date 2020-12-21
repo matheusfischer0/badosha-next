@@ -3,6 +3,7 @@ import Head from 'next/head'
 
 import { Container } from '../styles/pages/Home'
 import Jumbotron from '../components/Jumbotron/Jumbotron'
+import SwiperComponent from '../components/SwiperComponent/SwiperComponent'
 
 const Home: React.FC = () => {
   return (
@@ -15,7 +16,7 @@ const Home: React.FC = () => {
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         ></link>
       </Head>
-      <Jumbotron></Jumbotron>
+      <SwiperComponent></SwiperComponent>
     </Container>
   )
 }
