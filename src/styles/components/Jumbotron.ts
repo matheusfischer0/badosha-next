@@ -7,17 +7,30 @@ export const Container = styled.div`
   z-index: -1;
 `;
 
-interface BannerProps {
-  backgroundUrl:string;
-
-}
-
-export const Banner = styled.div<BannerProps>`
+export const TextContainer = styled.div`
   display:flex;
-  position:absolute;
-  flex-basis:1;
-  height: 80vh;
-  left:-100vw;
-  background: url(${props => props.backgroundUrl}) no-repeat center center;
-  background-size:cover;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:64px;
+  color:#555;
+
+  >h3{
+    font-size: ${props=> props.theme.font_sizes.large};
+    font-weight:500;
+  }
+  >p{
+    margin-top:35px;
+    text-align:justify;
+  }
 `;
+
+export const ImageContainer = styled.div`
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:64px 0px;
+`;
+
+
+

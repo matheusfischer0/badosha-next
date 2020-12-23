@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   height: 80px;
-  background-color: ${props => props.theme.colors.footer};
+  background-color: ${props => props.theme.colors.grey};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,7 +12,7 @@ export const Container = styled.div`
 export const Phone = styled.div`
   display: flex;
   align-items: center;
-  color: ${props => props.theme.colors.pfooter};
+  color: ${props => props.theme.colors.light_yellow};
   margin-right: 25px;
 
   h3{
@@ -25,7 +25,7 @@ export const Phone = styled.div`
 export const Address = styled.div`
   display: flex;
   align-items: center;
-  color: ${props => props.theme.colors.pfooter};
+  color: ${props => props.theme.colors.light_yellow};
   margin-left: 25px;
   h3{
       margin-left: 10px;
@@ -37,12 +37,12 @@ export const Address = styled.div`
 export const Signature = styled.div`
   display: flex;
   align-items: center;
-  color: ${props => props.theme.colors.pfooter};
+  color: ${props => props.theme.colors.light_yellow};
   margin-left: 25px;
   p{
     padding-top: 10px;
     margin: 0px 10px;
-    font-size: 12px;
+    font-size: ${props=> props.theme.font_sizes.extra_small};
 
   }
 `;

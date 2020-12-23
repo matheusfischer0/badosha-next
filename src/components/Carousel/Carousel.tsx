@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 // Import Swiper React components
-import SwiperCore, { Navigation, Pagination, Thumbs } from 'swiper'
-SwiperCore.use([Navigation, Pagination, Thumbs])
+import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper'
+SwiperCore.use([Navigation, Pagination, Autoplay])
 
 import { SwiperSlide } from 'swiper/react'
 
@@ -32,15 +32,24 @@ const Carousel: React.FC<CarouselProps> = ({ images, ...props }) => {
       onSwiper={swiper => {
         console.log(swiper)
       }}
+      autoplay={{
+        delay: 2500,
+        stopOnLastSlide: true,
+        disableOnInteraction: true
+      }}
+      speed={1500}
       navigation
       pagination
     >
       {imagesList.map((image, i) => (
-        <SwiperSlide key={i + image.url} color="#fff">
-          <Link href={image.link}>
-            <Banner src={image.url} alt={image.alt}></Banner>
-          </Link>
-        </SwiperSlide>
+        <>
+          <SwiperSlide key={i + image.url} color="#fff">
+            <Link href={image.link}>
+              <Banner src={image.url} alt={image.alt}></Banner>
+            </Link>
+          </SwiperSlide>
+          <span slot="container-end">Container End</span>
+        </>
       ))}
     </SwiperContainer>
   )

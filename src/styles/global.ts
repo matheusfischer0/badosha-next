@@ -10,8 +10,8 @@ export default createGlobalStyle`
 
   body {
     position:relative;
-    background: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.text};
+    background: ${props => props.theme.colors.whiter};
+    color: ${props => props.theme.colors.grey};
     font: 400 16px Roboto, sans-serif;
   }
 

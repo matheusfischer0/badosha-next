@@ -4,21 +4,7 @@ export const Container = styled.div`
   display:flex;
   flex-direction: row;
   justify-content:space-between;
-  background-color: ${props => props.theme.colors.topbar};
-`;
-
-export const Menu = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items:center;
-  justify-content:space-between;
-
-  a {
-    font-size: 24px;
-    padding:0px 20px;
-    color: ${props => props.theme.colors.menutext};
-    text-decoration: none;
-  }
+  background-color: ${props => props.theme.colors.whiter};
 `;
 
 export const TopLogo = styled.div`

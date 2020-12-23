@@ -5,11 +5,11 @@ import { Swiper , SwiperSlide} from 'swiper/react'
 export const Banner = styled.img`
   width:100vw;
   min-width:1400px;
-  min-height:700px;
+  min-height:800px;
 `;
 
 export const SwiperContainer = styled(Swiper)`
-  height:700px;
+  height:800px;
 
 .swiper-button-prev,
 .swiper-button-next {
