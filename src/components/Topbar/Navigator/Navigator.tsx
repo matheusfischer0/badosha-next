@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import {
-  Menu,
   MenuItem,
   Item,
+  Button,
   UnderlineItem
 } from '../../../styles/components/Navigator'
 
@@ -20,16 +20,18 @@ const Topbar: React.FC = () => {
   ]
 
   return (
-    <Menu>
+    <>
       {routes.map((route, i) => (
-        <MenuItem key={i}>
-          <Link href={route.path}>
-            <Item active={asPath === route.path}>{route.label}</Item>
-          </Link>
-          <UnderlineItem active={asPath === route.path} />
+        <MenuItem key={i} active={asPath === route.path}>
+          <Button href={route.path}>
+            <Item active={asPath === route.path}>
+              <span>{route.label}</span>
+              <UnderlineItem active={asPath === route.path} />
+            </Item>
+          </Button>
         </MenuItem>
       ))}
-    </Menu>
+    </>
   )
 }
 
