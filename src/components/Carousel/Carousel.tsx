@@ -6,7 +6,14 @@ SwiperCore.use([Navigation, Pagination, Autoplay])
 
 import { SwiperSlide } from 'swiper/react'
 
-import { Banner, SwiperContainer } from '../../styles/components/Carousel'
+import {
+  Banner,
+  BannerContainer,
+  SwiperContainer,
+  SwiperSlideContainer,
+  Overlay,
+  TextContainer
+} from '../../styles/components/Carousel'
 
 interface ImageProps {
   url: string
@@ -42,12 +49,15 @@ const Carousel: React.FC<CarouselProps> = ({ images, ...props }) => {
       pagination
     >
       {imagesList.map((image, i) => (
-        <>
-          <SwiperSlide key={i + image.url} color="#fff">
+        <SwiperSlide key={i + image.url} color="#fff">
+          <BannerContainer>
+            <Overlay></Overlay>
+            <TextContainer>
+              <h2>Easy soluções em sistemas</h2>
+            </TextContainer>
             <Banner src={image.url} alt={image.alt}></Banner>
-          </SwiperSlide>
-          <span slot="container-end">Container End</span>
-        </>
+          </BannerContainer>
+        </SwiperSlide>
       ))}
     </SwiperContainer>
   )
