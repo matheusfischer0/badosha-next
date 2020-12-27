@@ -62,8 +62,10 @@ export const ImageContainer = styled.div`
   justify-content:center;
   align-items:center;
 
+
   img{
     width:100vw;
+    border-radius: 6px;
     @media ${device.tablet} {
       width:500px;
     }
