@@ -54,6 +54,9 @@ const Home: React.FC = () => {
         alt={'Imagem de um bife grelado com salada montado no prato'}
         left={true}
       ></Jumbotron>
+      <Menu
+
+      ></Menu>
     </Container>
   )
 }
