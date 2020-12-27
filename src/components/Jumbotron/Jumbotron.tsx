@@ -6,23 +6,23 @@ import {
   ImageContainer
 } from '../../styles/components/Jumbotron'
 
-import useWindowSize from '../../hooks/UseWindowSize'
-
 interface JumbotronProps {
   title: string
   message: string
   image: string
   alt: string
+  left?: boolean
 }
 
 const Jumbotron: React.FC<JumbotronProps> = ({
   title,
   message,
   image,
-  alt
+  alt,
+  left
 }) => {
   return (
-    <Container>
+    <Container left={left}>
       <TextContainer>
         <h3>{title}</h3>
         <p>{message}</p>

@@ -49,12 +49,12 @@ export const MenuMobile = styled.div`
 `;
 
 export const NavigatorIcon = styled.div`
-display:flex;
-align-items:center;
-margin-right:20px;
-cursor: pointer;
-@media ${device.tablet} {
-    display: none;
+  display:flex;
+  align-items:center;
+  margin-right:20px;
+  cursor: pointer;
+  @media ${device.tablet} {
+      display: none;
   }
 `;
 

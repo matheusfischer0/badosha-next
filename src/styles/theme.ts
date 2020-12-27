@@ -18,6 +18,7 @@ const theme = {
     large:'36px',
     medium:'28px',
     small:'22px',
+    medium_small:'16px',
     extra_small:'12px',
   }
 }

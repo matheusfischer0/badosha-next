@@ -9,7 +9,7 @@ import {
   UnderlineItem
 } from '../../../styles/components/Navigator'
 
-const Topbar: React.FC = () => {
+const Navigator: React.FC = () => {
   const { asPath } = useRouter()
 
   const routes = [
@@ -35,4 +35,4 @@ const Topbar: React.FC = () => {
   )
 }
 
-export default Topbar
+export default Navigator

@@ -43,9 +43,9 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <link
-            href="https://fonts.googleapis.com/css?family=Roboto:400,500,700"
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Roboto:wght@100;400&display=swap"
             rel="stylesheet"
-          />
+          ></link>
           <link rel="icon" href="./logo_badosha.png" sizes="32x32" />
         </Head>
         <body>

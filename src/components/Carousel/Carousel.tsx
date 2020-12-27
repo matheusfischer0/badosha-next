@@ -37,16 +37,14 @@ const Carousel: React.FC<CarouselProps> = ({ images, ...props }) => {
         stopOnLastSlide: true,
         disableOnInteraction: true
       }}
-      speed={1500}
+      speed={1000}
       navigation
       pagination
     >
       {imagesList.map((image, i) => (
         <>
           <SwiperSlide key={i + image.url} color="#fff">
-            <Link href={image.link}>
-              <Banner src={image.url} alt={image.alt}></Banner>
-            </Link>
+            <Banner src={image.url} alt={image.alt}></Banner>
           </SwiperSlide>
           <span slot="container-end">Container End</span>
         </>
