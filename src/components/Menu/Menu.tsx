@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const [selectedId, setSelectedId] = useState(null)
 
 <AnimateSharedLayout type="crossfade">
