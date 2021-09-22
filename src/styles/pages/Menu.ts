@@ -10,13 +10,15 @@ export const Container = styled.div`
 `
 
 export const TopLogo = styled.div`
-  display: flex;
-  align-items: flex-end;
   cursor: pointer;
-  padding: 10px 0px;
-  margin: 10px 20px;
-  h2 {
-    margin-left: 20px;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+  }
+  h2{
+    margin: 0px 10px;
   }
 `
 
@@ -24,6 +26,7 @@ export const Categories = styled.div`
   display: flex;
   width: 100vw;
   overflow: auto;
+  margin: 0px 5px;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -86,6 +89,5 @@ export const MenuItem = styled.div`
       font-weight: 400;
       margin-top: 5px;
     }
-
   }
 `

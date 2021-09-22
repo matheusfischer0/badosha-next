@@ -15,6 +15,7 @@ import {
 } from '../styles/pages/Menu'
 
 import Logo from '../assets/logo_badosha.png'
+import BluTerraceLogo from '../assets/blu_terrace_logo.png'
 
 type Extra = {
   name: string
@@ -39,6 +40,13 @@ type HomeProps = {
 const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
   const [category, setCategory] = useState<string>(menu[0].category)
 
+  const handleFormatMoney = (value: number) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(value)
+  }
+
   const handleSelectCategory = (value: string) => {
     setCategory(value)
   }
@@ -49,14 +57,24 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
         <title>Badosha Cardápio</title>
       </Head>
       <TopLogo>
-        <Image
-          src={Logo}
-          alt="Badosha logo"
-          layout={'fixed'}
-          width={100}
-          height={100}
-          quality={100}
-        />
+        <div>
+          <Image
+            src={Logo}
+            alt="Badosha logo"
+            layout={'fixed'}
+            width={100}
+            height={100}
+            quality={100}
+          />
+          <Image
+            src={BluTerraceLogo}
+            alt="Badosha logo"
+            layout={'fixed'}
+            width={100}
+            height={139}
+            quality={100}
+          />
+        </div>
         <h2>Cardápio</h2>
       </TopLogo>
       <Categories>
@@ -80,7 +98,7 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
                 <span>{item.name}</span>
                 {item.description && <span>{item.description}</span>}
               </div>
-              <span>{`R$ ${Number(item.price).toFixed(2)}`}</span>
+              <span>{handleFormatMoney(item.price)}</span>
             </MenuItem>
           ))}
       </List>
