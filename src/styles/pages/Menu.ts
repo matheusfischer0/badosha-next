@@ -1,8 +1,12 @@
 import styled from 'styled-components'
+import device from '../sizes'
 
 export const Container = styled.div`
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  overflow: hidden;
 `
 
 export const TopLogo = styled.div`
