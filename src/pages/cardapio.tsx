@@ -37,7 +37,7 @@ type HomeProps = {
 }
 
 const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
-  const [category, setCategory] = useState<string>()
+  const [category, setCategory] = useState<string>(menu[0].category)
 
   const handleSelectCategory = (value: string) => {
     setCategory(value)
@@ -87,7 +87,7 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   try {
-    const result = await fetch(`http://localhost:3000/api/menu`)
+    const result = await fetch(`${process.env.API_URL}/api/menu`)
     const menu: Item[] = await result.json()
     const categories: string[] = [...new Set(menu.map(item => item.category))]
 
