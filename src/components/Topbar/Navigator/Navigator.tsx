@@ -14,9 +14,9 @@ const Navigator: React.FC = () => {
 
   const routes = [
     { path: '/', label: 'Inicio' },
-    { path: '/quem_somos', label: 'Quem somos' },
+    { path: '/#quem_somos', label: 'Quem somos' },
     { path: '/cardapio', label: 'Cardápio' },
-    { path: '/contato', label: 'Contato' }
+    { path: '/#contato', label: 'Contato' }
   ]
 
   return (

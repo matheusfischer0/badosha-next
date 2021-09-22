@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 // Import Swiper React components
@@ -5,6 +6,8 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper'
 SwiperCore.use([Navigation, Pagination, Autoplay])
 
 import { SwiperSlide } from 'swiper/react'
+
+import Logo from '../../assets/logo_badosha.png'
 
 import {
   Banner,
@@ -17,8 +20,6 @@ import {
 
 interface ImageProps {
   url: string
-  title: string
-  subtitle: string
   alt: string
   link: string
 }
@@ -52,9 +53,6 @@ const Carousel: React.FC<CarouselProps> = ({ images, ...props }) => {
         <SwiperSlide key={i + image.url} color="#fff">
           <BannerContainer>
             <Overlay></Overlay>
-            <TextContainer>
-              <h2>Easy soluções em sistemas</h2>
-            </TextContainer>
             <Banner src={image.url} alt={image.alt}></Banner>
           </BannerContainer>
         </SwiperSlide>

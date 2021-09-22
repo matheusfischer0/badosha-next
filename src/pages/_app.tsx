@@ -17,9 +17,7 @@ import Footer from '../components/Footer/Footer'
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <ThemeProvider theme={theme}>
-      <Topbar></Topbar>
       <Component {...pageProps} />
-      <Footer></Footer>
       <GlobalStyle />
     </ThemeProvider>
   )
