@@ -63,7 +63,29 @@ export const MenuItem = styled.div`
   border-radius: 6px;
   margin: 10px;
   span {
+    display: flex;
+    align-items: center;
     text-align: center;
     white-space: nowrap;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 10px;
+    span {
+      text-align: left;
+      white-space: normal;
+    }
+    span:first-child {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    span:nth-child(2) {
+      font-size: 14px;
+      font-weight: 400;
+      margin-top: 5px;
+    }
+
   }
 `
