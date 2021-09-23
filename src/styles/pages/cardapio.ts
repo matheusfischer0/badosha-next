@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Link from 'next/link'
 import device from '../sizes'
 
 export const Container = styled.div`
@@ -10,7 +11,6 @@ export const Container = styled.div`
 `
 
 export const TopLogo = styled.div`
-  cursor: pointer;
   div {
     display: flex;
     align-items: center;
@@ -20,6 +20,14 @@ export const TopLogo = styled.div`
   h2{
     margin: 0px 10px;
   }
+`
+
+
+export const Button = styled(Link)`
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  cursor: pointer;
 `
 
 export const Categories = styled.div`

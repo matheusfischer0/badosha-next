@@ -11,8 +11,9 @@ import {
   Item,
   ActiveCategory,
   List,
-  MenuItem
-} from '../styles/pages/Menu'
+  MenuItem,
+  Button
+} from '../styles/pages/cardapio'
 
 import Logo from '../assets/logo_badosha.png'
 import BluTerraceLogo from '../assets/blu_terrace_logo.png'
@@ -58,22 +59,26 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
       </Head>
       <TopLogo>
         <div>
-          <Image
-            src={Logo}
-            alt="Badosha logo"
-            layout={'fixed'}
-            width={100}
-            height={100}
-            quality={100}
-          />
-          <Image
-            src={BluTerraceLogo}
-            alt="Badosha logo"
-            layout={'fixed'}
-            width={100}
-            height={139}
-            quality={100}
-          />
+          <Button href={'/'}>
+            <Image
+              src={Logo}
+              alt="Badosha logo"
+              layout={'fixed'}
+              width={100}
+              height={100}
+              quality={100}
+            />
+          </Button>
+          <Button href={'/info'}>
+            <Image
+              src={BluTerraceLogo}
+              alt="Badosha logo"
+              layout={'fixed'}
+              width={100}
+              height={139}
+              quality={100}
+            />
+          </Button>
         </div>
         <h2>Cardápio</h2>
       </TopLogo>

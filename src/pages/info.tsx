@@ -4,17 +4,10 @@ import Image from 'next/image'
 import { GetServerSideProps, NextPage } from 'next'
 import { motion } from 'framer-motion'
 
-import {
-  Container,
-  TopLogo,
-  Categories,
-  Item,
-  ActiveCategory,
-  List,
-  MenuItem
-} from '../styles/pages/Menu'
+import { Container, TopLogo, Button, Content } from '../styles/pages/info'
 
 import Logo from '../assets/logo_badosha.png'
+import BluTerraceLogo from '../assets/blu_terrace_logo.png'
 
 type Extra = {
   name: string
@@ -48,42 +41,38 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
       <Head>
         <title>Badosha Cardápio</title>
       </Head>
+
       <TopLogo>
-        <Image
-          src={Logo}
-          alt="Badosha logo"
-          layout={'fixed'}
-          width={100}
-          height={100}
-          quality={100}
-        />
-        <h2>Cardápio</h2>
+        <div>
+          <Button href={'/'}>
+            <Image
+              src={Logo}
+              alt="Badosha logo"
+              layout={'fixed'}
+              width={100}
+              height={100}
+              quality={100}
+            />
+          </Button>
+          <Button href={'/info'}>
+            <Image
+              src={BluTerraceLogo}
+              alt="Badosha logo"
+              layout={'fixed'}
+              width={100}
+              height={139}
+              quality={100}
+            />
+          </Button>
+        </div>
+        <h2>Informações</h2>
       </TopLogo>
-      <Categories>
-        {categories.map(c => (
-          <Item
-            key={c}
-            onClick={() => handleSelectCategory(c)}
-            active={c == category}
-          >
-            <span>{c}</span>
-          </Item>
-        ))}
-      </Categories>
-      {category && <ActiveCategory>{category}</ActiveCategory>}
-      <List>
-        {menu
-          .filter(item => item.category === category)
-          .map(item => (
-            <MenuItem key={item.name}>
-              <div>
-                <span>{item.name}</span>
-                {item.description && <span>{item.description}</span>}
-              </div>
-              <span>{`R$ ${Number(item.price).toFixed(2)}`}</span>
-            </MenuItem>
-          ))}
-      </List>
+
+      <Content>
+        <h3>Boa tarde,</h3>
+        <p>Para acessar o Wi-Fi o login é o seu CPF</p>
+        <p>A senha é sua data de nascimento</p>
+      </Content>
     </Container>
   )
 }
