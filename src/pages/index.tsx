@@ -30,7 +30,7 @@ const Home: NextPage = () => {
   return (
     <Container>
       <Head>
-        <title>Badosha Restaurante</title>
+        <title>Badosha Gastrobar</title>
       </Head>
       <Topbar></Topbar>
       <Carousel images={images}></Carousel>
