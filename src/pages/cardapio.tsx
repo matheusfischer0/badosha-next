@@ -39,7 +39,6 @@ type HomeProps = {
 }
 
 const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
-
   const [category, setCategory] = useState<string>(menu[0].category)
 
   const handleFormatMoney = (value: number) => {
@@ -56,7 +55,7 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
   return (
     <Container>
       <Head>
-        <title>Badosha Cardápio</title>
+        <title>Badosha Gastrobar</title>
       </Head>
       <TopLogo>
         <div>
