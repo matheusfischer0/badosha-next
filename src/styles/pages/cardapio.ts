@@ -3,11 +3,11 @@ import Link from 'next/link'
 import device from '../sizes'
 
 export const Container = styled.div`
-  height: 100vh;
   width: 100%;
   max-width: 768px;
   margin: 0 auto;
   overflow: hidden;
+  padding-bottom: 100px;
 `
 
 export const TopLogo = styled.div`
@@ -17,11 +17,10 @@ export const TopLogo = styled.div`
     justify-content: space-between;
     margin: 5px;
   }
-  h2{
+  h2 {
     margin: 0px 10px;
   }
 `
-
 
 export const Button = styled(Link)`
   display: flex;
@@ -58,6 +57,7 @@ export const Item = styled.div<ItemProps>`
 `
 
 export const ActiveCategory = styled.h3`
+  font-size: 22px;
   margin: 10px;
 `
 
@@ -67,35 +67,51 @@ export const List = styled.div`
   overflow-y: auto;
 `
 
+export const MenuRow = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0px 10px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+`
+
+export const MenuTitle = styled.span`
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+`
+
 export const MenuItem = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 10px 0px;
   border-radius: 6px;
-  margin: 10px;
-  span {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    white-space: nowrap;
-  }
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: 10px;
-    span {
-      text-align: left;
-      white-space: normal;
-    }
-    span:first-child {
-      font-size: 16px;
-      font-weight: 600;
-    }
-    span:nth-child(2) {
-      font-size: 14px;
-      font-weight: 400;
-      margin-top: 5px;
-    }
-  }
+`
+
+export const MenuDescription = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 10px;
+`
+
+export const MenuOption = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+`
+export const MenuOptionDescription = styled.div`
+  display: flex;
+  flex: 1;
+`
+export const MenuQuantity = styled.div`
+  display: flex;
+  flex: 1;
+`
+export const MenuPrice = styled.div`
+  display: flex;
 `

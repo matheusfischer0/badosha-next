@@ -11,7 +11,14 @@ import {
   Item,
   ActiveCategory,
   List,
+  MenuRow,
   MenuItem,
+  MenuTitle,
+  MenuDescription,
+  MenuOption,
+  MenuOptionDescription,
+  MenuQuantity,
+  MenuPrice,
   Button
 } from '../styles/pages/cardapio'
 
@@ -24,12 +31,20 @@ type Extra = {
   price: number
 }
 
+type Options = {
+  description?: string
+  quantity?: number
+  price: number
+}
+
 type Item = {
   name: string
   category: string
+  unity?: string
   description?: string
   quantity?: string
-  price: number
+  price?: number
+  options?: Options[]
   extras?: Extra[]
 }
 
@@ -98,13 +113,37 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
         {menu
           .filter(item => item.category === category)
           .map(item => (
-            <MenuItem key={item.name}>
-              <div>
-                <span>{item.name}</span>
-                {item.description && <span>{item.description}</span>}
-              </div>
-              <span>{handleFormatMoney(item.price)}</span>
-            </MenuItem>
+            <MenuRow>
+              <MenuItem key={item.name}>
+                <div>
+                  <MenuTitle>{item.name}</MenuTitle>
+                  {item.description && (
+                    <MenuDescription>{item.description}</MenuDescription>
+                  )}
+                </div>
+                {item.price && <span>{handleFormatMoney(item.price)}</span>}
+              </MenuItem>
+              {item.options &&
+                item.options.map(option => (
+                  <MenuOption>
+                    {option.description && (
+                      <MenuOptionDescription>
+                        <span>{`${option.description}`}</span>
+                      </MenuOptionDescription>
+                    )}
+                    {option.quantity && (
+                      <MenuQuantity>
+                        <span>{`${option.quantity} ${item.unity}`}</span>
+                      </MenuQuantity>
+                    )}
+                    {option.price && (
+                      <MenuPrice>
+                        <span>{handleFormatMoney(option.price)}</span>
+                      </MenuPrice>
+                    )}
+                  </MenuOption>
+                ))}
+            </MenuRow>
           ))}
       </List>
     </Container>
