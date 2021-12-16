@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import { GetServerSideProps, NextPage } from 'next'
-import { motion } from 'framer-motion'
+import { GetServerSideProps, GetStaticProps, NextPage } from 'next'
 
 import {
   Container,
@@ -150,20 +149,21 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  try {
-    const result = await fetch(`${process.env.API_URL}/api/menu`)
-    const menu: Item[] = await result.json()
-    const categories: string[] = [...new Set(menu.map(item => item.category))]
+// This function gets called at build time
+export const getStaticProps: GetStaticProps = async () => {
+  const result = await fetch(`${process.env.API_URL}/api/menu`)
+  const menu: Item[] = await result.json()
+  const categories: string[] = [...new Set(menu.map(item => item.category))]
 
+  if (!menu) {
     return {
-      props: { menu, categories }
+      notFound: true
     }
-  } catch {
-    res.statusCode = 404
-    return {
-      props: {}
-    }
+  }
+
+  return {
+    props: { menu, categories },
+    revalidate: 60 * 60 * 24
   }
 }
 
