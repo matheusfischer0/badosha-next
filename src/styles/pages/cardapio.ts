@@ -33,6 +33,7 @@ export const Categories = styled.div`
   width: 100vw;
   overflow: auto;
   margin: 0px 5px;
+  padding-right: 50px;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -113,4 +114,6 @@ export const MenuQuantity = styled.div`
 `
 export const MenuPrice = styled.div`
   display: flex;
+  flex: 1;
+  justify-content: flex-end;
 `

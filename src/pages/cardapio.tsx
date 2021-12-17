@@ -112,8 +112,10 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
                 {item.price && <span>{handleFormatMoney(item.price)}</span>}
               </MenuItem>
               {item.options &&
-                item.options.map(option => (
-                  <MenuOption key={`${item.name}_${option.price}`}>
+                item.options.map((option, index) => (
+                  <MenuOption
+                    key={`${item.description}_${option.price}_${index}`}
+                  >
                     {option.description && (
                       <MenuOptionDescription>
                         <span>{`${option.description}`}</span>
