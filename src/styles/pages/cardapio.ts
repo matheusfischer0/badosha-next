@@ -8,24 +8,23 @@ export const Container = styled.div`
   margin: 0 auto;
   overflow: hidden;
   padding-bottom: 100px;
-`
-
-export const TopLogo = styled.div`
-  div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 5px;
-  }
   h2 {
     margin: 0px 10px;
   }
 `
 
-export const Button = styled(Link)`
+export const TopLogo = styled.div`
   display: flex;
   flex: 1;
   justify-content: center;
+  > div {
+    display: block;
+    width: 80%;
+    margin: 10px;
+  }
+`
+
+export const Button = styled(Link)`
   cursor: pointer;
 `
 
@@ -37,7 +36,6 @@ export const Categories = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-
 `
 interface ItemProps {
   active: boolean

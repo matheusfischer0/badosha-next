@@ -30,13 +30,49 @@ const menu = [
     unity: 'ml'
   },
   {
-    name: 'Chopp Blond Ale Frida Cervejaria Blumenau',
+    name: 'Blond Ale Frida Cervejaria Blumenau',
     category: 'Chopp',
     options: [
       { quantity: 500, price: 18 },
       { quantity: 300, price: 12 }
     ],
     unity: 'ml'
+  },
+   {
+    name: 'Caipiroska (Vodka)',
+    category: 'Caipirinhas',
+    options: [
+      { description: 'Limão', quantity: 330, price: 20 },
+      { description: 'Morango', quantity: 330, price: 20 },
+      { description: 'Melancia com manjericão', quantity: 330, price: 20 }
+    ],
+    unity: 'ml'
+  },
+  {
+    name: 'Caipirinha (Cachaça)',
+    category: 'Caipirinhas',
+    options: [
+      { description: 'Limão', quantity: 330, price: 17 },
+      { description: 'Morango', quantity: 330, price: 17 },
+      { description: 'Melancia com manjericão', quantity: 330, price: 17 }
+    ],
+    unity: 'ml'
+  },
+  {
+    name: 'Água com ou sem gás',
+    category: 'Bebidas',
+    price: 4.0
+  },
+  {
+    name: 'Refrigerante',
+    category: 'Bebidas',
+    price: 5.0
+  },
+  {
+    name: 'Suco | Soda Italiana',
+    category: 'Bebidas',
+    description: 'Verificar disponibilidade.',
+    price: 9.0
   },
   {
     name: 'Batata Frita',
@@ -202,42 +238,7 @@ const menu = [
     options: [{ quantity: 150, price: 15 }],
     unity: 'un'
   },
-  {
-    name: 'Caipiroska (Vodka)',
-    category: 'Caipirinhas',
-    options: [
-      { description: 'Limão', quantity: 330, price: 20 },
-      { description: 'Morango', quantity: 330, price: 20 },
-      { description: 'Melancia com manjericão', quantity: 330, price: 20 }
-    ],
-    unity: 'ml'
-  },
-  {
-    name: 'Caipirinha (Cachaça)',
-    category: 'Caipirinhas',
-    options: [
-      { description: 'Limão', quantity: 330, price: 17 },
-      { description: 'Morango', quantity: 330, price: 17 },
-      { description: 'Melancia com manjericão', quantity: 330, price: 17 }
-    ],
-    unity: 'ml'
-  },
-  {
-    name: 'Água com ou sem gás',
-    category: 'Bebidas',
-    price: 4.0
-  },
-  {
-    name: 'Refrigerante',
-    category: 'Bebidas',
-    price: 5.0
-  },
-  {
-    name: 'Suco | Soda Italiana',
-    category: 'Bebidas',
-    description: 'Verificar disponibilidade.',
-    price: 9.0
-  }
+
 ]
 
 type Extra = {

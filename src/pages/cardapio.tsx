@@ -75,27 +75,16 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
         <div>
           <Button href={'/'}>
             <Image
+              id="butt3"
               src={Logo}
               alt="Badosha logo"
-              layout={'fixed'}
-              width={100}
-              height={100}
-              quality={100}
-            />
-          </Button>
-          <Button href={'/info'}>
-            <Image
-              src={BluTerraceLogo}
-              alt="Badosha logo"
-              layout={'fixed'}
-              width={100}
-              height={139}
-              quality={100}
+              width={1772}
+              height={609}
             />
           </Button>
         </div>
-        <h2>Cardápio</h2>
       </TopLogo>
+      <h2>Cardápio</h2>
       <Categories>
         {categories.map(c => (
           <Item
