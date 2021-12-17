@@ -38,25 +38,75 @@ const menu = [
     ],
     unity: 'ml'
   },
-   {
+  {
     name: 'Caipiroska (Vodka)',
-    category: 'Caipirinhas',
+    category: 'Drinks',
+    price: 20,
     options: [
-      { description: 'Limão', quantity: 330, price: 20 },
-      { description: 'Morango', quantity: 330, price: 20 },
-      { description: 'Melancia com manjericão', quantity: 330, price: 20 }
+      { description: 'Limão' },
+      { description: 'Morango' },
+      { description: 'Melancia com manjericão' }
     ],
     unity: 'ml'
   },
   {
     name: 'Caipirinha (Cachaça)',
-    category: 'Caipirinhas',
+    category: 'Drinks',
+    price: 17,
     options: [
-      { description: 'Limão', quantity: 330, price: 17 },
-      { description: 'Morango', quantity: 330, price: 17 },
-      { description: 'Melancia com manjericão', quantity: 330, price: 17 }
+      { description: 'Limão' },
+      { description: 'Morango' },
+      { description: 'Melancia com manjericão' }
     ],
     unity: 'ml'
+  },
+  {
+    name: 'Gim Tônica',
+    category: 'Drinks',
+    price: 23,
+    options: [
+      { description: 'Melância com canela' },
+      { description: 'Tangerina com cravo' },
+      { description: 'Limão e alecrim' },
+      { description: 'Melão e manjericão' }
+    ],
+    unity: 'ml'
+  },
+  {
+    name: 'Whisky',
+    category: 'Drinks',
+    options: [
+      { description: 'Johnny red label (Dose)', price: 21 },
+      { description: 'Jack Daniels (Dose)', price: 23 }
+    ],
+    unity: 'Dose'
+  },
+  {
+    name: 'Cachaça artesanal',
+    category: 'Drinks',
+    options: [
+      { description: 'Prata (Dose)', price: 7 },
+      { description: 'Envelhecida (Dose)', price: 9 }
+    ],
+    unity: 'Dose'
+  },
+  {
+    name: 'Gin',
+    category: 'Drinks',
+    options: [
+      { description: 'Seagers (Dose)', price: 12 },
+      { description: 'Kalvelage (Dose)', price: 15 }
+    ],
+    unity: 'Dose'
+  },
+  {
+    name: 'Vodka',
+    category: 'Drinks',
+    options: [
+      { description: 'Smirnoff (Dose)', price: 11 },
+      { description: 'Kalvelage (Dose)', price: 12 }
+    ],
+    unity: 'Dose'
   },
   {
     name: 'Água com ou sem gás',
@@ -237,8 +287,7 @@ const menu = [
     description: 'Brownie com mousse de Chocolate meio amargo e Creme de avelã',
     options: [{ quantity: 150, price: 15 }],
     unity: 'un'
-  },
-
+  }
 ]
 
 type Extra = {
@@ -250,7 +299,7 @@ type Extra = {
 type Options = {
   description?: string
   quantity?: number
-  price: number
+  price?: number
 }
 
 type Item = {

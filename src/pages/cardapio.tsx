@@ -84,7 +84,6 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
           </Button>
         </div>
       </TopLogo>
-      <h2>Cardápio</h2>
       <Categories>
         {categories.map(c => (
           <Item

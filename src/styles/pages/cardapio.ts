@@ -51,6 +51,7 @@ export const Item = styled.div<ItemProps>`
   border-radius: 6px;
   margin: 10px 5px;
   span {
+    min-width: 80px;
     text-align: center;
     white-space: nowrap;
   }
