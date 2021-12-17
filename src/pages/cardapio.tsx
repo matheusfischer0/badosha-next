@@ -124,7 +124,7 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
               </MenuItem>
               {item.options &&
                 item.options.map(option => (
-                  <MenuOption>
+                  <MenuOption key={`${item.name}_${option.price}`}>
                     {option.description && (
                       <MenuOptionDescription>
                         <span>{`${option.description}`}</span>

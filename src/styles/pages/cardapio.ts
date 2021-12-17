@@ -37,6 +37,7 @@ export const Categories = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+
 `
 interface ItemProps {
   active: boolean
