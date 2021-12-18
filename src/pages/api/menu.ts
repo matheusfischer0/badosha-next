@@ -39,6 +39,15 @@ const menu = [
     unity: 'ml'
   },
   {
+    name: 'Chope de Vinho Bierbaum',
+    category: 'Chopp',
+    options: [
+      { quantity: 500, price: 20 },
+      { quantity: 300, price: 14 }
+    ],
+    unity: 'ml'
+  },
+  {
     name: 'Caipiroska (Vodka)',
     category: 'Drinks',
     price: 20,
