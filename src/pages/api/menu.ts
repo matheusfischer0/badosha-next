@@ -48,6 +48,41 @@ const menu = [
     unity: 'ml'
   },
   {
+    name: 'Cervejaria Blumenau',
+    category: 'Cervejas',
+    options: [
+      { description: 'Capirava Little IPA', quantity: 500, price: 28 },
+      { description: 'Ipê Amarelo Hop Lager', quantity: 500, price: 22 },
+      { description: 'Frida Blond Ale', quantity: 500, price: 20 },
+      { description: 'Vila Weissbier', quantity: 500, price: 22 }
+    ],
+    unity: 'ml'
+  },
+  {
+    name: 'Heineken',
+    category: 'Cervejas',
+    options: [{ quantity: 330, price: 12 }],
+    unity: 'ml'
+  },
+  {
+    name: 'Corona',
+    category: 'Cervejas',
+    options: [{ quantity: 330, price: 12 }],
+    unity: 'ml'
+  },
+  {
+    name: 'Budweiser',
+    category: 'Cervejas',
+    options: [{ quantity: 330, price: 10 }],
+    unity: 'ml'
+  },
+  {
+    name: 'Stella Artois',
+    category: 'Cervejas',
+    options: [{ quantity: 330, price: 10 }],
+    unity: 'ml'
+  },
+  {
     name: 'Caipiroska (Vodka)',
     category: 'Drinks',
     price: 20,
@@ -118,17 +153,23 @@ const menu = [
     unity: 'Dose'
   },
   {
-    name: 'Água com ou sem gás',
+    name: 'Água (com/sem gás)',
     category: 'Bebidas',
     price: 4.0
   },
   {
-    name: 'Refrigerante',
+    name: 'Refrigerantes',
     category: 'Bebidas',
+    options: [
+      { description: 'Coca-cola' },
+      { description: 'Coca-cola Zero' },
+      { description: 'Guaraná Antartica' },
+      { description: 'Aguá Tônica' }
+    ],
     price: 5.0
   },
   {
-    name: 'Suco | Soda Italiana',
+    name: 'Sucos',
     category: 'Bebidas',
     description: 'Verificar disponibilidade.',
     price: 9.0
