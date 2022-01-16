@@ -39,7 +39,7 @@ const menu = [
     unity: 'ml'
   },
   {
-    name: 'Chope de Vinho Bierbaum',
+    name: 'Chope de Vinho',
     category: 'Chopp',
     options: [
       { quantity: 500, price: 20 },
@@ -60,12 +60,6 @@ const menu = [
   },
   {
     name: 'Heineken',
-    category: 'Cervejas',
-    options: [{ quantity: 330, price: 12 }],
-    unity: 'ml'
-  },
-  {
-    name: 'Corona',
     category: 'Cervejas',
     options: [{ quantity: 330, price: 12 }],
     unity: 'ml'
@@ -169,10 +163,17 @@ const menu = [
     price: 5.0
   },
   {
-    name: 'Sucos',
+    name: 'Sucos (Verificar disponibilidade)',
     category: 'Bebidas',
-    description: 'Verificar disponibilidade.',
+    options: [{ description: 'Laranja' }, { description: 'Melancia' }],
     price: 9.0
+  },
+  {
+    name: 'Mix de Frutos Secos',
+    category: 'Aperitivos/Petiscos',
+    description: 'Temperados artesanalmente',
+    price: 8.0,
+    unity: 'g'
   },
   {
     name: 'Batata Frita',
@@ -198,39 +199,39 @@ const menu = [
     name: 'Bolinho de Costela',
     category: 'Aperitivos/Petiscos',
     description:
-      'Porção de bolinho de costela (450 g) com cozimento prolongado, acompanha maionese artesanal e geleia de pimenta.',
-    options: [{ quantity: 8, price: 49 }],
-    unity: 'un'
+      'Porção de bolinho de costela com cozimento prolongado, acompanha maionese artesanal e geleia de pimenta.',
+    options: [{ quantity: 450, price: 49 }],
+    unity: 'g'
   },
   {
     name: 'Bolinho de Linguiça Blumenau',
     category: 'Aperitivos/Petiscos',
     description:
-      'Porção de bolinho de linguiça blumenau (450 g) produzida em nossa região, acompanha maionese artesanal.',
-    options: [{ quantity: 8, price: 46 }],
-    unity: 'un'
+      'Porção de bolinho de linguiça blumenau produzida em nossa região, acompanha maionese artesanal.',
+    options: [{ quantity: 450, price: 46 }],
+    unity: 'g'
   },
   {
     name: 'Tiras de alcatra',
     category: 'Aperitivos/Petiscos',
     description:
-      'Porção de tiras de alcatra (300 g), acompanha batata frita (150 g) e maionese artesanal.',
-    options: [{ quantity: 450, price: 59 }],
+      'Porção de tiras de alcatra, acompanha batata frita e maionese artesanal.',
+    options: [{ quantity: 300, price: 59 }],
     unity: 'g'
   },
   {
     name: 'Linguiça Blumenau',
     category: 'Aperitivos/Petiscos',
     description:
-      'Porção de linguiça blumenau (300 g), acompanha batata frita (150 g) e maionese artesanal',
-    options: [{ quantity: 450, price: 49 }],
+      'Porção de linguiça blumenau, acompanha batata frita e maionese artesanal',
+    options: [{ quantity: 300, price: 49 }],
     unity: 'g'
   },
   {
     name: 'Porção Mista Especial',
     category: 'Aperitivos/Petiscos',
     description:
-      'Coxinha de Frango (200g), Linguiça Blumenau (200g), Alcatra (200g), Batata frita (200g), Farofa e Pão.',
+      'Coxinha de Frango, Linguiça Blumenau, Alcatra, Batata frita , Farofa e Pão.',
     options: [{ quantity: 800, price: 79 }],
     unity: 'g'
   },
@@ -238,15 +239,15 @@ const menu = [
     name: 'Panceta de Porco',
     category: 'Aperitivos/Petiscos',
     description:
-      'Porção de Panceta de porco (300 g), acompanhada de batata frita (150 g) e maionese artesanal.',
-    options: [{ quantity: 450, price: 39 }],
+      'Porção de Panceta de porco, acompanhada de batata frita e maionese artesanal.',
+    options: [{ quantity: 300, price: 39 }],
     unity: 'g'
   },
   {
     name: 'Coxinhas de Frango grelhadas',
     category: 'Aperitivos/Petiscos',
     description:
-      'Porção de Coxinhas de Frango grelhadas (300 g). Acompanha Pães e geleira de pimenta.',
+      'Porção de Coxinhas de Frango grelhadas. Acompanha Pães e geleira de pimenta.',
     options: [{ quantity: 300, price: 39 }],
     unity: 'g'
   },
@@ -254,7 +255,7 @@ const menu = [
     name: 'Hambúrguer Artesanal',
     category: 'Hambúrguers Artesanais',
     description:
-      'Pão de Brioche com Hambúrguer Artesanal (200g), Queijo Mozzarella, Alface, Tomate e Cebola Roxa. Acompanha maionese artesanal.',
+      'Pão de Brioche com Hambúrguer Artesanal, Queijo Mozzarella, Alface, Tomate e Cebola Roxa. Acompanha maionese artesanal.',
     options: [
       { description: 'Sem batata', price: 39 },
       { description: 'Com batata (100g)', price: 45 }
@@ -265,7 +266,7 @@ const menu = [
     name: 'Hambúrguer de Costela',
     category: 'Hambúrguers Artesanais',
     description:
-      'Pão Ciabatta com Hambúrguer de Costela (200g), Queijo Colonial, Rúcula e Tomate. Acompanha maionese artesanal.',
+      'Pão Ciabatta com Hambúrguer de Costela, Queijo Colonial, Rúcula e Tomate. Acompanha maionese artesanal.',
     options: [
       { description: 'Sem batata', price: 45 },
       { description: 'Com batata (100g)', price: 51 }
@@ -276,24 +277,13 @@ const menu = [
     name: 'Sanduíche de Frango',
     category: 'Sanduíches',
     description:
-      'Pão de sanduíche com Frango grelhado (150g), Queijo Mozzarella, Alface e tomate. Acompanha maionese artesanal.',
+      'Pão de sanduíche com Frango grelhado, Queijo Mozzarella, Alface e tomate. Acompanha maionese artesanal.',
     options: [
       { description: 'Sem batata', price: 32 },
       { description: 'Com batata (100g)', price: 37 }
     ],
     unity: 'g'
   },
-  // {
-  //   name: 'Sanduíche Vegano',
-  //   category: 'Sanduíches',
-  //   description:
-  //     'Sanduíche Vegano, Pão Ciabatta, Brotos de alface e tomate. Acompanha batata frita e maionese artesanal.',
-  //   options: [
-  //     { description: 'Sem batata', price: 32 },
-  //     { description: 'Com batata', price: 37 }
-  //   ],
-  //   unity: 'g'
-  // },
   {
     name: 'Piadina',
     category: 'Pratos Principais',
@@ -305,16 +295,15 @@ const menu = [
   {
     name: 'Alcatra Grelhada',
     category: 'Pratos Principais',
-    description:
-      'Alcatra (300g) com arroz, batata frita (80g) e salada da casa.',
-    options: [{ price: 49 }]
+    description: 'Alcatra com arroz, batata frita e salada da casa.',
+    options: [{ quantity: 300, price: 49 }]
   },
   {
     name: 'Filé de Frango Grelhado',
     category: 'Pratos Principais',
     description:
-      'Filé de frango grelado (300g) com arroz, batata frita (80g) e salada da casa.',
-    options: [{ price: 42 }]
+      'Filé de frango grelado com arroz, batata frita e salada da casa.',
+    options: [{ quantity: 300, price: 42 }]
   },
   {
     name: 'Omelete',
@@ -327,7 +316,7 @@ const menu = [
     name: 'Salada Badosha',
     category: 'Pratos Principais',
     description:
-      'Frango grelhado com mix de folhas, pepino, tomate, palmito, melancia em cubos, queijo parmesão e croutons. Acompanha maionese artesanal.',
+      'Frango grelhado com mix de folhas, pepino, tomate, alface crespa roxa e verde, rúcula, morango e croutons. Acompanha maionese artesanal.',
     options: [{ quantity: 350, price: 28 }],
     unity: 'g'
   },
