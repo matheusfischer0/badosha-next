@@ -6,9 +6,6 @@ import { motion } from 'framer-motion'
 
 import { Container, TopLogo, Button, Content } from '../styles/pages/info'
 
-import Logo from '../assets/logo_badosha.png'
-import BluTerraceLogo from '../assets/blu_terrace_logo.png'
-
 type Extra = {
   name: string
   quantity?: string
@@ -46,7 +43,7 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
         <div>
           <Button href={'/'}>
             <Image
-              src={Logo}
+              src={'/logo_badosha.png'}
               alt="Badosha logo"
               layout={'fixed'}
               width={100}
@@ -56,7 +53,7 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
           </Button>
           <Button href={'/info'}>
             <Image
-              src={BluTerraceLogo}
+              src={'/blu_terrace_logo.png'}
               alt="Badosha logo"
               layout={'fixed'}
               width={100}
