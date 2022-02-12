@@ -30,11 +30,11 @@ const Jumbotron: React.FC<JumbotronProps> = ({
         <h3>{title}</h3>
         <p>{message}</p>
       </TextContainer>
-      <LeftContainer>
-        <ImageContainer>
-          <Image src={image} alt={alt} layout={'fill'}></Image>
-        </ImageContainer>
-      </LeftContainer>
+      {/* <LeftContainer> */}
+      <ImageContainer>
+        <Image src={image} alt={alt} layout={'fill'}></Image>
+      </ImageContainer>
+      {/* </LeftContainer> */}
     </Container>
   )
 }

@@ -13,7 +13,8 @@ import {
   Banner,
   BannerContainer,
   SwiperContainer,
-  Overlay
+  Overlay,
+  Logo
 } from '../../styles/components/Carousel'
 
 interface ImageProps {
@@ -50,8 +51,15 @@ const Carousel: React.FC<CarouselProps> = ({ images, ...props }) => {
       {imagesList.map((image, i) => (
         <SwiperSlide key={i + image.url} color="#fff">
           <BannerContainer>
-            <Overlay></Overlay>
             <Image src={image.url} alt={image.alt} layout={'fill'}></Image>
+            <Overlay></Overlay>
+            <Logo>
+              <Image
+                src={'/logo_badosha-removebg-preview.png'}
+                alt={'Logo Restaurante Badosha'}
+                layout={'fill'}
+              ></Image>
+            </Logo>
           </BannerContainer>
         </SwiperSlide>
       ))}

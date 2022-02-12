@@ -11,6 +11,11 @@ export const BannerContainer = styled.div`
   justify-content: center;
   width: 100%;
   align-items: center;
+  > div {
+    img {
+      object-fit: cover;
+    }
+  }
 `
 
 export const Banner = styled(Image)`
@@ -34,6 +39,23 @@ export const Overlay = styled.div`
   height: 100%;
   opacity: 0.5;
   background-color: #000 !important;
+`
+
+export const Logo = styled.div`
+  position: absolute;
+  bottom: 50px;
+  width: 40%;
+  min-width: 300px;
+  height: 20%;
+  opacity: 1;
+  background-color: transparent !important;
+  > div {
+    border-radius: 20px;
+    img {
+      object-fit: contain;
+      filter: invert();
+    }
+  }
 `
 
 export const TextContainer = styled.div`
@@ -60,7 +82,7 @@ export const SwiperSlideContainer = styled(SwiperSlide)``
 export const SwiperContainer = styled(Swiper)`
   height: 400px;
 
-  @media ${device.mobileM} {
+  @media ${device.mobileL} {
     height: 600px;
   }
   @media ${device.tablet} {

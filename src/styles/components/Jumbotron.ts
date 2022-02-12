@@ -60,17 +60,21 @@ export const TextContainer = styled.div`
 
 export const LeftContainer = styled.div`
   position: relative;
-  width: 80vw;
-  @media ${device.tablet} {
-    width: 400px;
-  }
-  @media ${device.laptop} {
-    width: 600px;
-  }
 `
 
 export const ImageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   > div {
+    width: 90vw;
+    @media ${device.tablet} {
+      width: 400px;
+    }
+    @media ${device.laptop} {
+      width: 600px;
+    }
     position: unset !important;
   }
 
