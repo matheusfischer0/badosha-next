@@ -77,8 +77,8 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
               id="butt3"
               src={'/logo_badosha.png'}
               alt="Badosha logo"
-              width={1772}
-              height={609}
+              width={1200}
+              height={413}
             />
           </Button>
         </div>
