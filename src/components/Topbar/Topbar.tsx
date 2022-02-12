@@ -35,8 +35,8 @@ const Topbar: React.FC = () => {
             src={'/logo_badosha.png'}
             alt="Badosha logo"
             layout={'fixed'}
-            height={86.2}
-            width={250}
+            height={69}
+            width={200}
             quality={100}
           />
         </TopLogo>
