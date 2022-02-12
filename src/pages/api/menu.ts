@@ -1,7 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-
 const menu = [
   {
     name: 'Pilsen Schorstein',
@@ -84,7 +83,8 @@ const menu = [
     options: [
       { description: 'Limão' },
       { description: 'Morango' },
-      { description: 'Melancia com manjericão' }
+      { description: 'Melância com manjericão' },
+      { description: 'Maracujá com hortelã' }
     ],
     unity: 'ml'
   },
@@ -95,7 +95,8 @@ const menu = [
     options: [
       { description: 'Limão' },
       { description: 'Morango' },
-      { description: 'Melancia com manjericão' }
+      { description: 'Melância com manjericão' },
+      { description: 'Maracujá com hortelã' }
     ],
     unity: 'ml'
   },
@@ -104,12 +105,27 @@ const menu = [
     category: 'Drinks',
     price: 23,
     options: [
-      { description: 'Melância com canela' },
-      { description: 'Tangerina com cravo' },
-      { description: 'Limão e alecrim' },
-      { description: 'Melão e manjericão' }
+      { description: 'Tradicional' },
+      { description: 'Limão' },
+      { description: 'Maracujá Tropical' },
+      { description: 'Melância' }
     ],
     unity: 'ml'
+  },
+  {
+    name: 'Batidas',
+    category: 'Drinks',
+    price: 21,
+    options: [
+      { description: 'Maracujá' },
+      { description: 'Melância' },
+      { description: 'Morango' }
+    ]
+  },
+  {
+    name: 'Pinã Colada',
+    category: 'Drinks',
+    price: 21
   },
   {
     name: 'Whisky',
@@ -164,9 +180,13 @@ const menu = [
     price: 5.0
   },
   {
-    name: 'Sucos (Verificar disponibilidade)',
+    name: 'Sucos',
     category: 'Bebidas',
-    options: [{ description: 'Laranja' }, { description: 'Melancia' }],
+    options: [
+      { description: 'Laranja' },
+      { description: 'Melancia' },
+      { description: 'Abacaxi' }
+    ],
     price: 9.0
   },
   {

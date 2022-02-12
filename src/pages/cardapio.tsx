@@ -21,8 +21,7 @@ import {
   Button
 } from '../styles/pages/cardapio'
 
-import Logo from '../assets/logo_badosha.png'
-import BluTerraceLogo from '../assets/blu_terrace_logo.png'
+// import Logo from '../assets/logo_badosha.png'
 
 type Extra = {
   name: string
@@ -76,7 +75,7 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
           <Button href={'/'}>
             <Image
               id="butt3"
-              src={Logo}
+              src={'/logo_badosha.png'}
               alt="Badosha logo"
               width={1772}
               height={609}
@@ -100,8 +99,8 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
         {menu
           .filter(item => item.category === category)
           .map(item => (
-            <MenuRow>
-              <MenuItem key={item.name}>
+            <MenuRow key={item.name}>
+              <MenuItem>
                 <div>
                   <MenuTitle>{item.name}</MenuTitle>
                   {item.description && (

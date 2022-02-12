@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import device from '../sizes'
+import Image from 'next/image'
 
 interface ContainerProps {
   left: boolean
@@ -10,6 +11,8 @@ export const Container = styled.div<ContainerProps>`
   flex-direction: column;
   overflow: hidden;
   z-index: -1;
+  flex: 1;
+  position: relative;
 
   @media ${device.tablet} {
     align-items: center;
@@ -55,18 +58,41 @@ export const TextContainer = styled.div`
   }
 `
 
+export const LeftContainer = styled.div`
+  position: relative;
+  width: 80vw;
+  @media ${device.tablet} {
+    width: 400px;
+  }
+  @media ${device.laptop} {
+    width: 600px;
+  }
+`
+
 export const ImageContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  > div {
+    position: unset !important;
+  }
 
   img {
-    width: 80vw;
-    @media ${device.tablet} {
-      width: 400px;
-    }
-    @media ${device.laptop} {
-      width: 600px;
-    }
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
+`
+
+export const Banner = styled(Image)`
+  width: 100%;
+  height: 100%;
+  @media ${device.mobileL} {
+    object-fit: cover;
+  }
+  @media ${device.tablet} {
+    height: unset;
+  }
+  @media ${device.laptopL} {
+    height: unset;
+    width: 100%;
   }
 `

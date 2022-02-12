@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 import {
   Container,
   TextContainer,
-  ImageContainer
+  ImageContainer,
+  LeftContainer,
+  Banner
 } from '../../styles/components/Jumbotron'
 
 interface JumbotronProps {
@@ -27,10 +30,11 @@ const Jumbotron: React.FC<JumbotronProps> = ({
         <h3>{title}</h3>
         <p>{message}</p>
       </TextContainer>
-
-      <ImageContainer>
-        <img src={image} alt={alt} />
-      </ImageContainer>
+      <LeftContainer>
+        <ImageContainer>
+          <Image src={image} alt={alt} layout={'fill'}></Image>
+        </ImageContainer>
+      </LeftContainer>
     </Container>
   )
 }

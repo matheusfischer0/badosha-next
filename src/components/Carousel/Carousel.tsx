@@ -7,15 +7,13 @@ SwiperCore.use([Navigation, Pagination, Autoplay])
 
 import { SwiperSlide } from 'swiper/react'
 
-import Logo from '../../assets/logo_badosha.png'
+// import Logo from '../../assets/logo_badosha.png'
 
 import {
   Banner,
   BannerContainer,
   SwiperContainer,
-  SwiperSlideContainer,
-  Overlay,
-  TextContainer
+  Overlay
 } from '../../styles/components/Carousel'
 
 interface ImageProps {
@@ -53,7 +51,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, ...props }) => {
         <SwiperSlide key={i + image.url} color="#fff">
           <BannerContainer>
             <Overlay></Overlay>
-            <Banner src={image.url} alt={image.alt}></Banner>
+            <Image src={image.url} alt={image.alt} layout={'fill'}></Image>
           </BannerContainer>
         </SwiperSlide>
       ))}

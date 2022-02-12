@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Image from 'next/image'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import device from '../sizes'
@@ -12,7 +13,7 @@ export const BannerContainer = styled.div`
   align-items: center;
 `
 
-export const Banner = styled.img`
+export const Banner = styled(Image)`
   height: 100%;
   @media ${device.mobileL} {
     object-fit: cover;

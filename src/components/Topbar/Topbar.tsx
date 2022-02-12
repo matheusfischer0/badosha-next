@@ -11,7 +11,7 @@ import {
   MenuMobile,
   NavigatorIcon
 } from '../../styles/components/Topbar'
-import Logo from '../../assets/logo_badosha.png'
+// import Logo from '../../assets/logo_badosha.png'
 
 import { MenuToggle } from '../MenuToggle/MenuToggle'
 import { motion, useCycle } from 'framer-motion'
@@ -32,7 +32,7 @@ const Topbar: React.FC = () => {
       <MenuMobile>
         <TopLogo onClick={handleRedirectToHome}>
           <Image
-            src={Logo}
+            src={'/logo_badosha.png'}
             alt="Badosha logo"
             layout={'fixed'}
             height={86.2}
