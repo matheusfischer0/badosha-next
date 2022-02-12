@@ -264,14 +264,14 @@ const menu = [
     options: [{ quantity: 300, price: 39 }],
     unity: 'g'
   },
-  {
-    name: 'Coxinhas de Frango grelhadas',
-    category: 'Aperitivos/Petiscos',
-    description:
-      'Porção de Coxinhas de Frango grelhadas. Acompanha Pães e geleira de pimenta.',
-    options: [{ quantity: 300, price: 39 }],
-    unity: 'g'
-  },
+  // {
+  //   name: 'Coxinhas de Frango grelhadas',
+  //   category: 'Aperitivos/Petiscos',
+  //   description:
+  //     'Porção de Coxinhas de Frango grelhadas. Acompanha Pães e geleira de pimenta.',
+  //   options: [{ quantity: 300, price: 39 }],
+  //   unity: 'g'
+  // },
   {
     name: 'Hambúrguer Artesanal',
     category: 'Hambúrguers Artesanais',
@@ -287,7 +287,7 @@ const menu = [
     name: 'Hambúrguer de Costela',
     category: 'Hambúrguers Artesanais',
     description:
-      'Pão Ciabatta com Hambúrguer de Costela, Queijo Colonial, Rúcula e Tomate. Acompanha maionese artesanal.',
+      'Pão Ciabatta com Costela Desfiada, Queijo Colonial, Rúcula e Tomate. Acompanha maionese artesanal.',
     options: [
       { description: 'Sem batata', price: 45 },
       { description: 'Com batata (100g)', price: 51 }
