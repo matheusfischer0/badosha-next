@@ -192,18 +192,15 @@ const menu = [
   {
     name: 'Mix de Frutos Secos',
     category: 'Aperitivos/Petiscos',
-    description: 'Temperados artesanalmente',
+    description: 'Amendoins torrados e temperados artesanalmente',
     price: 8.0,
     unity: 'g'
   },
   {
-    name: 'Batata Frita',
+    name: 'Anéis de cebola',
     category: 'Aperitivos/Petiscos',
-    description: 'Porção de batata frita, acompanha maionese artesanal.',
-    options: [
-      { quantity: 300, price: 19 },
-      { quantity: 600, price: 35 }
-    ],
+    description: 'Porção de anéis de cebola empanado.',
+    options: [{ quantity: 200, price: 18 }],
     unity: 'g'
   },
   {
@@ -217,19 +214,64 @@ const menu = [
     unity: 'g'
   },
   {
+    name: 'Batata Frita',
+    category: 'Aperitivos/Petiscos',
+    description: 'Porção de batata frita, acompanha maionese artesanal.',
+    options: [
+      { quantity: 300, price: 19 },
+      { quantity: 600, price: 35 }
+    ],
+    unity: 'g'
+  },
+  {
     name: 'Bolinho de Costela',
     category: 'Aperitivos/Petiscos',
     description:
       'Porção de bolinho de costela com cozimento prolongado, acompanha maionese artesanal e geleia de pimenta.',
-    options: [{ quantity: 450, price: 49 }],
-    unity: 'g'
+    options: [
+      { quantity: 8, price: 49 },
+      { quantity: 4, price: 29 }
+    ],
+    unity: 'un'
   },
   {
     name: 'Bolinho de Linguiça Blumenau',
     category: 'Aperitivos/Petiscos',
     description:
       'Porção de bolinho de linguiça blumenau produzida em nossa região, acompanha maionese artesanal.',
-    options: [{ quantity: 450, price: 46 }],
+    options: [
+      { quantity: 8, price: 46 },
+      { quantity: 4, price: 26 }
+    ],
+    unity: 'un'
+  },
+  {
+    name: 'Mini Croquetes de Frango com Catupiry',
+    category: 'Aperitivos/Petiscos',
+    description: 'Deliciosos croquetes de frango com catupity.',
+    options: [{ quantity: 10, price: 18 }],
+    unity: 'un'
+  },
+  {
+    name: 'Mini Quibe com Catupiry',
+    category: 'Aperitivos/Petiscos',
+    description: 'Deliciosos quibes com catupity.',
+    options: [{ quantity: 10, price: 20 }],
+    unity: 'un'
+  },
+  {
+    name: 'Mini Pastéis de Frango',
+    category: 'Aperitivos/Petiscos',
+    description: 'Porção de mini pastéis de frango.',
+    options: [{ quantity: 10, price: 18 }],
+    unity: 'un'
+  },
+  {
+    name: 'Hackepeter',
+    category: 'Aperitivos/Petiscos',
+    description:
+      'Prato típico alemão, carne moída crua temperada com azeite, pimenta preta e temperos verdes. Acompanha Pães.',
+    options: [{ quantity: 250, price: 40 }],
     unity: 'g'
   },
   {
