@@ -347,26 +347,26 @@ const menu = [
     ],
     unity: 'g'
   },
-  {
-    name: 'Piadina',
-    category: 'Pratos Principais',
-    description:
-      'Panqueca de frigideira com queijo mozzarella, alcatra em tiras, bacon e especiarias.',
-    options: [{ quantity: 350, price: 42 }],
-    unity: 'g'
-  },
+  // {
+  //   name: 'Piadina',
+  //   category: 'Pratos Principais',
+  //   description:
+  //     'Panqueca de frigideira com queijo mozzarella, alcatra em tiras, bacon e especiarias.',
+  //   options: [{ quantity: 350, price: 42 }],
+  //   unity: 'g'
+  // },
   {
     name: 'Alcatra Grelhada',
     category: 'Pratos Principais',
     description: 'Alcatra com arroz, batata frita e salada da casa.',
-    options: [{ quantity: 300, price: 49 }]
+    price: 49
   },
   {
     name: 'Filé de Frango Grelhado',
     category: 'Pratos Principais',
     description:
       'Filé de frango grelado com arroz, batata frita e salada da casa.',
-    options: [{ quantity: 300, price: 42 }]
+    price: 42
   },
   {
     name: 'Omelete',
