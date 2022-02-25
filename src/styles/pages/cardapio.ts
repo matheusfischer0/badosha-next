@@ -127,11 +127,11 @@ export const MenuOption = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
+  margin-left: 10px;
 `
 export const MenuOptionDescription = styled.div`
   display: flex;
   flex: 1;
-  margin-left: 10px;
 `
 export const MenuQuantity = styled.div`
   display: flex;

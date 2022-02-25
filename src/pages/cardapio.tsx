@@ -101,8 +101,8 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
         {menu
           .filter(item => item.category === category)
           .map(item => (
-            <MenuContainer>
-              <MenuRow key={item.name}>
+            <MenuContainer key={item.name}>
+              <MenuRow>
                 <MenuItem>
                   <MenuItemDescription>
                     <MenuTitle>{item.name}</MenuTitle>

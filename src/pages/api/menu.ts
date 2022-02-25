@@ -191,13 +191,6 @@ const menu = [
     price: 9.0
   },
   {
-    name: 'Mix de Frutos Secos',
-    category: 'Aperitivos/Petiscos',
-    description: 'Amendoins torrados e temperados artesanalmente',
-    price: 8.0,
-    unity: 'g'
-  },
-  {
     name: 'Anéis de cebola',
     category: 'Aperitivos/Petiscos',
     description: 'Porção de anéis de cebola empanado.',
@@ -275,7 +268,7 @@ const menu = [
     category: 'Aperitivos/Petiscos',
     description:
       'Prato típico alemão feito à base de carne crua com condimentos. Acompanha pão.',
-    options: [{ quantity: 250, price: 40 }],
+    options: [{ quantity: 250, price: 42 }],
     unity: 'g',
     images: ['/hackapeter1.jpg', '/hackapeter2.jpg']
   },
@@ -284,7 +277,7 @@ const menu = [
     category: 'Aperitivos/Petiscos',
     description:
       'Porção de tiras de alcatra, acompanha batata frita e maionese artesanal.',
-    options: [{ quantity: 300, price: 59 }],
+    options: [{ quantity: 300, price: 40 }],
     unity: 'g'
   },
   {
@@ -307,10 +300,11 @@ const menu = [
   {
     name: 'Panceta de Porco',
     category: 'Aperitivos/Petiscos',
-    description:
-      'Porção de Panceta de porco, acompanhada de batata frita e maionese artesanal.',
-    options: [{ quantity: 300, price: 39 }],
-    unity: 'g',
+    description: 'Porção de Panceta de porco, acompanha maionese artesanal.',
+    options: [
+      { description: 'Individual', price: 24 },
+      { description: 'Para compartilhar', price: 45 }
+    ],
     images: ['/panceta1.jpg', '/panceta2.jpg']
   },
   {
