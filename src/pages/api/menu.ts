@@ -308,28 +308,30 @@ const menu = [
     images: ['/panceta1.jpg', '/panceta2.jpg']
   },
   {
-    name: 'Hambúrguer Artesanal',
-    category: 'Hambúrguers Artesanais',
+    name: 'Cheeseburguer',
+    category: 'Hambúrguers',
+    description:
+      'Pão de Brioche com Hambúrguer Artesanal, Queijo Cheddar. Acompanha maionese artesanal.',
+    options: [{ description: 'Porção de Batata frita', price: 8 }],
+    price: 20,
+    images: ['/cheeseburguer2.jpeg']
+  },
+  {
+    name: 'Hambúrguer Clássico',
+    category: 'Hambúrguers',
     description:
       'Pão de Brioche com Hambúrguer Artesanal, Queijo Mozzarella, Alface, Tomate e Cebola Roxa. Acompanha maionese artesanal.',
-    options: [
-      { description: 'Sem batata', price: 39 },
-      { description: 'Com batata (100g)', price: 45 }
-    ],
-    unity: 'g',
+    options: [{ description: 'Porção de Batata frita', price: 8 }],
+    price: 29,
     images: ['/lanche_artesanal1.jpg']
   },
-
   {
     name: 'Hambúrguer de Costela',
-    category: 'Hambúrguers Artesanais',
+    category: 'Hambúrguers',
     description:
       'Pão Ciabatta com Costela Desfiada, Queijo Colonial, Rúcula e Tomate. Acompanha maionese artesanal.',
-    options: [
-      { description: 'Sem batata', price: 45 },
-      { description: 'Com batata (100g)', price: 51 }
-    ],
-    unity: 'g',
+    options: [{ description: 'Porção de Batata frita', price: 8 }],
+    price: 36,
     images: ['/lanche_costela1.jpg', '/lanche_costela2.jpg']
   },
   {
@@ -337,11 +339,8 @@ const menu = [
     category: 'Sanduíches',
     description:
       'Pão de sanduíche com Frango grelhado, Queijo Mozzarella, Alface e tomate. Acompanha maionese artesanal.',
-    options: [
-      { description: 'Sem batata', price: 32 },
-      { description: 'Com batata (100g)', price: 37 }
-    ],
-    unity: 'g'
+    options: [{ description: 'Porção de Batata frita', price: 8 }],
+    price: 28
   },
   {
     name: 'Alcatra Grelhada',
