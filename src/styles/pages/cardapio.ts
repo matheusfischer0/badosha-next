@@ -144,12 +144,14 @@ export const MenuPrice = styled.div`
 
 export const MenuImage = styled.div`
   display: flex;
-  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   max-height: 180px;
   justify-content: center;
 
   > div {
     width: 100%;
+    max-width: 320px;
     position: unset !important;
   }
 

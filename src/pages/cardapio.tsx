@@ -103,11 +103,6 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
           .map(item => (
             <MenuContainer>
               <MenuRow key={item.name}>
-                {item.images && (
-                  <MenuImage key={item.images[0]}>
-                    <Image src={item.images[0]} layout="fill"></Image>
-                  </MenuImage>
-                )}
                 <MenuItem>
                   <MenuItemDescription>
                     <MenuTitle>{item.name}</MenuTitle>
@@ -141,6 +136,11 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
                       )}
                     </MenuOption>
                   ))}
+                {item.images && (
+                  <MenuImage key={item.images[0]}>
+                    <Image src={item.images[0]} layout="fill"></Image>
+                  </MenuImage>
+                )}
               </MenuRow>
             </MenuContainer>
           ))}
