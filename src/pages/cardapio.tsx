@@ -18,10 +18,11 @@ import {
   MenuOptionDescription,
   MenuQuantity,
   MenuPrice,
+  MenuImage,
+  MenuContainer,
+  MenuItemDescription,
   Button
 } from '../styles/pages/cardapio'
-
-// import Logo from '../assets/logo_badosha.png'
 
 type Extra = {
   name: string
@@ -44,6 +45,7 @@ type Item = {
   price?: number
   options?: Options[]
   extras?: Extra[]
+  images?: string[]
 }
 
 type HomeProps = {
@@ -99,39 +101,48 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
         {menu
           .filter(item => item.category === category)
           .map(item => (
-            <MenuRow key={item.name}>
-              <MenuItem>
-                <div>
-                  <MenuTitle>{item.name}</MenuTitle>
-                  {item.description && (
-                    <MenuDescription>{item.description}</MenuDescription>
+            <MenuContainer>
+              <MenuRow key={item.name}>
+                {item.images && (
+                  <MenuImage key={item.images[0]}>
+                    <Image src={item.images[0]} layout="fill"></Image>
+                  </MenuImage>
+                )}
+                <MenuItem>
+                  <MenuItemDescription>
+                    <MenuTitle>{item.name}</MenuTitle>
+                    {item.description && (
+                      <MenuDescription>{item.description}</MenuDescription>
+                    )}
+                  </MenuItemDescription>
+                  {item.price && (
+                    <MenuPrice>{handleFormatMoney(item.price)}</MenuPrice>
                   )}
-                </div>
-                {item.price && <span>{handleFormatMoney(item.price)}</span>}
-              </MenuItem>
-              {item.options &&
-                item.options.map((option, index) => (
-                  <MenuOption
-                    key={`${item.description}_${option.price}_${index}`}
-                  >
-                    {option.description && (
-                      <MenuOptionDescription>
-                        <span>{`${option.description}`}</span>
-                      </MenuOptionDescription>
-                    )}
-                    {option.quantity && (
-                      <MenuQuantity>
-                        <span>{`${option.quantity} ${item.unity}`}</span>
-                      </MenuQuantity>
-                    )}
-                    {option.price && (
-                      <MenuPrice>
-                        <span>{handleFormatMoney(option.price)}</span>
-                      </MenuPrice>
-                    )}
-                  </MenuOption>
-                ))}
-            </MenuRow>
+                </MenuItem>
+                {item.options &&
+                  item.options.map((option, index) => (
+                    <MenuOption
+                      key={`${item.description}_${option.price}_${index}`}
+                    >
+                      {option.description && (
+                        <MenuOptionDescription>
+                          <span>{`${option.description}`}</span>
+                        </MenuOptionDescription>
+                      )}
+                      {option.quantity && (
+                        <MenuQuantity>
+                          <span>{`${option.quantity} ${item.unity}`}</span>
+                        </MenuQuantity>
+                      )}
+                      {option.price && (
+                        <MenuPrice>
+                          <span>{handleFormatMoney(option.price)}</span>
+                        </MenuPrice>
+                      )}
+                    </MenuOption>
+                  ))}
+              </MenuRow>
+            </MenuContainer>
           ))}
       </List>
     </Container>

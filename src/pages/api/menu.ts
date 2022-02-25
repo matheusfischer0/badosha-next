@@ -62,7 +62,8 @@ const menu = [
     name: 'Heineken',
     category: 'Cervejas',
     options: [{ quantity: 330, price: 12 }],
-    unity: 'ml'
+    unity: 'ml',
+    images: ['/heineken1.jpg']
   },
   {
     name: 'Budweiser',
@@ -201,7 +202,8 @@ const menu = [
     category: 'Aperitivos/Petiscos',
     description: 'Porção de anéis de cebola empanado.',
     options: [{ quantity: 200, price: 18 }],
-    unity: 'g'
+    unity: 'g',
+    images: ['/aneis3.jpg', '/aneis1.jpg', '/aneis3.jpg']
   },
   {
     name: 'Aipim com Bacon',
@@ -211,7 +213,8 @@ const menu = [
       { quantity: 300, price: 24 },
       { quantity: 600, price: 39 }
     ],
-    unity: 'g'
+    unity: 'g',
+    images: ['/aipim_frito1.jpg']
   },
   {
     name: 'Batata Frita',
@@ -232,7 +235,8 @@ const menu = [
       { quantity: 8, price: 49 },
       { quantity: 4, price: 29 }
     ],
-    unity: 'un'
+    unity: 'un',
+    images: ['/bolinho_costela_1.jpg', '/bolinho_costela_2.jpg']
   },
   {
     name: 'Bolinho de Linguiça Blumenau',
@@ -270,9 +274,10 @@ const menu = [
     name: 'Hackepeter',
     category: 'Aperitivos/Petiscos',
     description:
-      'Prato típico alemão, carne moída crua temperada com azeite, pimenta preta e temperos verdes. Acompanha Pães.',
+      'Prato típico alemão feito à base de carne crua com condimentos. Acompanha pão.',
     options: [{ quantity: 250, price: 40 }],
-    unity: 'g'
+    unity: 'g',
+    images: ['/hackapeter1.jpg', '/hackapeter2.jpg']
   },
   {
     name: 'Tiras de alcatra',
@@ -296,7 +301,8 @@ const menu = [
     description:
       'Coxinha de Frango, Linguiça Blumenau, Alcatra, Batata frita , Farofa e Pão.',
     options: [{ quantity: 800, price: 79 }],
-    unity: 'g'
+    unity: 'g',
+    images: ['/mista1.jpg', '/mista2.jpg', '/mista3.jpg']
   },
   {
     name: 'Panceta de Porco',
@@ -304,16 +310,9 @@ const menu = [
     description:
       'Porção de Panceta de porco, acompanhada de batata frita e maionese artesanal.',
     options: [{ quantity: 300, price: 39 }],
-    unity: 'g'
+    unity: 'g',
+    images: ['/panceta1.jpg', '/panceta2.jpg']
   },
-  // {
-  //   name: 'Coxinhas de Frango grelhadas',
-  //   category: 'Aperitivos/Petiscos',
-  //   description:
-  //     'Porção de Coxinhas de Frango grelhadas. Acompanha Pães e geleira de pimenta.',
-  //   options: [{ quantity: 300, price: 39 }],
-  //   unity: 'g'
-  // },
   {
     name: 'Hambúrguer Artesanal',
     category: 'Hambúrguers Artesanais',
@@ -323,8 +322,10 @@ const menu = [
       { description: 'Sem batata', price: 39 },
       { description: 'Com batata (100g)', price: 45 }
     ],
-    unity: 'g'
+    unity: 'g',
+    images: ['/lanche_artesanal1.jpg']
   },
+
   {
     name: 'Hambúrguer de Costela',
     category: 'Hambúrguers Artesanais',
@@ -334,7 +335,8 @@ const menu = [
       { description: 'Sem batata', price: 45 },
       { description: 'Com batata (100g)', price: 51 }
     ],
-    unity: 'g'
+    unity: 'g',
+    images: ['/lanche_costela1.jpg', '/lanche_costela2.jpg']
   },
   {
     name: 'Sanduíche de Frango',
@@ -347,19 +349,12 @@ const menu = [
     ],
     unity: 'g'
   },
-  // {
-  //   name: 'Piadina',
-  //   category: 'Pratos Principais',
-  //   description:
-  //     'Panqueca de frigideira com queijo mozzarella, alcatra em tiras, bacon e especiarias.',
-  //   options: [{ quantity: 350, price: 42 }],
-  //   unity: 'g'
-  // },
   {
     name: 'Alcatra Grelhada',
     category: 'Pratos Principais',
     description: 'Alcatra com arroz, batata frita e salada da casa.',
-    price: 49
+    price: 49,
+    images: ['/alcatra1.jpg', '/alcatra2.jpg']
   },
   {
     name: 'Filé de Frango Grelhado',
@@ -386,7 +381,7 @@ const menu = [
   {
     name: 'Brownie by Badosha',
     category: 'Sobremesas',
-    description: 'Brownie com mousse de Chocolate meio amargo e Creme de avelã',
+    description: 'Brownie com sorvete de creme',
     options: [{ quantity: 150, price: 15 }],
     unity: 'un'
   }

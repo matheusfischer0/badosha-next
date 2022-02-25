@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import Link from 'next/link'
-import device from '../sizes'
 
 export const Container = styled.div`
   width: 100%;
@@ -85,6 +84,16 @@ export const List = styled.div`
 export const MenuRow = styled.div`
   display: flex;
   flex-direction: column;
+  flex: 1;
+`
+
+export const MenuItemDescription = styled.div`
+  flex: 1;
+`
+
+export const MenuContainer = styled.div`
+  display: flex;
+  flex-direction: row;
   margin: 0px 10px;
   margin-bottom: 10px;
   padding-bottom: 10px;
@@ -130,6 +139,25 @@ export const MenuQuantity = styled.div`
 `
 export const MenuPrice = styled.div`
   display: flex;
-  flex: 1;
   justify-content: flex-end;
+`
+
+export const MenuImage = styled.div`
+  display: flex;
+  padding-bottom: 10px;
+  max-height: 180px;
+  justify-content: center;
+
+  > div {
+    width: 100%;
+    position: unset !important;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+    border-radius: 12px;
+  }
 `
