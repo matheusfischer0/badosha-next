@@ -14,12 +14,18 @@ export const Container = styled.div`
 
 export const TopLogo = styled.div`
   display: flex;
-  flex: 1;
-  justify-content: center;
-  > div {
-    display: block;
-    width: 80%;
-    margin: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  flex-direction: column;
+  align-items: center;
+  > a {
+    display: flex;
+    align-items: center;
+    color: #999;
+    text-decoration: none;
+    > span {
+      margin-right: 10px;
+    }
   }
 `
 
@@ -119,6 +125,7 @@ export const MenuItemDescription = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 `
 
 export const MenuDescription = styled.div`
@@ -148,6 +155,7 @@ export const MenuPrice = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+  font-size: 14px;
 `
 
 export const MenuImage = styled.div`

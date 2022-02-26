@@ -294,7 +294,7 @@ const menu = [
       },
       {
         slug: 'sucos-melancia',
-        description: 'Melancia'
+        description: 'Melância'
       },
       {
         slug: 'sucos-abacaxi',
@@ -524,8 +524,7 @@ const menu = [
     name: 'Brownie by Badosha',
     category: 'Sobremesas',
     description: 'Brownie com sorvete de creme',
-    options: [{ quantity: 150, price: 15 }],
-    unity: 'un'
+    price: 15
   }
 ]
 

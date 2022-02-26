@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import { GetServerSideProps, GetStaticProps, NextPage } from 'next'
+import { GetStaticProps, NextPage } from 'next'
+
+import { FiInstagram } from 'react-icons/fi'
 
 import {
   Container,
@@ -75,17 +77,19 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
         <title>Badosha Gastrobar</title>
       </Head>
       <TopLogo>
-        <div>
-          <Button href={'/'}>
-            <Image
-              id="butt3"
-              src={'/logo_badosha.png'}
-              alt="Badosha logo"
-              width={1200}
-              height={413}
-            />
-          </Button>
-        </div>
+        <Button href={'/'}>
+          <Image
+            id="butt3"
+            src={'/logo_badosha.png'}
+            alt="Badosha logo"
+            width={1200}
+            height={413}
+          />
+        </Button>
+        <a href="https://www.instagram.com/badosha.gastrobar/">
+          <span>Acesse nosso Instagram!</span>
+          <FiInstagram size={32} color="#aaa"></FiInstagram>
+        </a>
       </TopLogo>
       <Categories>
         {categories.map(c => (
