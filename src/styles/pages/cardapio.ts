@@ -71,8 +71,10 @@ export const Item = styled.div<ItemProps>`
 `
 
 export const ActiveCategory = styled.h3`
+  text-align: center;
   font-size: 22px;
   margin: 10px;
+  border-bottom: 1px solid #ddd;
 `
 
 export const List = styled.div`
@@ -84,11 +86,9 @@ export const List = styled.div`
 export const MenuRow = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   flex: 1;
-`
-
-export const MenuItemDescription = styled.div`
-  flex: 1;
+  margin-right: 10px;
 `
 
 export const MenuContainer = styled.div`
@@ -105,19 +105,24 @@ export const MenuTitle = styled.span`
   align-items: center;
   font-size: 18px;
   font-weight: 600;
+  margin-right: 10px;
 `
 
 export const MenuItem = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   border-radius: 6px;
 `
 
-export const MenuDescription = styled.div`
+export const MenuItemDescription = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  font-size: 15px;
+`
+
+export const MenuDescription = styled.div`
+  font-size: 12px;
   font-weight: 400;
   margin-top: 10px;
 `
@@ -127,7 +132,9 @@ export const MenuOption = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
-  margin-left: 10px;
+  span {
+    font-size: 14px;
+  }
 `
 export const MenuOptionDescription = styled.div`
   display: flex;
@@ -140,18 +147,21 @@ export const MenuQuantity = styled.div`
 export const MenuPrice = styled.div`
   display: flex;
   justify-content: flex-end;
+  align-items: flex-start;
 `
 
 export const MenuImage = styled.div`
   display: flex;
   margin-top: 10px;
   margin-bottom: 10px;
-  max-height: 180px;
   justify-content: center;
+  max-width: 180px;
+  max-height: 180px;
+  width: 20%;
+  height: 80%;
 
   > div {
     width: 100%;
-    max-width: 320px;
     position: unset !important;
   }
 

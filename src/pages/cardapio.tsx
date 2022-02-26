@@ -31,12 +31,14 @@ type Extra = {
 }
 
 type Options = {
+  slug: string
   description?: string
   quantity?: number
   price: number
 }
 
 type Item = {
+  slug: string
   name: string
   category: string
   unity?: string
@@ -101,24 +103,22 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
         {menu
           .filter(item => item.category === category)
           .map(item => (
-            <MenuContainer key={item.name}>
+            <MenuContainer key={item.slug}>
               <MenuRow>
                 <MenuItem>
                   <MenuItemDescription>
                     <MenuTitle>{item.name}</MenuTitle>
-                    {item.description && (
-                      <MenuDescription>{item.description}</MenuDescription>
+                    {item.price && (
+                      <MenuPrice>{handleFormatMoney(item.price)}</MenuPrice>
                     )}
                   </MenuItemDescription>
-                  {item.price && (
-                    <MenuPrice>{handleFormatMoney(item.price)}</MenuPrice>
+                  {item.description && (
+                    <MenuDescription>{item.description}</MenuDescription>
                   )}
                 </MenuItem>
                 {item.options &&
-                  item.options.map((option, index) => (
-                    <MenuOption
-                      key={`${item.description}_${option.price}_${index}`}
-                    >
+                  item.options.map(option => (
+                    <MenuOption key={option.slug}>
                       {option.description && (
                         <MenuOptionDescription>
                           <span>{`${option.description}`}</span>
@@ -136,12 +136,12 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
                       )}
                     </MenuOption>
                   ))}
-                {item.images && (
-                  <MenuImage key={item.images[0]}>
-                    <Image src={item.images[0]} layout="fill"></Image>
-                  </MenuImage>
-                )}
               </MenuRow>
+              {item.images && (
+                <MenuImage>
+                  <Image src={item.images[0]} layout="fill"></Image>
+                </MenuImage>
+              )}
             </MenuContainer>
           ))}
       </List>

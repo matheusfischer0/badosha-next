@@ -3,62 +3,85 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 const menu = [
   {
+    slug: 'pilsen-schorstein',
     name: 'Pilsen Schorstein',
     category: 'Chopp',
     options: [
-      { quantity: 500, price: 20 },
-      { quantity: 300, price: 14 }
+      { quantity: 500, price: 15 },
+      { quantity: 300, price: 12 }
     ],
     unity: 'ml'
   },
   {
+    slug: 'ipa-schorstein',
     name: 'Indian Pale Ale (IPA) Schorstein',
     category: 'Chopp',
     options: [
-      { quantity: 500, price: 22 },
-      { quantity: 300, price: 16 }
-    ],
-    unity: 'ml'
-  },
-  {
-    name: 'Pilsen Cervejaria Blumenau',
-    category: 'Chopp',
-    options: [
       { quantity: 500, price: 18 },
-      { quantity: 300, price: 12 }
-    ],
-    unity: 'ml'
-  },
-  {
-    name: 'Blond Ale Frida Cervejaria Blumenau',
-    category: 'Chopp',
-    options: [
-      { quantity: 500, price: 18 },
-      { quantity: 300, price: 12 }
-    ],
-    unity: 'ml'
-  },
-  {
-    name: 'Chope de Vinho',
-    category: 'Chopp',
-    options: [
-      { quantity: 500, price: 20 },
       { quantity: 300, price: 14 }
     ],
     unity: 'ml'
   },
   {
-    name: 'Cervejaria Blumenau',
-    category: 'Cervejas',
+    slug: 'pilsen-blumenau',
+    name: 'Pilsen Cervejaria Blumenau',
+    category: 'Chopp',
     options: [
-      { description: 'Capirava Little IPA', quantity: 500, price: 28 },
-      { description: 'Ipê Amarelo Hop Lager', quantity: 500, price: 22 },
-      { description: 'Frida Blond Ale', quantity: 500, price: 20 },
-      { description: 'Vila Weissbier', quantity: 500, price: 22 }
+      { quantity: 500, price: 15 },
+      { quantity: 300, price: 12 }
     ],
     unity: 'ml'
   },
   {
+    slug: 'frida-blumenau',
+    name: 'Blond Ale Frida Cervejaria Blumenau',
+    category: 'Chopp',
+    options: [
+      { quantity: 500, price: 16 },
+      { quantity: 300, price: 12 }
+    ],
+    unity: 'ml'
+  },
+  {
+    slug: 'chope-vinho',
+    name: 'Chope de Vinho',
+    category: 'Chopp',
+    options: [
+      { quantity: 500, price: 17 },
+      { quantity: 300, price: 13 }
+    ],
+    unity: 'ml'
+  },
+  {
+    slug: 'capivara-blumenau',
+    name: 'Capirava Little IPA',
+    category: 'Cervejas',
+    options: [{ quantity: 500, price: 28 }],
+    unity: 'ml'
+  },
+  {
+    slug: 'ipe-amarelo-blumenau',
+    name: 'Ipê Amarelo Hop Lager',
+    category: 'Cervejas',
+    options: [{ quantity: 500, price: 22 }],
+    unity: 'ml'
+  },
+  {
+    slug: 'frida-garrafa-blumenau',
+    name: 'Frida Blond Ale',
+    category: 'Cervejas',
+    options: [{ quantity: 500, price: 20 }],
+    unity: 'ml'
+  },
+  {
+    slug: 'vila-weiss-blumenau',
+    name: 'Vila Weissbier',
+    category: 'Cervejas',
+    options: [{ quantity: 500, price: 22 }],
+    unity: 'ml'
+  },
+  {
+    slug: 'heineken-long',
     name: 'Heineken',
     category: 'Cervejas',
     options: [{ quantity: 330, price: 12 }],
@@ -66,131 +89,222 @@ const menu = [
     images: ['/heineken1.jpg']
   },
   {
+    slug: 'budweiser-long',
     name: 'Budweiser',
     category: 'Cervejas',
     options: [{ quantity: 330, price: 10 }],
     unity: 'ml'
   },
   {
+    slug: 'stella-long',
     name: 'Stella Artois',
     category: 'Cervejas',
     options: [{ quantity: 330, price: 10 }],
     unity: 'ml'
   },
   {
+    slug: 'caipiroska-frutas',
     name: 'Caipiroska (Vodka)',
     category: 'Drinks',
     price: 20,
     options: [
-      { description: 'Limão' },
-      { description: 'Morango' },
-      { description: 'Melância com manjericão' },
-      { description: 'Maracujá com hortelã' }
+      {
+        slug: 'caipiroska-limao',
+        description: 'Limão'
+      },
+      {
+        slug: 'caipiroska-morango',
+        description: 'Morango'
+      },
+      {
+        slug: 'caipiroska-melancia',
+        description: 'Melância com manjericão'
+      },
+      {
+        slug: 'caipiroska-maracuja',
+        description: 'Maracujá com hortelã'
+      }
     ],
     unity: 'ml'
   },
   {
+    slug: 'caipirinha-frutas',
     name: 'Caipirinha (Cachaça)',
     category: 'Drinks',
     price: 17,
     options: [
-      { description: 'Limão' },
-      { description: 'Morango' },
-      { description: 'Melância com manjericão' },
-      { description: 'Maracujá com hortelã' }
+      {
+        slug: 'caipirinha-limao',
+        description: 'Limão'
+      },
+      {
+        slug: 'caipirinha-morango',
+        description: 'Morango'
+      },
+      {
+        slug: 'caipirinha-melancia',
+        description: 'Melância com manjericão'
+      },
+      {
+        slug: 'caipirinha-maracuja',
+        description: 'Maracujá com hortelã'
+      }
     ],
     unity: 'ml'
   },
   {
+    slug: 'gin-tonica',
     name: 'Gim Tônica',
     category: 'Drinks',
     price: 23,
     options: [
-      { description: 'Tradicional' },
-      { description: 'Limão' },
-      { description: 'Maracujá Tropical' },
-      { description: 'Melância' }
+      {
+        slug: 'gin-tonica-trad',
+        description: 'Tradicional'
+      },
+      {
+        slug: 'gin-tonica-limao',
+        description: 'Limão'
+      },
+      {
+        slug: 'gin-tonica-maracuja',
+        description: 'Maracujá Tropical'
+      },
+      {
+        slug: 'gin-tonica-melancia',
+        description: 'Melância'
+      }
     ],
     unity: 'ml'
   },
   {
-    name: 'Batidas',
-    category: 'Drinks',
-    price: 21,
-    options: [
-      { description: 'Maracujá' },
-      { description: 'Melância' },
-      { description: 'Morango' }
-    ]
-  },
-  {
-    name: 'Pinã Colada',
-    category: 'Drinks',
-    price: 21
-  },
-  {
+    slug: 'whisky',
     name: 'Whisky',
-    category: 'Drinks',
+    category: 'Doses',
     options: [
-      { description: 'Johnny red label (Dose)', price: 21 },
-      { description: 'Jack Daniels (Dose)', price: 23 }
+      {
+        slug: 'whisky-johnny-red',
+        description: 'Johnny red label (Dose)',
+        price: 21
+      },
+      {
+        slug: 'whisky-jack-daniels',
+        description: 'Jack Daniels (Dose)',
+        price: 23
+      }
     ],
     unity: 'Dose'
   },
   {
+    slug: 'cachaca',
     name: 'Cachaça artesanal',
-    category: 'Drinks',
+    category: 'Doses',
     options: [
-      { description: 'Prata (Dose)', price: 7 },
-      { description: 'Envelhecida (Dose)', price: 9 }
+      {
+        slug: 'cachaca-prata',
+        description: 'Prata (Dose)',
+        price: 7
+      },
+      {
+        slug: 'cachaca-envelhecida',
+        description: 'Envelhecida (Dose)',
+        price: 9
+      }
     ],
     unity: 'Dose'
   },
   {
+    slug: 'gin',
     name: 'Gin',
-    category: 'Drinks',
+    category: 'Doses',
     options: [
-      { description: 'Seagers (Dose)', price: 12 },
-      { description: 'Kalvelage (Dose)', price: 15 }
+      {
+        slug: 'gin-seagers',
+        description: 'Seagers (Dose)',
+        price: 12
+      },
+      {
+        slug: 'gin-kalvelage',
+        description: 'Kalvelage (Dose)',
+        price: 15
+      }
     ],
     unity: 'Dose'
   },
   {
+    slug: 'vodka',
     name: 'Vodka',
-    category: 'Drinks',
+    category: 'Doses',
     options: [
-      { description: 'Smirnoff (Dose)', price: 11 },
-      { description: 'Kalvelage (Dose)', price: 12 }
+      {
+        slug: 'vodka-smirnoff',
+        description: 'Smirnoff (Dose)',
+        price: 11
+      },
+      {
+        slug: 'vodka-kalvelage',
+        description: 'Kalvelage (Dose)',
+        price: 12
+      }
     ],
     unity: 'Dose'
   },
   {
+    slug: 'agua',
     name: 'Água (com/sem gás)',
     category: 'Bebidas',
     price: 4.0
   },
   {
+    slug: 'refrigerante',
     name: 'Refrigerantes',
     category: 'Bebidas',
     options: [
-      { description: 'Coca-cola' },
-      { description: 'Coca-cola Zero' },
-      { description: 'Guaraná Antartica' },
-      { description: 'Aguá Tônica' }
+      {
+        slug: 'refrigerante-coca',
+        description: 'Coca-cola'
+      },
+      {
+        slug: 'refrigerante-coca-zero',
+        description: 'Coca-cola Zero'
+      },
+      {
+        slug: 'refrigerante-guarana',
+        description: 'Guaraná Antartica'
+      },
+      {
+        slug: 'refrigerante-guarana-zero',
+        description: 'Guaraná Antartica Zero'
+      },
+      {
+        slug: 'refrigerante-tonica',
+        description: 'Aguá Tônica'
+      }
     ],
     price: 5.0
   },
   {
+    slug: 'sucos',
     name: 'Sucos',
     category: 'Bebidas',
     options: [
-      { description: 'Laranja' },
-      { description: 'Melancia' },
-      { description: 'Abacaxi' }
+      {
+        slug: 'sucos-laranja',
+        description: 'Laranja'
+      },
+      {
+        slug: 'sucos-melancia',
+        description: 'Melancia'
+      },
+      {
+        slug: 'sucos-abacaxi',
+        description: 'Abacaxi'
+      }
     ],
     price: 9.0
   },
   {
+    slug: 'petiscos-aneis-cebola',
     name: 'Anéis de cebola',
     category: 'Aperitivos/Petiscos',
     description: 'Porção de anéis de cebola empanado.',
@@ -199,6 +313,7 @@ const menu = [
     images: ['/aneis3.jpg', '/aneis1.jpg', '/aneis3.jpg']
   },
   {
+    slug: 'petiscos-aipim-bacon',
     name: 'Aipim com Bacon',
     category: 'Aperitivos/Petiscos',
     description: 'Delicioso Aipim frito com bacon, acompanha creme de queijo.',
@@ -210,6 +325,7 @@ const menu = [
     images: ['/aipim_frito1.jpg']
   },
   {
+    slug: 'petiscos-batata-frita',
     name: 'Batata Frita',
     category: 'Aperitivos/Petiscos',
     description: 'Porção de batata frita, acompanha maionese artesanal.',
@@ -220,6 +336,7 @@ const menu = [
     unity: 'g'
   },
   {
+    slug: 'petiscos-bolinho-costela',
     name: 'Bolinho de Costela',
     category: 'Aperitivos/Petiscos',
     description:
@@ -229,9 +346,10 @@ const menu = [
       { quantity: 4, price: 29 }
     ],
     unity: 'un',
-    images: ['/bolinho_costela_1.jpg', '/bolinho_costela_2.jpg']
+    images: ['/bolinho_costela_2.jpg', '/bolinho_costela_1.jpg']
   },
   {
+    slug: 'petiscos-linguica-blumenau',
     name: 'Bolinho de Linguiça Blumenau',
     category: 'Aperitivos/Petiscos',
     description:
@@ -240,9 +358,11 @@ const menu = [
       { quantity: 8, price: 46 },
       { quantity: 4, price: 26 }
     ],
-    unity: 'un'
+    unity: 'un',
+    images: ['/bolinho_costela_2.jpg', '/bolinho_costela_1.jpg']
   },
   {
+    slug: 'petiscos-croquete-frango',
     name: 'Mini Croquetes de Frango com Catupiry',
     category: 'Aperitivos/Petiscos',
     description: 'Deliciosos croquetes de frango com catupity.',
@@ -250,6 +370,7 @@ const menu = [
     unity: 'un'
   },
   {
+    slug: 'petiscos-quibe',
     name: 'Mini Quibe com Catupiry',
     category: 'Aperitivos/Petiscos',
     description: 'Deliciosos quibes com catupity.',
@@ -257,13 +378,29 @@ const menu = [
     unity: 'un'
   },
   {
-    name: 'Mini Pastéis de Frango',
+    slug: 'petiscos-pasteis',
+    name: 'Mini Pastéis',
     category: 'Aperitivos/Petiscos',
     description: 'Porção de mini pastéis de frango.',
-    options: [{ quantity: 10, price: 18 }],
+    options: [
+      {
+        slug: 'petiscos-pasteis-frango',
+        description: 'Frango',
+        quantity: 10,
+        price: 18
+      },
+      {
+        slug: 'petiscos-pasteis-carne',
+        description: 'Carne',
+        quantity: 10,
+        price: 18
+      }
+    ],
     unity: 'un'
   },
+
   {
+    slug: 'petiscos-hackepeter',
     name: 'Hackepeter',
     category: 'Aperitivos/Petiscos',
     description:
@@ -273,6 +410,7 @@ const menu = [
     images: ['/hackapeter1.jpg', '/hackapeter2.jpg']
   },
   {
+    slug: 'petiscos-tiras-alcatra',
     name: 'Tiras de alcatra',
     category: 'Aperitivos/Petiscos',
     description:
@@ -289,15 +427,17 @@ const menu = [
     unity: 'g'
   },
   {
+    slug: 'petiscos-mista-especial',
     name: 'Porção Mista Especial',
     category: 'Aperitivos/Petiscos',
     description:
       'Coxinha de Frango, Linguiça Blumenau, Alcatra, Batata frita , Farofa e Pão.',
     options: [{ quantity: 800, price: 79 }],
     unity: 'g',
-    images: ['/mista1.jpg', '/mista2.jpg', '/mista3.jpg']
+    images: ['/mista3.jpg', '/mista2.jpg', '/mista1.jpg']
   },
   {
+    slug: 'petiscos-panceta',
     name: 'Panceta de Porco',
     category: 'Aperitivos/Petiscos',
     description: 'Porção de Panceta de porco, acompanha maionese artesanal.',
@@ -308,6 +448,7 @@ const menu = [
     images: ['/panceta1.jpg', '/panceta2.jpg']
   },
   {
+    slug: 'hamburguer-cheeseburguer',
     name: 'Cheeseburguer',
     category: 'Hambúrguers',
     description:
@@ -317,6 +458,7 @@ const menu = [
     images: ['/cheeseburguer2.jpeg']
   },
   {
+    slug: 'hamburguer-classico',
     name: 'Hambúrguer Clássico',
     category: 'Hambúrguers',
     description:
@@ -326,6 +468,7 @@ const menu = [
     images: ['/lanche_artesanal1.jpg']
   },
   {
+    slug: 'hamburguer-costela',
     name: 'Hambúrguer de Costela',
     category: 'Hambúrguers',
     description:
@@ -335,6 +478,7 @@ const menu = [
     images: ['/lanche_costela1.jpg', '/lanche_costela2.jpg']
   },
   {
+    slug: 'sanduiche-frango',
     name: 'Sanduíche de Frango',
     category: 'Sanduíches',
     description:
@@ -343,6 +487,7 @@ const menu = [
     price: 28
   },
   {
+    slug: 'prato-alcatra',
     name: 'Alcatra Grelhada',
     category: 'Pratos Principais',
     description: 'Alcatra com arroz, batata frita e salada da casa.',
@@ -350,6 +495,7 @@ const menu = [
     images: ['/alcatra1.jpg', '/alcatra2.jpg']
   },
   {
+    slug: 'prato-file-frango',
     name: 'Filé de Frango Grelhado',
     category: 'Pratos Principais',
     description:
@@ -357,6 +503,7 @@ const menu = [
     price: 42
   },
   {
+    slug: 'prato-omelete',
     name: 'Omelete',
     category: 'Pratos Principais',
     description: 'Omelete com tomate e salada da casa.',
@@ -364,6 +511,7 @@ const menu = [
     unity: 'g'
   },
   {
+    slug: 'prato-salada',
     name: 'Salada Badosha',
     category: 'Pratos Principais',
     description:
@@ -372,6 +520,7 @@ const menu = [
     unity: 'g'
   },
   {
+    slug: 'sobremesa-brownie',
     name: 'Brownie by Badosha',
     category: 'Sobremesas',
     description: 'Brownie com sorvete de creme',
