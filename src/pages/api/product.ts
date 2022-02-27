@@ -711,6 +711,6 @@ export default function handler(
   const { slug } = req.query
   const product = content.find(item => item.slug === slug)
   if (product) {
-    res.status(200).json(product)
+    res.status(200).json(JSON.parse(JSON.stringify(product)))
   } else res.status(400)
 }

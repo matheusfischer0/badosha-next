@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 import { Product } from '../../dtos/Product'
 
-const content = [
+const content: Product[] = [
   {
     slug: 'pilsen-schorstein',
     name: 'Pilsen Schorstein',

@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { GetStaticProps, NextPage } from 'next'
 
+const productsList = require('../../assets/products.json')
+
 import { FiInstagram } from 'react-icons/fi'
 
 import {
@@ -145,8 +147,8 @@ const Menu: NextPage<HomeProps> = ({ products, categories }) => {
 
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch(`${process.env.API_URL}/api/products`)
-  const products: Product[] = await response.json()
+  // const response = await fetch(`${process.env.API_URL}/api/products`)
+  const products: Product[] = productsList
 
   const categories: string[] = [...new Set(products.map(item => item.category))]
 
