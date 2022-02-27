@@ -57,10 +57,10 @@ export const Categories = styled.div`
     background: #555;
   }
 `
-interface ItemProps {
+interface ProductProps {
   active: boolean
 }
-export const ItemView = styled.div<ItemProps>`
+export const ProductView = styled.div<ProductProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,14 +114,14 @@ export const MenuTitle = styled.span`
   margin-right: 10px;
 `
 
-export const MenuItem = styled.div`
+export const MenuProduct = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 6px;
 `
 
-export const MenuItemDescription = styled.div`
+export const MenuProductDescription = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;

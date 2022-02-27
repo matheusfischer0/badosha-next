@@ -1,12 +1,17 @@
 import React from 'react'
 import Image from 'next/image'
 import { GetStaticProps } from 'next'
+import axios from 'axios'
 
-import { Item } from '../../dtos/Item'
+import { Product } from '../../dtos/Product'
+
+import BasicCarousel from '../../components/BasicCarousel/BasicCarousel'
+
+import { FiCornerDownLeft } from 'react-icons/fi'
 
 import {
   MenuRow,
-  MenuItem,
+  MenuProduct,
   MenuTitle,
   MenuDescription,
   MenuOption,
@@ -15,15 +20,13 @@ import {
   MenuPrice,
   MenuImage,
   MenuContainer,
-  MenuItemDescription,
+  MenuProductDescription,
   Button
-} from '../../styles/pages/item'
-import BasicCarousel from '../../components/BasicCarousel/BasicCarousel'
-import { FiCornerDownLeft } from 'react-icons/fi'
+} from '../../styles/pages/Product'
 
-type ItemProps = { item: Item }
+type ProductProps = { product: Product }
 
-function ItemScreen({ item }: ItemProps) {
+function ProductScreen({ product }: ProductProps) {
   const handleFormatMoney = (value: number) => {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
@@ -37,22 +40,24 @@ function ItemScreen({ item }: ItemProps) {
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
-      {item.images && <BasicCarousel images={item.images}></BasicCarousel>}
+      {product.images && (
+        <BasicCarousel images={product.images}></BasicCarousel>
+      )}
       <MenuContainer>
         <MenuRow>
-          <MenuItem>
-            <MenuItemDescription>
-              <MenuTitle>{item.name}</MenuTitle>
-              {item.price && (
-                <MenuPrice>{handleFormatMoney(item.price)}</MenuPrice>
+          <MenuProduct>
+            <MenuProductDescription>
+              <MenuTitle>{product.name}</MenuTitle>
+              {product.price && (
+                <MenuPrice>{handleFormatMoney(product.price)}</MenuPrice>
               )}
-            </MenuItemDescription>
-            {item.description && (
-              <MenuDescription>{item.description}</MenuDescription>
+            </MenuProductDescription>
+            {product.description && (
+              <MenuDescription>{product.description}</MenuDescription>
             )}
-          </MenuItem>
-          {item.options &&
-            item.options.map(option => (
+          </MenuProduct>
+          {product.options &&
+            product.options.map(option => (
               <MenuOption key={option.slug}>
                 {option.description && (
                   <MenuOptionDescription>
@@ -61,7 +66,7 @@ function ItemScreen({ item }: ItemProps) {
                 )}
                 {option.quantity && (
                   <MenuQuantity>
-                    <span>{`${option.quantity} ${item.unity}`}</span>
+                    <span>{`${option.quantity} ${product.unity}`}</span>
                   </MenuQuantity>
                 )}
                 {option.price && (
@@ -83,13 +88,13 @@ function ItemScreen({ item }: ItemProps) {
 // This function gets called at build time
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
-  const res = await fetch(`${process.env.API_URL}/api/menu`)
-  const items = await res.json()
+  const response = await axios.get(`${process.env.API_URL}/api/menu`)
+  const products: Product[] = response.data
 
   // Get the paths we want to pre-render based on items
-  const paths = items.map((item: Item) => {
+  const paths = products.map((product: Product) => {
     return {
-      params: { slug: item.slug }
+      params: { slug: product.slug }
     }
   })
 
@@ -101,19 +106,19 @@ export async function getStaticPaths() {
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params
-  const result = await fetch(`${process.env.API_URL}/api/item?slug=${slug}`)
-  const item = await result.json()
+  const result = await axios.get(`${process.env.API_URL}/api/item?slug=${slug}`)
+  const product = result.data
 
-  if (!item) {
+  if (!product) {
     return {
       notFound: true
     }
   }
 
   return {
-    props: { item },
+    props: { product },
     revalidate: 60 * 60 * 24
   }
 }
 
-export default ItemScreen
+export default ProductScreen

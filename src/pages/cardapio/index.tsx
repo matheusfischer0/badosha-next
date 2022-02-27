@@ -9,11 +9,11 @@ import {
   Container,
   TopLogo,
   Categories,
-  ItemView,
+  ProductView,
   ActiveCategory,
   List,
   MenuRow,
-  MenuItem,
+  MenuProduct,
   MenuTitle,
   MenuDescription,
   MenuOption,
@@ -22,20 +22,24 @@ import {
   MenuPrice,
   MenuImage,
   MenuContainer,
-  MenuItemDescription,
+  MenuProductDescription,
   Button
 } from '../../styles/pages/cardapio'
 
-import { Item } from '../../dtos/Item'
+import { Product } from '../../dtos/Product'
 import useLocalStorage from '../../hooks/UseLocalStorage'
+import axios from 'axios'
 
 type HomeProps = {
-  menu: Item[]
+  products: Product[]
   categories: string[]
 }
 
-const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
-  const [category, setCategory] = useLocalStorage('category', menu[0].category)
+const Menu: NextPage<HomeProps> = ({ products, categories }) => {
+  const [category, setCategory] = useLocalStorage(
+    'category',
+    products[0].category
+  )
   // const [category, setCategory] = useState<string>(menu[0].category)
 
   const handleFormatMoney = (value: number) => {
@@ -71,34 +75,34 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
       </TopLogo>
       <Categories>
         {categories.map(c => (
-          <ItemView
+          <ProductView
             key={c}
             onClick={() => handleSelectCategory(c)}
             active={c == category}
           >
             <span>{c}</span>
-          </ItemView>
+          </ProductView>
         ))}
       </Categories>
       {category && <ActiveCategory>{category}</ActiveCategory>}
       <List>
-        {menu
+        {products
           .filter(item => item.category === category)
           .map(item => (
             <Button key={item.slug} href={`/cardapio/${item.slug}`}>
               <MenuContainer>
                 <MenuRow>
-                  <MenuItem>
-                    <MenuItemDescription>
+                  <MenuProduct>
+                    <MenuProductDescription>
                       <MenuTitle>{item.name}</MenuTitle>
                       {item.price && (
                         <MenuPrice>{handleFormatMoney(item.price)}</MenuPrice>
                       )}
-                    </MenuItemDescription>
+                    </MenuProductDescription>
                     {item.description && (
                       <MenuDescription>{item.description}</MenuDescription>
                     )}
-                  </MenuItem>
+                  </MenuProduct>
                   {item.options &&
                     item.options.map(option => (
                       <MenuOption key={option.slug}>
@@ -139,20 +143,19 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
 
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async () => {
-  const result = await fetch(`${process.env.API_URL}/api/menu`)
+  const response = await axios.get(`${process.env.API_URL}/api/menu`)
+  const products: Product[] = response.data
 
-  const menu: Item[] = await result.json()
+  const categories: string[] = [...new Set(products.map(item => item.category))]
 
-  const categories: string[] = [...new Set(menu.map(item => item.category))]
-
-  if (!menu) {
+  if (!products) {
     return {
       notFound: true
     }
   }
 
   return {
-    props: { menu, categories },
+    props: { products, categories },
     revalidate: 60 * 60 * 24
   }
 }

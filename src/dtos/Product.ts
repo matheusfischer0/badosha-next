@@ -1,6 +1,6 @@
 import { Options } from './Options'
 
-export type Item = {
+export type Product = {
   slug: string
   name: string
   category: string

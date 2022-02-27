@@ -29,14 +29,14 @@ export const MenuTitle = styled.span`
   margin-right: 10px;
 `
 
-export const MenuItem = styled.div`
+export const MenuProduct = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 6px;
 `
 
-export const MenuItemDescription = styled.div`
+export const MenuProductDescription = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { GetServerSideProps, NextPage } from 'next'
 
 import { Container, TopLogo, Button, Content } from '../styles/pages/info'
+import axios from 'axios'
 
 type Extra = {
   name: string
@@ -75,8 +76,8 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   try {
-    const result = await fetch(`${process.env.API_URL}/api/menu`)
-    const menu: Item[] = await result.json()
+    const result = await axios.get(`/api/menu`)
+    const menu: Item[] = result.data
     const categories: string[] = [...new Set(menu.map(item => item.category))]
 
     return {

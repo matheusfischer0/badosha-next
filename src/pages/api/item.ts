@@ -704,7 +704,7 @@ const content = [
 ]
 
 type Options = {
-  slug?: string
+  slug: string
   description?: string
   quantity?: number
   price?: number
