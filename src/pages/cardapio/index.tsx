@@ -9,7 +9,7 @@ import {
   Container,
   TopLogo,
   Categories,
-  Item,
+  ItemView,
   ActiveCategory,
   List,
   MenuRow,
@@ -24,33 +24,10 @@ import {
   MenuContainer,
   MenuItemDescription,
   Button
-} from '../styles/pages/cardapio'
+} from '../../styles/pages/cardapio'
 
-type Extra = {
-  name: string
-  quantity?: string
-  price: number
-}
-
-type Options = {
-  slug: string
-  description?: string
-  quantity?: number
-  price: number
-}
-
-type Item = {
-  slug: string
-  name: string
-  category: string
-  unity?: string
-  description?: string
-  quantity?: string
-  price?: number
-  options?: Options[]
-  extras?: Extra[]
-  images?: string[]
-}
+import { Item } from '../../dtos/Item'
+import useLocalStorage from '../../hooks/UseLocalStorage'
 
 type HomeProps = {
   menu: Item[]
@@ -58,7 +35,8 @@ type HomeProps = {
 }
 
 const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
-  const [category, setCategory] = useState<string>(menu[0].category)
+  const [category, setCategory] = useLocalStorage('category', menu[0].category)
+  // const [category, setCategory] = useState<string>(menu[0].category)
 
   const handleFormatMoney = (value: number) => {
     return new Intl.NumberFormat('pt-BR', {
@@ -93,13 +71,13 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
       </TopLogo>
       <Categories>
         {categories.map(c => (
-          <Item
+          <ItemView
             key={c}
             onClick={() => handleSelectCategory(c)}
             active={c == category}
           >
             <span>{c}</span>
-          </Item>
+          </ItemView>
         ))}
       </Categories>
       {category && <ActiveCategory>{category}</ActiveCategory>}
@@ -107,50 +85,52 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
         {menu
           .filter(item => item.category === category)
           .map(item => (
-            <MenuContainer key={item.slug}>
-              <MenuRow>
-                <MenuItem>
-                  <MenuItemDescription>
-                    <MenuTitle>{item.name}</MenuTitle>
-                    {item.price && (
-                      <MenuPrice>{handleFormatMoney(item.price)}</MenuPrice>
+            <Button key={item.slug} href={`/cardapio/${item.slug}`}>
+              <MenuContainer>
+                <MenuRow>
+                  <MenuItem>
+                    <MenuItemDescription>
+                      <MenuTitle>{item.name}</MenuTitle>
+                      {item.price && (
+                        <MenuPrice>{handleFormatMoney(item.price)}</MenuPrice>
+                      )}
+                    </MenuItemDescription>
+                    {item.description && (
+                      <MenuDescription>{item.description}</MenuDescription>
                     )}
-                  </MenuItemDescription>
-                  {item.description && (
-                    <MenuDescription>{item.description}</MenuDescription>
-                  )}
-                </MenuItem>
-                {item.options &&
-                  item.options.map(option => (
-                    <MenuOption key={option.slug}>
-                      {option.description && (
-                        <MenuOptionDescription>
-                          <span>{`${option.description}`}</span>
-                        </MenuOptionDescription>
-                      )}
-                      {option.quantity && (
-                        <MenuQuantity>
-                          <span>{`${option.quantity} ${item.unity}`}</span>
-                        </MenuQuantity>
-                      )}
-                      {option.price && (
-                        <MenuPrice>
-                          <span>{handleFormatMoney(option.price)}</span>
-                        </MenuPrice>
-                      )}
-                    </MenuOption>
-                  ))}
-              </MenuRow>
-              {item.images && (
-                <MenuImage>
-                  <Image
-                    src={item.images[0]}
-                    layout="fill"
-                    quality={50}
-                  ></Image>
-                </MenuImage>
-              )}
-            </MenuContainer>
+                  </MenuItem>
+                  {item.options &&
+                    item.options.map(option => (
+                      <MenuOption key={option.slug}>
+                        {option.description && (
+                          <MenuOptionDescription>
+                            <span>{`${option.description}`}</span>
+                          </MenuOptionDescription>
+                        )}
+                        {option.quantity && (
+                          <MenuQuantity>
+                            <span>{`${option.quantity} ${item.unity}`}</span>
+                          </MenuQuantity>
+                        )}
+                        {option.price && (
+                          <MenuPrice>
+                            <span>{handleFormatMoney(option.price)}</span>
+                          </MenuPrice>
+                        )}
+                      </MenuOption>
+                    ))}
+                </MenuRow>
+                {item.images && (
+                  <MenuImage>
+                    <Image
+                      src={item.images[0]}
+                      layout="fill"
+                      quality={50}
+                    ></Image>
+                  </MenuImage>
+                )}
+              </MenuContainer>
+            </Button>
           ))}
       </List>
     </Container>
@@ -160,7 +140,9 @@ const Menu: NextPage<HomeProps> = ({ menu, categories }) => {
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async () => {
   const result = await fetch(`${process.env.API_URL}/api/menu`)
+
   const menu: Item[] = await result.json()
+
   const categories: string[] = [...new Set(menu.map(item => item.category))]
 
   if (!menu) {

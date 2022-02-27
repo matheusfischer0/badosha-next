@@ -1,6 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-
 const menu = require('./menu.json')
 
 type Options = {
@@ -25,5 +24,9 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Item[]>
 ) {
-  res.status(200).json(menu)
+  const { slug } = req.query
+  const item = menu.find(item => item.slug === slug)
+  if (item) {
+    res.status(200).json(item)
+  } else return []
 }

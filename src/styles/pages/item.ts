@@ -1,94 +1,6 @@
 import styled from 'styled-components'
 import Link from 'next/link'
 
-export const Container = styled.div`
-  width: 100%;
-  max-width: 768px;
-  margin: 0 auto;
-  overflow: hidden;
-  padding-bottom: 100px;
-  h2 {
-    margin: 0px 10px;
-  }
-`
-
-export const TopLogo = styled.div`
-  display: flex;
-  margin-left: 30px;
-  margin-right: 30px;
-  flex-direction: column;
-  align-items: center;
-  > a {
-    display: flex;
-    align-items: center;
-    color: #999;
-    text-decoration: none;
-    > span {
-      margin-right: 10px;
-    }
-  }
-`
-
-export const Button = styled(Link)`
-  cursor: pointer;
-`
-
-export const Categories = styled.div`
-  display: flex;
-  width: 100%;
-  overflow: auto;
-  margin: 0px 5px;
-
-  /* width */
-  &::-webkit-scrollbar {
-    height: 6px;
-  }
-  /* Track */
-  &::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  /* Handle */
-  &::-webkit-scrollbar-thumb {
-    border-radius: 12px;
-    background: #888;
-  }
-  /* Handle on hover */
-  &::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-`
-interface ItemProps {
-  active: boolean
-}
-export const ItemView = styled.div<ItemProps>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: ${props => (props.active ? '#ddd' : '#eee')};
-  padding: 10px 10px;
-  border: 1px solid #eee;
-  border-radius: 6px;
-  margin: 10px 5px;
-  span {
-    min-width: 80px;
-    text-align: center;
-    white-space: nowrap;
-  }
-`
-
-export const ActiveCategory = styled.h3`
-  text-align: center;
-  font-size: 22px;
-  margin: 10px;
-  border-bottom: 1px solid #ddd;
-`
-
-export const List = styled.div`
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-`
-
 export const MenuRow = styled.div`
   display: flex;
   flex-direction: column;
@@ -98,11 +10,14 @@ export const MenuRow = styled.div`
 `
 
 export const MenuContainer = styled.div`
+  position: relative;
   display: flex;
+  flex: 1;
   flex-direction: row;
   margin: 0px 10px;
-  margin-bottom: 10px;
   padding-bottom: 10px;
+  padding-top: 20px;
+
   border-bottom: 1px solid #ddd;
 `
 
@@ -163,10 +78,6 @@ export const MenuImage = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
   justify-content: center;
-  max-width: 180px;
-  max-height: 180px;
-  width: 20%;
-  height: 80%;
 
   > div {
     width: 100%;
@@ -180,4 +91,16 @@ export const MenuImage = styled.div`
     height: unset !important;
     border-radius: 12px;
   }
+`
+
+export const Button = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 15px;
+  background-color: #f6c101;
+  border-top-left-radius: 20px;
 `
