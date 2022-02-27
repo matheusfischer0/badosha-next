@@ -89,7 +89,7 @@ export async function getStaticPaths() {
   // Get the paths we want to pre-render based on items
   const paths = items.map((item: Item) => {
     return {
-      params: { slug: item.slug }
+      params: { slug: `${item.slug}` }
     }
   })
 
