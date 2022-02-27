@@ -88,13 +88,13 @@ function ProductScreen({ product }: ProductProps) {
 // This function gets called at build time
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
-  const response = await axios.get(`${process.env.API_URL}/api/menu`)
-  const products: Product[] = response.data
+  const response = await fetch(`${process.env.API_URL}/api/products`)
+  const products: Product[] = await response.json()
 
   // Get the paths we want to pre-render based on items
   const paths = products.map((product: Product) => {
     return {
-      params: { slug: product.slug }
+      params: { slug: product.slug.toString() }
     }
   })
 
@@ -106,8 +106,8 @@ export async function getStaticPaths() {
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params
-  const result = await axios.get(`${process.env.API_URL}/api/item?slug=${slug}`)
-  const product = result.data
+  const result = await fetch(`${process.env.API_URL}/api/product?slug=${slug}`)
+  const product = await result.json()
 
   if (!product) {
     return {

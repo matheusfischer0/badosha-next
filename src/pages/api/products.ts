@@ -1,6 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 
+import { Product } from '../../dtos/Product'
+
 const content = [
   {
     slug: 'pilsen-schorstein',
@@ -703,31 +705,9 @@ const content = [
   }
 ]
 
-type Options = {
-  slug: string
-  description?: string
-  quantity?: number
-  price?: number
-}
-
-type Item = {
-  slug: string
-  name: string
-  category: string
-  unity?: string
-  description?: string
-  quantity?: string
-  price?: number
-  options?: Options[]
-}
-
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Item>
+  res: NextApiResponse<Product[]>
 ) {
-  const { slug } = req.query
-  const item = content.find(item => item.slug === slug)
-  if (item) {
-    res.status(200).json(item)
-  } else return []
+  res.status(200).json(content)
 }

@@ -28,6 +28,7 @@ import {
 
 import { Product } from '../../dtos/Product'
 import useLocalStorage from '../../hooks/UseLocalStorage'
+
 import axios from 'axios'
 
 type HomeProps = {
@@ -40,7 +41,8 @@ const Menu: NextPage<HomeProps> = ({ products, categories }) => {
     'category',
     products[0].category
   )
-  // const [category, setCategory] = useState<string>(menu[0].category)
+
+  // const [category, setCategory] = useState<string>(products[0].category)
 
   const handleFormatMoney = (value: number) => {
     return new Intl.NumberFormat('pt-BR', {
@@ -143,8 +145,8 @@ const Menu: NextPage<HomeProps> = ({ products, categories }) => {
 
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await axios.get(`${process.env.API_URL}/api/menu`)
-  const products: Product[] = response.data
+  const response = await fetch(`${process.env.API_URL}/api/products`)
+  const products: Product[] = await response.json()
 
   const categories: string[] = [...new Set(products.map(item => item.category))]
 
