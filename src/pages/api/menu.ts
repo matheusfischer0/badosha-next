@@ -25,5 +25,6 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Item[]>
 ) {
+  // const items = JSON.parse(menu)
   res.status(200).json(menu)
 }

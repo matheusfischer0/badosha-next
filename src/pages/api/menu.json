@@ -4,8 +4,8 @@
     "name": "Pilsen Schorstein",
     "category": "Chopp",
     "options": [
-      { "quantity": 500, "price": 15 },
-      { "quantity": 300, "price": 12 }
+      { "slug": "pilsen-schorstein-500", "quantity": 500, "price": 15 },
+      { "slug": "pilsen-schorstein-300", "quantity": 300, "price": 12 }
     ],
     "unity": "ml"
   },
@@ -14,8 +14,8 @@
     "name": "Indian Pale Ale (IPA) Schorstein",
     "category": "Chopp",
     "options": [
-      { "quantity": 500, "price": 18 },
-      { "quantity": 300, "price": 14 }
+      { "slug": "ipa-schorstein-500", "quantity": 500, "price": 18 },
+      { "slug": "ipa-schorstein-300", "quantity": 300, "price": 14 }
     ],
     "unity": "ml"
   },
@@ -24,8 +24,8 @@
     "name": "Pilsen Cervejaria Blumenau",
     "category": "Chopp",
     "options": [
-      { "quantity": 500, "price": 15 },
-      { "quantity": 300, "price": 12 }
+      { "slug": "pilsen-blumenau-500", "quantity": 500, "price": 15 },
+      { "slug": "pilsen-blumenau-300", "quantity": 300, "price": 12 }
     ],
     "unity": "ml"
   },
@@ -34,8 +34,16 @@
     "name": "Blond Ale Frida Cervejaria Blumenau",
     "category": "Chopp",
     "options": [
-      { "quantity": 500, "price": 16 },
-      { "quantity": 300, "price": 12 }
+      {
+        "slug": "frida-blumenau-500",
+        "quantity": 500,
+        "price": 16
+      },
+      {
+        "slug": "frida-blumenau-300",
+        "quantity": 300,
+        "price": 12
+      }
     ],
     "unity": "ml"
   },
@@ -44,8 +52,16 @@
     "name": "Chope de Vinho",
     "category": "Chopp",
     "options": [
-      { "quantity": 500, "price": 17 },
-      { "quantity": 300, "price": 13 }
+      {
+        "slug": "chope-vinho-500",
+        "quantity": 500,
+        "price": 17
+      },
+      {
+        "slug": "chope-vinho-300",
+        "quantity": 300,
+        "price": 13
+      }
     ],
     "unity": "ml"
   },
@@ -53,35 +69,65 @@
     "slug": "capivara-blumenau",
     "name": "Capirava Little IPA",
     "category": "Cervejas",
-    "options": [{ "quantity": 500, "price": 28 }],
+    "options": [
+      {
+        "slug": "capivara-blumenau-500",
+        "quantity": 500,
+        "price": 28
+      }
+    ],
     "unity": "ml"
   },
   {
     "slug": "ipe-amarelo-blumenau",
     "name": "Ipê Amarelo Hop Lager",
     "category": "Cervejas",
-    "options": [{ "quantity": 500, "price": 22 }],
+    "options": [
+      {
+        "slug": "ipe-amarelo-blumenau-500",
+        "quantity": 500,
+        "price": 22
+      }
+    ],
     "unity": "ml"
   },
   {
     "slug": "frida-garrafa-blumenau",
     "name": "Frida Blond Ale",
     "category": "Cervejas",
-    "options": [{ "quantity": 500, "price": 20 }],
+    "options": [
+      {
+        "slug": "frida-garrafa-blumenau-500",
+        "quantity": 500,
+        "price": 20
+      }
+    ],
     "unity": "ml"
   },
   {
     "slug": "vila-weiss-blumenau",
     "name": "Vila Weissbier",
     "category": "Cervejas",
-    "options": [{ "quantity": 500, "price": 22 }],
+    "options": [
+      {
+        "slug": "vila-weiss-blumenau-500",
+        "quantity": 500,
+        "price": 22
+      }
+    ],
     "unity": "ml"
   },
   {
     "slug": "heineken-long",
     "name": "Heineken",
     "category": "Cervejas",
-    "options": [{ "quantity": 330, "price": 12 }],
+    "options": [
+      {
+        "slug": "heineken-long-330",
+        "quantity": 330,
+        "price": 12
+      }
+    ],
     "unity": "ml",
     "images": ["/heineken1.jpg"]
   },
@@ -89,14 +135,26 @@
     "slug": "budweiser-long",
     "name": "Budweiser",
     "category": "Cervejas",
-    "options": [{ "quantity": 330, "price": 10 }],
+    "options": [
+      {
+        "slug": "budweiser-long-330",
+        "quantity": 330,
+        "price": 10
+      }
+    ],
     "unity": "ml"
   },
   {
     "slug": "stella-long",
     "name": "Stella Artois",
     "category": "Cervejas",
-    "options": [{ "quantity": 330, "price": 10 }],
+    "options": [
+      {
+        "slug": "stella-long-330",
+        "quantity": 330,
+        "price": 10
+      }
+    ],
     "unity": "ml"
   },
   {
@@ -305,7 +363,13 @@
     "name": "Anéis de cebola",
     "category": "Aperitivos/Petiscos",
     "description": "Porção de anéis de cebola empanado.",
-    "options": [{ "quantity": 200, "price": 18 }],
+    "options": [
+      {
+        "slug": "petiscos-aneis-cebola-200",
+        "quantity": 200,
+        "price": 18
+      }
+    ],
     "unity": "g",
     "images": ["/aneis3.jpg", "/aneis1.jpg", "/aneis2.jpg"]
   },
@@ -315,8 +379,16 @@
     "category": "Aperitivos/Petiscos",
     "description": "Delicioso Aipim frito com bacon, acompanha creme de queijo.",
     "options": [
-      { "quantity": 300, "price": 24 },
-      { "quantity": 600, "price": 39 }
+      {
+        "slug": "petiscos-aipim-bacon-300",
+        "quantity": 300,
+        "price": 24
+      },
+      {
+        "slug": "petiscos-aipim-bacon-600",
+        "quantity": 600,
+        "price": 39
+      }
     ],
     "unity": "g",
     "images": ["/aipim_frito1.jpg"]
@@ -327,8 +399,16 @@
     "category": "Aperitivos/Petiscos",
     "description": "Porção de batata frita, acompanha maionese artesanal.",
     "options": [
-      { "quantity": 300, "price": 19 },
-      { "quantity": 600, "price": 35 }
+      {
+        "slug": "petiscos-batata-frita-300",
+        "quantity": 300,
+        "price": 19
+      },
+      {
+        "slug": "petiscos-batata-frita-600",
+        "quantity": 600,
+        "price": 35
+      }
     ],
     "unity": "g"
   },
@@ -338,8 +418,16 @@
     "category": "Aperitivos/Petiscos",
     "description": "Porção de bolinho de costela com cozimento prolongado, acompanha maionese artesanal e geleia de pimenta.",
     "options": [
-      { "quantity": 8, "price": 49 },
-      { "quantity": 4, "price": 29 }
+      {
+        "slug": "petiscos-bolinho-costela-8",
+        "quantity": 8,
+        "price": 49
+      },
+      {
+        "slug": "petiscos-bolinho-costela-4",
+        "quantity": 4,
+        "price": 29
+      }
     ],
     "unity": "un",
     "images": ["/bolinho_costela_2.jpg", "/bolinho_costela_1.jpg"]
@@ -350,8 +438,16 @@
     "category": "Aperitivos/Petiscos",
     "description": "Porção de bolinho de linguiça blumenau produzida em nossa região, acompanha maionese artesanal.",
     "options": [
-      { "quantity": 8, "price": 46 },
-      { "quantity": 4, "price": 26 }
+      {
+        "slug": "petiscos-linguica-blumenau-8",
+        "quantity": 8,
+        "price": 46
+      },
+      {
+        "slug": "petiscos-linguica-blumenau-4",
+        "quantity": 4,
+        "price": 26
+      }
     ],
     "unity": "un",
     "images": ["/bolinho_costela_2.jpg", "/bolinho_costela_1.jpg"]
@@ -361,7 +457,13 @@
     "name": "Mini Croquetes de Frango com Catupiry",
     "category": "Aperitivos/Petiscos",
     "description": "Deliciosos croquetes de frango com catupity.",
-    "options": [{ "quantity": 10, "price": 18 }],
+    "options": [
+      {
+        "slug": "petiscos-croquete-frango-10",
+        "quantity": 10,
+        "price": 18
+      }
+    ],
     "unity": "un"
   },
   {
@@ -369,7 +471,13 @@
     "name": "Mini Quibe com Catupiry",
     "category": "Aperitivos/Petiscos",
     "description": "Deliciosos quibes com catupity.",
-    "options": [{ "quantity": 10, "price": 20 }],
+    "options": [
+      {
+        "slug": "petiscos-quibe-10",
+        "quantity": 10,
+        "price": 20
+      }
+    ],
     "unity": "un"
   },
   {
@@ -399,7 +507,13 @@
     "name": "Hackepeter",
     "category": "Aperitivos/Petiscos",
     "description": "Prato típico alemão feito à base de carne crua com condimentos. Acompanha pão.",
-    "options": [{ "quantity": 250, "price": 42 }],
+    "options": [
+      {
+        "slug": "petiscos-hackepeter-250",
+        "quantity": 250,
+        "price": 42
+      }
+    ],
     "unity": "g",
     "images": ["/hackapeter1.jpg", "/hackapeter2.jpg"]
   },
@@ -408,7 +522,13 @@
     "name": "Tiras de alcatra",
     "category": "Aperitivos/Petiscos",
     "description": "Porção de tiras de alcatra, acompanha batata frita e maionese artesanal.",
-    "options": [{ "quantity": 300, "price": 40 }],
+    "options": [
+      {
+        "slug": "petiscos-tiras-alcatra-300",
+        "quantity": 300,
+        "price": 40
+      }
+    ],
     "unity": "g"
   },
   {
@@ -416,7 +536,13 @@
     "name": "Linguiça Blumenau",
     "category": "Aperitivos/Petiscos",
     "description": "Porção de linguiça blumenau, acompanha batata frita e maionese artesanal",
-    "options": [{ "quantity": 300, "price": 49 }],
+    "options": [
+      {
+        "slug": "petiscos-linguica-300",
+        "quantity": 300,
+        "price": 49
+      }
+    ],
     "unity": "g"
   },
   {
@@ -424,7 +550,13 @@
     "name": "Porção Mista Especial",
     "category": "Aperitivos/Petiscos",
     "description": "Coxinha de Frango, Linguiça Blumenau, Alcatra, Batata frita , Farofa e Pão.",
-    "options": [{ "quantity": 800, "price": 79 }],
+    "options": [
+      {
+        "slug": "petiscos-mista-especial-800",
+        "quantity": 800,
+        "price": 79
+      }
+    ],
     "unity": "g",
     "images": ["/mista3.jpg", "/mista2.jpg", "/mista1.jpg"]
   },
@@ -434,8 +566,16 @@
     "category": "Aperitivos/Petiscos",
     "description": "Porção de Panceta de porco, acompanha maionese artesanal.",
     "options": [
-      { "description": "Individual", "price": 24 },
-      { "description": "Para compartilhar", "price": 45 }
+      {
+        "slug": "petiscos-panceta-ind",
+        "description": "Individual",
+        "price": 24
+      },
+      {
+        "slug": "petiscos-panceta-comp",
+        "description": "Para compartilhar",
+        "price": 45
+      }
     ],
     "images": ["/panceta1.jpg", "/panceta2.jpg"]
   },
@@ -504,7 +644,13 @@
     "name": "Omelete",
     "category": "Pratos Principais",
     "description": "Omelete com tomate e salada da casa.",
-    "options": [{ "quantity": 350, "price": 29 }],
+    "options": [
+      {
+        "slug": "prato-omelete-350",
+        "quantity": 350,
+        "price": 29
+      }
+    ],
     "unity": "g"
   },
   {
@@ -512,7 +658,13 @@
     "name": "Salada Badosha",
     "category": "Pratos Principais",
     "description": "Frango grelhado com mix de folhas, pepino, tomate, alface crespa roxa e verde, rúcula, morango e croutons. Acompanha maionese artesanal.",
-    "options": [{ "quantity": 350, "price": 28 }],
+    "options": [
+      {
+        "slug": "prato-salada-350",
+        "quantity": 350,
+        "price": 28
+      }
+    ],
     "unity": "g"
   },
   {

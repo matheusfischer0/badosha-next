@@ -25,7 +25,8 @@ export default function handler(
   res: NextApiResponse<Item[]>
 ) {
   const { slug } = req.query
-  const item = menu.find(item => item.slug === slug)
+  // const items = JSON.parse(menu)
+  const item = menu.find((item: Item) => item.slug === slug)
   if (item) {
     res.status(200).json(item)
   } else return []
