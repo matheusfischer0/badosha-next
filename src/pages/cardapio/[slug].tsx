@@ -48,7 +48,11 @@ function ProductScreen({ product }: ProductProps) {
         <MenuRow>
           <MenuProduct>
             <MenuProductDescription>
-              <MenuTitle>{product.name}</MenuTitle>
+              <MenuTitle>
+                {`${product.name} ${
+                  product.unavailable ? '(Indísponível)' : ''
+                }`}
+              </MenuTitle>
               {product.price && (
                 <MenuPrice>{handleFormatMoney(product.price)}</MenuPrice>
               )}

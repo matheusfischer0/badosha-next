@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Link from 'next/link'
 
 export const Container = styled.div`
@@ -29,8 +29,35 @@ export const TopLogo = styled.div`
   }
 `
 
-export const Button = styled(Link)`
-  cursor: pointer;
+type ButtonProps = { inactive?: boolean }
+
+export const Button = styled(Link)<ButtonProps>`
+  position: relative;
+  ${({ inactive = false }) => css`
+    cursor: ${inactive ? 'not-allowed' : 'pointer'};
+  `}
+`
+export const Unavailable = styled.div`
+  position: absolute;
+  background-color: #000;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  cursor: not-allowed;
+  border-radius: 12px;
+`
+
+type ItemProps = { inactive?: boolean }
+
+export const Item = styled.div<ItemProps>`
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 10px;
+  border-radius: 12px;
+  ${({ inactive = false }) => css`
+    background-color: ${inactive ? '#ddd' : 'transparent'};
+    opacity: ${inactive ? 0.5 : 1};
+  `};
 `
 
 export const Categories = styled.div`
@@ -100,10 +127,6 @@ export const MenuRow = styled.div`
 export const MenuContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 0px 10px;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
 `
 
 export const MenuTitle = styled.span`

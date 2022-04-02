@@ -25,7 +25,9 @@ import {
   MenuImage,
   MenuContainer,
   MenuProductDescription,
-  Button
+  Button,
+  Unavailable,
+  Item
 } from '../../styles/pages/cardapio'
 
 import { Product } from '../../dtos/Product'
@@ -93,52 +95,58 @@ const Menu: NextPage<HomeProps> = ({ products, categories }) => {
         {products
           .filter(item => item.category === category)
           .map(item => (
-            <Button key={item.slug} href={`/cardapio/${item.slug}`}>
-              <MenuContainer>
-                <MenuRow>
-                  <MenuProduct>
-                    <MenuProductDescription>
-                      <MenuTitle>{item.name}</MenuTitle>
-                      {item.price && (
-                        <MenuPrice>{handleFormatMoney(item.price)}</MenuPrice>
+            <Item inactive={item.unavailable}>
+              <Button key={item.slug} href={`/cardapio/${item.slug}`}>
+                <MenuContainer>
+                  <MenuRow>
+                    <MenuProduct>
+                      <MenuProductDescription>
+                        <MenuTitle>
+                          {`${item.name} ${
+                            item.unavailable ? '(Indísponível)' : ''
+                          }`}
+                        </MenuTitle>
+                        {item.price && (
+                          <MenuPrice>{handleFormatMoney(item.price)}</MenuPrice>
+                        )}
+                      </MenuProductDescription>
+                      {item.description && (
+                        <MenuDescription>{item.description}</MenuDescription>
                       )}
-                    </MenuProductDescription>
-                    {item.description && (
-                      <MenuDescription>{item.description}</MenuDescription>
-                    )}
-                  </MenuProduct>
-                  {item.options &&
-                    item.options.map(option => (
-                      <MenuOption key={option.slug}>
-                        {option.description && (
-                          <MenuOptionDescription>
-                            <span>{`${option.description}`}</span>
-                          </MenuOptionDescription>
-                        )}
-                        {option.quantity && (
-                          <MenuQuantity>
-                            <span>{`${option.quantity} ${item.unity}`}</span>
-                          </MenuQuantity>
-                        )}
-                        {option.price && (
-                          <MenuPrice>
-                            <span>{handleFormatMoney(option.price)}</span>
-                          </MenuPrice>
-                        )}
-                      </MenuOption>
-                    ))}
-                </MenuRow>
-                {item.images && (
-                  <MenuImage>
-                    <Image
-                      src={item.images[0]}
-                      layout="fill"
-                      quality={50}
-                    ></Image>
-                  </MenuImage>
-                )}
-              </MenuContainer>
-            </Button>
+                    </MenuProduct>
+                    {item.options &&
+                      item.options.map(option => (
+                        <MenuOption key={option.slug}>
+                          {option.description && (
+                            <MenuOptionDescription>
+                              <span>{`${option.description}`}</span>
+                            </MenuOptionDescription>
+                          )}
+                          {option.quantity && (
+                            <MenuQuantity>
+                              <span>{`${option.quantity} ${item.unity}`}</span>
+                            </MenuQuantity>
+                          )}
+                          {option.price && (
+                            <MenuPrice>
+                              <span>{handleFormatMoney(option.price)}</span>
+                            </MenuPrice>
+                          )}
+                        </MenuOption>
+                      ))}
+                  </MenuRow>
+                  {item.images && (
+                    <MenuImage>
+                      <Image
+                        src={item.images[0]}
+                        layout="fill"
+                        quality={50}
+                      ></Image>
+                    </MenuImage>
+                  )}
+                </MenuContainer>
+              </Button>
+            </Item>
           ))}
       </List>
     </Container>

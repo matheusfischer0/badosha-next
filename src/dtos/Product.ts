@@ -10,4 +10,5 @@ export type Product = {
   price?: number
   options?: Options[]
   images?: string[]
+  unavailable?: boolean
 }

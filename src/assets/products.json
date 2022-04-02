@@ -371,7 +371,8 @@
       }
     ],
     "unity": "g",
-    "images": ["/aneis3.jpg", "/aneis1.jpg", "/aneis2.jpg"]
+    "images": ["/aneis3.jpg", "/aneis1.jpg", "/aneis2.jpg"],
+    "unavailable":true
   },
   {
     "slug": "petiscos-aipim-bacon",
