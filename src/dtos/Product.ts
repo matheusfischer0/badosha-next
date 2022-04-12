@@ -11,4 +11,5 @@ export type Product = {
   options?: Options[]
   images?: string[]
   unavailable?: boolean
+  hide?: boolean
 }

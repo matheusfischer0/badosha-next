@@ -41,12 +41,20 @@ type HomeProps = {
 }
 
 const Menu: NextPage<HomeProps> = ({ products, categories }) => {
-  const [category, setCategory] = useLocalStorage(
-    'category',
-    products[0].category
-  )
+  // const [category, setCategory] = useLocalStorage(
+  //   'category',
+  //   products[0].category
+  // )
 
-  // const [category, setCategory] = useState<string>(products[0].category)
+  // const [productList, setProductList] = useLocalStorage(
+  //   'products',
+  //   products.filter(item => item.category === products[0].category)
+  // )
+
+  const [category, setCategory] = useState<string>(products[0].category)
+  const [productList, setProductList] = useState<Product[]>(
+    products.filter(item => item.category === products[0].category)
+  )
 
   const handleFormatMoney = (value: number) => {
     return new Intl.NumberFormat('pt-BR', {
@@ -57,6 +65,7 @@ const Menu: NextPage<HomeProps> = ({ products, categories }) => {
 
   const handleSelectCategory = (value: string) => {
     setCategory(value)
+    setProductList(products.filter(item => item.category === value))
   }
 
   return (
@@ -92,11 +101,12 @@ const Menu: NextPage<HomeProps> = ({ products, categories }) => {
       </Categories>
       {category && <ActiveCategory>{category}</ActiveCategory>}
       <List>
-        {products
-          .filter(item => item.category === category)
-          .map(item => (
-            <Item inactive={item.unavailable}>
-              <Button key={item.slug} href={`/cardapio/${item.slug}`}>
+        {productList.map(item => {
+          if (item.hide) return
+
+          return (
+            <Item inactive={item.unavailable} key={item.slug}>
+              <Button href={`/cardapio/${item.slug}`}>
                 <MenuContainer>
                   <MenuRow>
                     <MenuProduct>
@@ -147,7 +157,8 @@ const Menu: NextPage<HomeProps> = ({ products, categories }) => {
                 </MenuContainer>
               </Button>
             </Item>
-          ))}
+          )
+        })}
       </List>
     </Container>
   )

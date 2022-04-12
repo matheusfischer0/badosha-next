@@ -340,7 +340,7 @@
   },
   {
     "slug": "sucos",
-    "name": "Sucos",
+    "name": "Sucos (Verificar disponibilidade)",
     "category": "Bebidas",
     "options": [
       {
@@ -363,16 +363,10 @@
     "name": "Anéis de cebola",
     "category": "Aperitivos/Petiscos",
     "description": "Porção de anéis de cebola empanado.",
-    "options": [
-      {
-        "slug": "petiscos-aneis-cebola-200",
-        "quantity": 200,
-        "price": 18
-      }
-    ],
+    "price": 18,
     "unity": "g",
     "images": ["/aneis3.jpg", "/aneis1.jpg", "/aneis2.jpg"],
-    "unavailable":true
+    "unavailable": true
   },
   {
     "slug": "petiscos-aipim-bacon",
@@ -420,14 +414,14 @@
     "description": "Porção de bolinho de costela com cozimento prolongado, acompanha maionese artesanal e geleia de pimenta.",
     "options": [
       {
-        "slug": "petiscos-bolinho-costela-8",
-        "quantity": 8,
-        "price": 49
-      },
-      {
         "slug": "petiscos-bolinho-costela-4",
         "quantity": 4,
         "price": 29
+      },
+      {
+        "slug": "petiscos-bolinho-costela-8",
+        "quantity": 8,
+        "price": 49
       }
     ],
     "unity": "un",
@@ -440,14 +434,14 @@
     "description": "Porção de bolinho de linguiça blumenau produzida em nossa região, acompanha maionese artesanal.",
     "options": [
       {
-        "slug": "petiscos-linguica-blumenau-8",
-        "quantity": 8,
-        "price": 46
-      },
-      {
         "slug": "petiscos-linguica-blumenau-4",
         "quantity": 4,
         "price": 26
+      },
+      {
+        "slug": "petiscos-linguica-blumenau-8",
+        "quantity": 8,
+        "price": 46
       }
     ],
     "unity": "un",
@@ -465,7 +459,8 @@
         "price": 18
       }
     ],
-    "unity": "un"
+    "unity": "un",
+    "hide": true
   },
   {
     "slug": "petiscos-quibe",
@@ -479,7 +474,8 @@
         "price": 20
       }
     ],
-    "unity": "un"
+    "unity": "un",
+    "hide": true
   },
   {
     "slug": "petiscos-pasteis",
@@ -489,13 +485,19 @@
     "options": [
       {
         "slug": "petiscos-pasteis-frango",
-        "description": "Frango",
+        "description": "Frango com requeijão",
         "quantity": 10,
         "price": 18
       },
       {
         "slug": "petiscos-pasteis-carne",
         "description": "Carne",
+        "quantity": 10,
+        "price": 18
+      },
+      {
+        "slug": "petiscos-pasteis-carne",
+        "description": "Linguiça Blumenau com requeijão",
         "quantity": 10,
         "price": 18
       }
@@ -526,22 +528,7 @@
     "options": [
       {
         "slug": "petiscos-tiras-alcatra-300",
-        "quantity": 300,
         "price": 40
-      }
-    ],
-    "unity": "g"
-  },
-  {
-    "slug": "petiscos-linguica",
-    "name": "Linguiça Blumenau",
-    "category": "Aperitivos/Petiscos",
-    "description": "Porção de linguiça blumenau, acompanha batata frita e maionese artesanal",
-    "options": [
-      {
-        "slug": "petiscos-linguica-300",
-        "quantity": 300,
-        "price": 49
       }
     ],
     "unity": "g"
@@ -560,6 +547,20 @@
     ],
     "unity": "g",
     "images": ["/mista3.jpg", "/mista2.jpg", "/mista1.jpg"]
+  },
+  {
+    "slug": "petiscos-linguica",
+    "name": "Linguiça Blumenau",
+    "category": "Aperitivos/Petiscos",
+    "description": "Porção de linguiça blumenau, acompanha batata frita e maionese artesanal",
+    "options": [
+      {
+        "slug": "petiscos-linguica-300",
+        "quantity": 300,
+        "price": 49
+      }
+    ],
+    "unity": "g"
   },
   {
     "slug": "petiscos-panceta",
@@ -622,7 +623,12 @@
         "price": 8
       },
       { "slug": "hamburguers-add-bacon", "description": "Bacon", "price": 6 },
-      { "slug": "hamburguers-add-ovo", "description": "Ovo", "price": 3 }
+      { "slug": "hamburguers-add-ovo", "description": "Ovo", "price": 3 },
+      {
+        "slug": "hamburguers-add-creme-queijo",
+        "description": "Creme de queijo",
+        "price": 10
+      }
     ]
   },
   {
@@ -638,20 +644,14 @@
     "name": "Filé de Frango Grelhado",
     "category": "Pratos Principais",
     "description": "Filé de frango grelado com arroz, batata frita e salada da casa.",
-    "price": 42
+    "price": 39
   },
   {
     "slug": "prato-omelete",
     "name": "Omelete",
     "category": "Pratos Principais",
     "description": "Omelete com tomate e salada da casa.",
-    "options": [
-      {
-        "slug": "prato-omelete-350",
-        "quantity": 350,
-        "price": 29
-      }
-    ],
+    "price": 29,
     "unity": "g"
   },
   {
@@ -659,13 +659,40 @@
     "name": "Salada Badosha",
     "category": "Pratos Principais",
     "description": "Frango grelhado com mix de folhas, pepino, tomate, alface crespa roxa e verde, rúcula, morango e croutons. Acompanha maionese artesanal.",
+    "price": 28,
+    "unity": "g"
+  },
+  {
+    "slug": "prato-espaguete",
+    "name": "Penne ou Espaguete",
+    "category": "Pratos Principais",
+    "description": "Escolha seu tipo de massa (Penne ou Espaguete) e escolha um dos molhos abaixo.",
     "options": [
       {
-        "slug": "prato-salada-350",
-        "quantity": 350,
-        "price": 28
+        "slug": "prato-espaguete-bolonhesa",
+        "description": "Molho Bolonhesa",
+        "price": 29
+      },
+      {
+        "slug": "prato-espaguete-linguica-blumenau",
+        "description": "Molho Linguiça Blumenau",
+        "price": 29
+      },
+      {
+        "slug": "prato-espaguete-alho-oleo",
+        "description": "Molho Alho e Óleo",
+        "price": 25
       }
     ],
+    "price": 28,
+    "unity": "g"
+  },
+  {
+    "slug": "prato-tilapia",
+    "name": "Tilápia Grelhada",
+    "category": "Pratos Principais",
+    "description": "Tilápia grelhada na manteiga com alcaparras, arroz e salada.",
+    "price": 42,
     "unity": "g"
   },
   {
@@ -674,10 +701,15 @@
     "category": "Pratos Principais",
     "options": [
       { "slug": "prato-add-feijao", "description": "Feijão", "price": 6 },
-      { "slug": "prato-add-arroz", "description": "Arroz", "price": 4 },
+      { "slug": "prato-add-arroz", "description": "Arroz", "price": 6 },
       { "slug": "prato-add-batata", "description": "Batata frita", "price": 8 },
       { "slug": "prato-add-bacon", "description": "Bacon", "price": 6 },
-      { "slug": "prato-add-ovo", "description": "Ovo", "price": 3 }
+      { "slug": "prato-add-ovo", "description": "Ovo", "price": 3 },
+      {
+        "slug": "prato-add-creme-queijo",
+        "description": "Creme de queijo",
+        "price": 10
+      }
     ]
   },
   {
