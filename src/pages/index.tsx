@@ -2,7 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import { NextPage } from 'next'
 
-import { Container } from '../styles/pages/Home'
+import { Container } from '../styles/pages/home.style'
+
 import Carousel from '../components/Carousel/Carousel'
 import Jumbotron from '../components/Jumbotron/Jumbotron'
 import Topbar from '../components/Topbar/Topbar'
@@ -32,8 +33,8 @@ const Home: NextPage = () => {
       <Head>
         <title>Badosha Gastrobar</title>
       </Head>
-      <Topbar></Topbar>
-      <Carousel images={images}></Carousel>
+      <Topbar />
+      <Carousel images={images} />
       <div id="quem_somos">
         <Jumbotron
           title={'Quem somos'}

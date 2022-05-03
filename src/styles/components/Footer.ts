@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import device from '../sizes';
+import device from '../sizes'
 
 export const Container = styled.div`
-  background-color: ${props => props.theme.colors.whiter};
+  background-color: ${props => props.theme.colors.white};
   color: ${props => props.theme.colors.grey};
   display: flex;
   flex-direction: column;
@@ -48,25 +48,25 @@ export const Phone = styled.div`
 `
 export const Address = styled.div`
   display: flex;
-  padding:8px 16px;
-  flex-direction:column;
-  h3{
-    text-align:start;
+  padding: 8px 16px;
+  flex-direction: column;
+  h3 {
+    text-align: start;
   }
-  address{
-    text-align:start;
+  address {
+    text-align: start;
     margin: 0px 0px;
   }
   @media ${device.tablet} {
     align-items: center;
-    padding:16px 24px;
-    flex-direction:row;
+    padding: 16px 24px;
+    flex-direction: row;
 
-    address{
+    address {
       margin: 0px 10px;
     }
   }
-`;
+`
 export const Signature = styled.div`
   display: flex;
   align-items: center;
@@ -83,4 +83,4 @@ export const Signature = styled.div`
 `
 export const AdressContainer = styled.div`
   flex-direction: column;
-`;
+`

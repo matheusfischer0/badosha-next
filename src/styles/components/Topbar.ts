@@ -8,7 +8,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  background-color: ${props => props.theme.colors.whiter};
+  background-color: ${props => props.theme.colors.white};
   @media ${device.tablet} {
     align-items: center;
     flex-direction: row;

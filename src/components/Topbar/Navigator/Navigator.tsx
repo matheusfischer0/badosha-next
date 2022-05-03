@@ -1,16 +1,18 @@
 import React from 'react'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import {
   MenuItem,
   Item,
   Button,
+  ButtonLink,
   UnderlineItem
 } from '../../../styles/components/Navigator'
+import { useAuth } from '../../../hooks/useAuth'
 
 const Navigator: React.FC = () => {
-  const { asPath } = useRouter()
+  const router = useRouter()
+  const { user, logout } = useAuth()
 
   const routes = [
     { path: '/', label: 'Inicio' },
@@ -19,18 +21,51 @@ const Navigator: React.FC = () => {
     { path: '/#contato', label: 'Contato' }
   ]
 
+  const privateRoutes = [
+    { path: '/dashboard/products', label: 'Produtos' },
+    { path: '/dashboard/categories', label: 'Categorias' }
+  ]
+
+  function handleLogout() {
+    logout()
+    router.push('/')
+  }
+
   return (
     <>
-      {routes.map((route, i) => (
-        <MenuItem key={i} active={asPath === route.path}>
-          <Button href={route.path}>
-            <Item active={asPath === route.path}>
-              <span>{route.label}</span>
-              <UnderlineItem active={asPath === route.path} />
-            </Item>
-          </Button>
-        </MenuItem>
-      ))}
+      {!user ? (
+        routes.map((route, i) => (
+          <MenuItem key={i} active={router.asPath === route.path}>
+            <ButtonLink href={route.path}>
+              <Item active={router.asPath === route.path}>
+                <span>{route.label}</span>
+                <UnderlineItem active={router.asPath === route.path} />
+              </Item>
+            </ButtonLink>
+          </MenuItem>
+        ))
+      ) : (
+        <>
+          {privateRoutes.map((route, i) => (
+            <MenuItem key={i} active={router.asPath === route.path}>
+              <ButtonLink href={route.path}>
+                <Item active={router.asPath === route.path}>
+                  <span>{route.label}</span>
+                  <UnderlineItem active={router.asPath === route.path} />
+                </Item>
+              </ButtonLink>
+            </MenuItem>
+          ))}
+          <MenuItem active={false}>
+            <Button onClick={handleLogout}>
+              <Item active={false}>
+                <span>Sair</span>
+                <UnderlineItem active={false} />
+              </Item>
+            </Button>
+          </MenuItem>
+        </>
+      )}
     </>
   )
 }

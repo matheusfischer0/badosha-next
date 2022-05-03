@@ -28,12 +28,9 @@ import {
   Button,
   Unavailable,
   Item
-} from '../../styles/pages/cardapio'
+} from '../../styles/pages/cardapio.style'
 
 import { Product } from '../../dtos/Product'
-import useLocalStorage from '../../hooks/UseLocalStorage'
-
-import axios from 'axios'
 
 type HomeProps = {
   products: Product[]
@@ -41,16 +38,6 @@ type HomeProps = {
 }
 
 const Menu: NextPage<HomeProps> = ({ products, categories }) => {
-  // const [category, setCategory] = useLocalStorage(
-  //   'category',
-  //   products[0].category
-  // )
-
-  // const [productList, setProductList] = useLocalStorage(
-  //   'products',
-  //   products.filter(item => item.category === products[0].category)
-  // )
-
   const [category, setCategory] = useState<string>(products[0].category)
   const [productList, setProductList] = useState<Product[]>(
     products.filter(item => item.category === products[0].category)

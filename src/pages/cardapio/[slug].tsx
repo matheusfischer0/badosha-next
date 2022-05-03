@@ -23,7 +23,7 @@ import {
   MenuContainer,
   MenuProductDescription,
   Button
-} from '../../styles/pages/Product'
+} from '../../styles/pages/product.style'
 
 type ProductProps = { product: Product }
 
