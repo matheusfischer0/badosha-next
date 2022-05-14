@@ -1,8 +1,6 @@
 import styled from 'styled-components'
-import Image from 'next/image'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import device from '../sizes'
 
 export const BannerContainer = styled.div`
   position: relative;

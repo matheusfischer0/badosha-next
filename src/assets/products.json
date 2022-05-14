@@ -365,8 +365,7 @@
     "description": "Porção de anéis de cebola empanado.",
     "price": 18,
     "unity": "g",
-    "images": ["/aneis3.jpg", "/aneis1.jpg", "/aneis2.jpg"],
-    "unavailable": true
+    "images": ["/aneis3.jpg", "/aneis1.jpg", "/aneis2.jpg"]
   },
   {
     "slug": "petiscos-aipim-bacon",
