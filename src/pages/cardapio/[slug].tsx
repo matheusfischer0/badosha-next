@@ -40,53 +40,49 @@ function ProductScreen({ product }: ProductProps) {
   }
 
   return (
-    <div style={{ width: '100vw', height: '100vh' }}>
+    <MenuContainer>
       {product.images && (
         <BasicCarousel images={product.images}></BasicCarousel>
       )}
-      <MenuContainer>
-        <MenuRow>
-          <MenuProduct>
-            <MenuProductDescription>
-              <MenuTitle>
-                {`${product.name} ${
-                  product.unavailable ? '(Indísponível)' : ''
-                }`}
-              </MenuTitle>
-              {product.price && (
-                <MenuPrice>{handleFormatMoney(product.price)}</MenuPrice>
-              )}
-            </MenuProductDescription>
-            {product.description && (
-              <MenuDescription>{product.description}</MenuDescription>
+      <MenuRow>
+        <MenuProduct>
+          <MenuProductDescription>
+            <MenuTitle>
+              {`${product.name} ${product.unavailable ? '(Indísponível)' : ''}`}
+            </MenuTitle>
+            {product.price && (
+              <MenuPrice>{handleFormatMoney(product.price)}</MenuPrice>
             )}
-          </MenuProduct>
-          {product.options &&
-            product.options.map(option => (
-              <MenuOption key={option.slug}>
-                {option.description && (
-                  <MenuOptionDescription>
-                    <span>{`${option.description}`}</span>
-                  </MenuOptionDescription>
-                )}
-                {option.quantity && (
-                  <MenuQuantity>
-                    <span>{`${option.quantity} ${product.unity}`}</span>
-                  </MenuQuantity>
-                )}
-                {option.price && (
-                  <MenuPrice>
-                    <span>{handleFormatMoney(option.price)}</span>
-                  </MenuPrice>
-                )}
-              </MenuOption>
-            ))}
-        </MenuRow>
-      </MenuContainer>
+          </MenuProductDescription>
+          {product.description && (
+            <MenuDescription>{product.description}</MenuDescription>
+          )}
+        </MenuProduct>
+        {product.options &&
+          product.options.map(option => (
+            <MenuOption key={option.slug}>
+              {option.description && (
+                <MenuOptionDescription>
+                  <span>{`${option.description}`}</span>
+                </MenuOptionDescription>
+              )}
+              {option.quantity && (
+                <MenuQuantity>
+                  <span>{`${option.quantity} ${product.unity}`}</span>
+                </MenuQuantity>
+              )}
+              {option.price && (
+                <MenuPrice>
+                  <span>{handleFormatMoney(option.price)}</span>
+                </MenuPrice>
+              )}
+            </MenuOption>
+          ))}
+      </MenuRow>
       <Button onClick={handleGoBack}>
         <FiCornerDownLeft size={50} color="#111"></FiCornerDownLeft>
       </Button>
-    </div>
+    </MenuContainer>
   )
 }
 

@@ -7,14 +7,15 @@ export const MenuRow = styled.div`
   justify-content: center;
   flex: 1;
   margin-right: 10px;
+  margin-top: 20px;
 `
 
 export const MenuContainer = styled.div`
   position: relative;
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  margin: 0px 10px;
+  width: 100vw;
+  max-width: 720px;
+  height: 100vh;
+  margin: 0px auto;
   padding-bottom: 10px;
   padding-top: 20px;
 

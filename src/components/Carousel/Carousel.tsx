@@ -41,12 +41,14 @@ const Carousel: React.FC<CarouselProps> = ({ images, ...props }) => {
       }}
       autoplay={{
         delay: 2500,
-        stopOnLastSlide: true,
         disableOnInteraction: true
       }}
       speed={1000}
-      navigation
-      pagination
+      loop={true}
+      pagination={{
+        clickable: true
+      }}
+      navigation={true}
     >
       {imagesList.map((image, i) => (
         <SwiperSlide key={i + image.url} color="#fff">

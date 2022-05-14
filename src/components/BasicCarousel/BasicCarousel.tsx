@@ -38,12 +38,14 @@ const BasicCarousel: React.FC<CarouselProps> = ({ images, ...props }) => {
         console.log(swiper)
       }}
       autoplay={{
-        delay: 5000,
-        disableOnInteraction: true
+        delay: 2500
       }}
       speed={1000}
-      navigation
-      pagination
+      loop={true}
+      pagination={{
+        clickable: true
+      }}
+      navigation={true}
     >
       {imagesList.map((image, i) => (
         <SwiperSlide key={image} color="#fff">
