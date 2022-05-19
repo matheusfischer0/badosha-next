@@ -2,6 +2,10 @@ import React from 'react'
 import Image from 'next/image'
 import { GetStaticProps } from 'next'
 
+import { collection, doc, getDoc, getDocs, query } from 'firebase/firestore'
+import { db } from '../../lib/firebase'
+
+import { Options } from '../../dtos/Options'
 import { Product } from '../../dtos/Product'
 
 import BasicCarousel from '../../components/BasicCarousel/BasicCarousel'
@@ -107,7 +111,18 @@ export async function getStaticPaths() {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params
 
-  const product = productsList.find(product => product.slug === slug)
+  const productRef = doc(db, `products`, `${slug}`)
+  const productDoc = await getDoc(productRef)
+
+  const optionsRef = collection(db, `products/${slug}/options`)
+  const optionsQuery = query(optionsRef)
+  const optionsDocs = await getDocs(optionsQuery)
+
+  const options: Options[] = optionsDocs.docs.map(optionDoc => {
+    return optionDoc.data() as Options
+  })
+
+  const product = { ...productDoc.data(), options } as Product
 
   if (!product) {
     return {

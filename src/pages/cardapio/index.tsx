@@ -32,6 +32,10 @@ import {
 
 import { Product } from '../../dtos/Product'
 
+import { collection, getDocs, query } from 'firebase/firestore'
+import { Options } from '../../dtos/Options'
+import { db } from '../../lib/firebase'
+
 type HomeProps = {
   products: Product[]
   categories: string[]
@@ -153,7 +157,26 @@ const Menu: NextPage<HomeProps> = ({ products, categories }) => {
 
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async () => {
-  const products: Product[] = productsList
+  const productsRef = collection(db, 'products')
+  const productsQuery = query(productsRef)
+  const productDocs = await getDocs(productsQuery)
+
+  const productsPromises = productDocs.docs.map(async productDoc => {
+    const optionsRef = collection(
+      db,
+      `products/${productDoc.data().slug}/options`
+    )
+    const optionsQuery = query(optionsRef)
+    const optionsDocs = await getDocs(optionsQuery)
+
+    const options: Options[] = optionsDocs.docs.map(optionDoc => {
+      return optionDoc.data() as Options
+    })
+
+    return { ...productDoc.data(), options } as Product
+  })
+
+  const products = await Promise.all(productsPromises)
 
   const categories: string[] = [...new Set(products.map(item => item.category))]
 

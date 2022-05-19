@@ -15,7 +15,7 @@ export default createGlobalStyle`
     font: 400 16px Roboto, sans-serif;
   }
 
-  button {
+  button, a {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
