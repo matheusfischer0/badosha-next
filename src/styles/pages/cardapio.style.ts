@@ -37,6 +37,7 @@ export const Button = styled(Link)<ButtonProps>`
     cursor: ${inactive ? 'not-allowed' : 'pointer'};
   `}
 `
+
 export const Unavailable = styled.div`
   position: absolute;
   background-color: #000;
@@ -155,6 +156,7 @@ export const MenuDescription = styled.div`
   font-size: 12px;
   font-weight: 400;
   margin-top: 10px;
+  width: 80%;
 `
 
 export const MenuOption = styled.div`
