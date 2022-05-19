@@ -720,6 +720,23 @@
     ]
   },
   {
+    "slug": "prato-sopa",
+    "name": "Sopas e Cremes",
+    "category": "Pratos Principais",
+    "options": [
+      {
+        "slug": "prato-canja",
+        "description": "Canja",
+        "price": 28
+      },
+      {
+        "slug": "prato-creme-batata-bacon",
+        "description": "Creme de Batata e bacon",
+        "price": 28
+      }
+    ]
+  },
+  {
     "slug": "prato-tilapia",
     "name": "Tilápia Grelhada",
     "category": "Pratos Principais",

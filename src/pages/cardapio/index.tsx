@@ -94,7 +94,7 @@ const Menu: NextPage<HomeProps> = ({ products, categories }) => {
 
           return (
             <Item inactive={item.unavailable} key={item.slug}>
-              <Button href={`/cardapio/${item.slug}`}>
+              <Button prefetch href={`/cardapio/${item.slug}`} passHref>
                 <MenuContainer>
                   <MenuRow>
                     <MenuProduct>

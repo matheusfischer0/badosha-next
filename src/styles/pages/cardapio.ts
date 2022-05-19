@@ -37,6 +37,7 @@ export const Button = styled(Link)<ButtonProps>`
     cursor: ${inactive ? 'not-allowed' : 'pointer'};
   `}
 `
+
 export const Unavailable = styled.div`
   position: absolute;
   background-color: #000;
