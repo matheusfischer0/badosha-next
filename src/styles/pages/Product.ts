@@ -48,6 +48,7 @@ export const MenuDescription = styled.div`
   font-size: 12px;
   font-weight: 400;
   margin-top: 10px;
+  width: 80%;
 `
 
 export const MenuOption = styled.div`

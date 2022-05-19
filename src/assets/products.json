@@ -233,6 +233,41 @@
     "unity": "ml"
   },
   {
+    "slug": "intis-malbec",
+    "name": "Intis Malbec",
+    "description": "Coloração violácea de intensidade média. Os aromas estão focados na ameixa e cereja fresca levemente contornada por especiarias. Macio, fresco, ótimo balanço.",
+    "category": "Vinhos",
+    "price": 68
+  },
+  {
+    "slug": "intis-cabernet-sauvignon",
+    "name": "Intis Cabernet Sauvignon",
+    "description": "Coloração rubi mediana, nuanças violáceas. Exibe aromas de fruta negra madura e especiarias como a pimenta preta. Muito macio em boca, de baixa estrutura.",
+    "category": "Vinhos",
+    "price": 68
+  },
+  {
+    "slug": "intis-chardonnay",
+    "name": "Intis Chardonnay",
+    "description": "Coloração palha delicada com toques verdeais. Encantador olfato cítrico e de frutas de polpa branca (maçã) sob sutil impressão floral. Ataque em boca cheio de frescor, com fruta prazerosa, conjunto harmônico com final limpo.",
+    "category": "Vinhos",
+    "price": 68
+  },
+  {
+    "slug": "intis-sauvignon-branco",
+    "name": "Intis Sauvignon Branco",
+    "description": "Coloração verdeal cristalina. Expressa aromas limonados e de pêssego sob fundo herbáceo. Leve em boca, suculento, com ótimo equilíbrio.",
+    "category": "Vinhos",
+    "price": 68
+  },
+  {
+    "slug": "las-moras-shiraz-rose",
+    "name": "Las Moras Shiraz Rose",
+    "description": "Coloração cereja, muito clara. Os aromas lembram frutas vermelhas frescas na pré-maturação, como morango, framboesa e groselha. Em boca é muito fresco, com boa acidez e frescor. Final leve e rápido.",
+    "category": "Vinhos",
+    "price": 75
+  },
+  {
     "slug": "whisky",
     "name": "Whisky",
     "category": "Doses",
@@ -495,7 +530,7 @@
         "price": 18
       },
       {
-        "slug": "petiscos-pasteis-carne",
+        "slug": "petiscos-pasteis-linguica",
         "description": "Linguiça Blumenau com requeijão",
         "quantity": 10,
         "price": 18
