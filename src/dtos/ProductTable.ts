@@ -1,4 +1,5 @@
 export type ProductTable = {
+  id: string
   slug: string
   name: string
   category: string

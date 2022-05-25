@@ -1,5 +1,6 @@
 import React from 'react'
 import Topbar from '../../../components/Topbar/Topbar'
+import withAuth from '../../../HOC/withAuth'
 
 function categories() {
   return (
@@ -10,4 +11,4 @@ function categories() {
   )
 }
 
-export default categories
+export default withAuth(categories)

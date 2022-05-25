@@ -35,6 +35,7 @@ import { Product } from '../../dtos/Product'
 import { collection, getDocs, query } from 'firebase/firestore'
 import { Options } from '../../dtos/Options'
 import { db } from '../../lib/firebase'
+import { useRouter } from 'next/router'
 
 type HomeProps = {
   products: Product[]
@@ -47,6 +48,8 @@ const Menu: NextPage<HomeProps> = ({ products, categories }) => {
     products.filter(item => item.category === products[0].category)
   )
 
+  const router = useRouter()
+
   const handleFormatMoney = (value: number) => {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
@@ -57,6 +60,13 @@ const Menu: NextPage<HomeProps> = ({ products, categories }) => {
   const handleSelectCategory = (value: string) => {
     setCategory(value)
     setProductList(products.filter(item => item.category === value))
+  }
+
+  const handleSelectProduct = (id: string) => {
+    router.push({
+      pathname: '/cardapio/[id]',
+      query: { id }
+    })
   }
 
   return (
@@ -95,9 +105,10 @@ const Menu: NextPage<HomeProps> = ({ products, categories }) => {
         {productList.map(item => {
           if (item.hide) return
 
+          console.log(item.id)
           return (
-            <Item inactive={item.unavailable} key={item.slug}>
-              <Button prefetch href={`/cardapio/${item.slug}`} passHref>
+            <Item inactive={item.unavailable} key={item.id}>
+              <Button prefetch href={`/cardapio/${item.id}`} passHref>
                 <MenuContainer>
                   <MenuRow>
                     <MenuProduct>
@@ -162,18 +173,15 @@ export const getStaticProps: GetStaticProps = async () => {
   const productDocs = await getDocs(productsQuery)
 
   const productsPromises = productDocs.docs.map(async productDoc => {
-    const optionsRef = collection(
-      db,
-      `products/${productDoc.data().slug}/options`
-    )
+    const optionsRef = collection(db, `products/${productDoc.id}/options`)
     const optionsQuery = query(optionsRef)
     const optionsDocs = await getDocs(optionsQuery)
 
     const options: Options[] = optionsDocs.docs.map(optionDoc => {
-      return optionDoc.data() as Options
+      return { id: optionDoc.id, ...optionDoc.data() } as Options
     })
 
-    return { ...productDoc.data(), options } as Product
+    return { id: productDoc.id, ...productDoc.data(), options } as Product
   })
 
   const products = await Promise.all(productsPromises)

@@ -19,7 +19,6 @@ const Footer: React.FC = () => {
             <a href="tel:+554730371012">
               <span className="topbar-phone">(47) 3037-1012</span>
             </a>{' '}
-            |{' '}
             <a href="tel:+5547992655968">
               {' '}
               <span className="topbar-phone">(47) 99265-5968</span>

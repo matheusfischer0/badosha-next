@@ -28,7 +28,7 @@ const Navigator: React.FC = () => {
 
   function handleLogout() {
     logout()
-    router.push('/')
+    // router.push('/')
   }
 
   return (
@@ -59,7 +59,7 @@ const Navigator: React.FC = () => {
           <MenuItem active={false}>
             <Button onClick={handleLogout}>
               <Item active={false}>
-                <span>Sair</span>
+                <span>Logout</span>
                 <UnderlineItem active={false} />
               </Item>
             </Button>

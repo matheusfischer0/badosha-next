@@ -93,12 +93,28 @@ function ProductScreen({ product }: ProductProps) {
 // This function gets called at build time
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
-  const products: Product[] = productsList
+  const productsRef = collection(db, 'products')
+  const productsQuery = query(productsRef)
+  const productDocs = await getDocs(productsQuery)
+
+  const productsPromises = productDocs.docs.map(async productDoc => {
+    const optionsRef = collection(db, `products/${productDoc.id}/options`)
+    const optionsQuery = query(optionsRef)
+    const optionsDocs = await getDocs(optionsQuery)
+
+    const options: Options[] = optionsDocs.docs.map(optionDoc => {
+      return { id: optionDoc.id, ...optionDoc.data() } as Options
+    })
+
+    return { id: productDoc.id, ...productDoc.data(), options } as Product
+  })
+
+  const products = await Promise.all(productsPromises)
 
   // Get the paths we want to pre-render based on items
   const paths = products.map((product: Product) => {
     return {
-      params: { slug: product.slug.toString() }
+      params: { id: product.id }
     }
   })
 
@@ -109,20 +125,24 @@ export async function getStaticPaths() {
 
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { slug } = params
+  const { id } = params
 
-  const productRef = doc(db, `products`, `${slug}`)
+  const productRef = doc(db, `products`, `${id}`)
   const productDoc = await getDoc(productRef)
 
-  const optionsRef = collection(db, `products/${slug}/options`)
+  const optionsRef = collection(db, `products/${id}/options`)
   const optionsQuery = query(optionsRef)
   const optionsDocs = await getDocs(optionsQuery)
 
   const options: Options[] = optionsDocs.docs.map(optionDoc => {
-    return optionDoc.data() as Options
+    return { id: optionDoc.id, ...optionDoc.data() } as Options
   })
 
-  const product = { ...productDoc.data(), options } as Product
+  const product = {
+    id: productDoc.id,
+    ...productDoc.data(),
+    options
+  } as Product
 
   if (!product) {
     return {

@@ -1,28 +1,10 @@
 import React from 'react'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
-import { useAuth } from '../../hooks/useAuth'
 
-import {
-  Container,
-  Header,
-  Item,
-  Logo,
-  Logout,
-  LogoutContainer,
-  Menu
-} from '../../styles/pages/dashboard.style'
+import { Container } from '../../styles/pages/dashboard.style'
 import Topbar from '../../components/Topbar/Topbar'
+import withAuth from '../../HOC/withAuth'
 
 function Dashboard() {
-  const router = useRouter()
-  const { user, logout } = useAuth()
-
-  function handleLogout() {
-    logout()
-    router.push('/')
-  }
-
   return (
     <Container>
       <Topbar />
@@ -30,4 +12,4 @@ function Dashboard() {
   )
 }
 
-export default Dashboard
+export default withAuth(Dashboard)

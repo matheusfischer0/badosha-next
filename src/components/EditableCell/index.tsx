@@ -3,8 +3,8 @@ import { Input } from './styles'
 
 export function EditableCell({
   value: initialValue,
-  row: { index },
-  column: { id },
+  row: { id, slug },
+  column: { key },
   updateMyData // This is a custom function that we supplied to our table instance
 }) {
   // We need to keep and update the state of the cell normally
@@ -16,7 +16,7 @@ export function EditableCell({
 
   // We'll only update the external data when the input is blurred
   const onBlur = () => {
-    updateMyData(index, id, value)
+    updateMyData(id, key, value)
   }
 
   // If the initialValue is changed external, sync it up with our state

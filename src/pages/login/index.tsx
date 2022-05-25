@@ -16,7 +16,7 @@ import {
   Title
 } from '../../styles/pages/login.style'
 
-function login() {
+function Login() {
   const { user, login } = useAuth()
 
   const router = useRouter()
@@ -26,7 +26,7 @@ function login() {
 
   useEffect(() => {
     if (user) {
-      router.push('/dashboard')
+      router.push('/dashboard/products')
     }
   }, [user])
 
@@ -89,4 +89,4 @@ function login() {
   )
 }
 
-export default login
+export default Login

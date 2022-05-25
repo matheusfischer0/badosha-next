@@ -1,23 +1,26 @@
 import React, { useEffect, useMemo, useState } from 'react'
 
 import { db } from '../../../lib/firebase'
-import { collection, getDocs, query } from 'firebase/firestore'
+import { collection, getDocs, query, doc, updateDoc } from 'firebase/firestore'
 
 import Topbar from '../../../components/Topbar/Topbar'
 import { Container, Content, Item } from '../../../styles/pages/products.style'
 import { TableComponent } from '../../../components/TableComponent'
 
-import { Product } from '../../../dtos/Product'
 import { Options } from '../../../dtos/Options'
-import { EditableCell } from '../../../components/EditableCell'
 import { EditableNumericCell } from '../../../components/EditableNumericCell'
 import { EditableCheckboxCell } from '../../../components/EditableCheckboxCell'
 import { ProductTable } from '../../../dtos/ProductTable'
+import { ActionsCell } from '../../../components/ActionsCell'
+import withAuth from '../../../HOC/withAuth'
+import { useRouter } from 'next/router'
 
 function Products() {
   const [categories, setCategories] = useState([])
   const [products, setProducts] = useState<ProductTable[]>([])
   const [data, setData] = useState<ProductTable[]>([])
+
+  const router = useRouter()
 
   useEffect(() => {
     handleLoadProducts()
@@ -29,10 +32,7 @@ function Products() {
     const productDocs = await getDocs(productsQuery)
 
     const productsPromises = productDocs.docs.map(async productDoc => {
-      const optionsRef = collection(
-        db,
-        `products/${productDoc.data().slug}/options`
-      )
+      const optionsRef = collection(db, `products/${productDoc.id}/options`)
       const optionsQuery = query(optionsRef)
       const optionsDocs = await getDocs(optionsQuery)
 
@@ -40,7 +40,11 @@ function Products() {
         return optionDoc.data() as Options
       })
 
-      return { ...productDoc.data(), options: options.length } as ProductTable
+      return {
+        id: productDoc.id,
+        ...productDoc.data(),
+        options: options.length
+      } as ProductTable
     })
 
     const tmpProducts = await Promise.all(productsPromises)
@@ -51,40 +55,60 @@ function Products() {
 
   const columns = useMemo(
     () => [
-      { Header: 'Slug', accessor: 'slug', Cell: EditableCell },
-      { Header: 'Name', accessor: 'name', Cell: EditableCell },
-      { Header: 'Category', accessor: 'category', Cell: EditableCell },
-      { Header: 'Unity', accessor: 'unity', Cell: EditableCell },
-      { Header: 'Description', accessor: 'description', Cell: EditableCell },
+      { label: 'Código', accessor: 'slug', type: 'string' },
+      { label: 'Nome', accessor: 'name', type: 'string' },
+      { label: 'Categoria', accessor: 'category', type: 'string' },
+      { label: 'Unidade', accessor: 'unity', type: 'string' },
       {
-        Header: 'Price',
+        label: 'Descrição',
+        accessor: 'description',
+        type: 'string'
+      },
+      {
+        label: 'Preço',
         accessor: 'price',
-        Cell: EditableNumericCell
+        Cell: EditableNumericCell,
+        type: 'number'
       },
-      { Header: 'Options', accessor: 'options' },
+      { label: 'Opções', accessor: 'options', type: 'number' },
       {
-        Header: 'Unavailable',
+        label: 'Indisponível',
         accessor: 'unavailable',
-        Cell: EditableCheckboxCell
+        Cell: EditableCheckboxCell,
+        type: 'boolean'
       },
-      { Header: 'Hide', accessor: 'hide', Cell: EditableCheckboxCell }
+      {
+        label: 'Esconder',
+        accessor: 'hide',
+        Cell: EditableCheckboxCell,
+        type: 'boolean'
+      },
+      {
+        label: 'Ações',
+        accessor: 'actions',
+        Cell: ActionsCell
+      }
     ],
     []
   )
 
-  const updateMyData = (rowIndex, columnId, value) => {
-    // We also turn on the flag to not reset the page
-    setProducts(old =>
-      old.map((row, index) => {
-        if (index === rowIndex) {
-          return {
-            ...old[rowIndex],
-            [columnId]: value
-          }
-        }
-        return row
-      })
-    )
+  const updateMyData = async (
+    id: string,
+    key: string,
+    value: string | number | boolean
+  ) => {
+    const documentRef = doc(db, 'products', `${id}`)
+
+    await updateDoc(documentRef, {
+      [key]: value
+    })
+  }
+
+  const editData = (id: string) => {
+    router.push({
+      pathname: '/dashboard/products/[id]',
+      query: { id }
+    })
   }
 
   return (
@@ -95,10 +119,11 @@ function Products() {
           columns={columns}
           data={data}
           updateMyData={updateMyData}
+          editData={editData}
         />
       </Content>
     </Container>
   )
 }
 
-export default Products
+export default withAuth(Products)

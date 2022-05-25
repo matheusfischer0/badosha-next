@@ -1,4 +1,8 @@
+import { FunctionComponent } from 'react'
+
 export interface Column {
-  Header: string
+  label: string
   accessor: string
+  Cell?: FunctionComponent<any>
+  type?: string
 }

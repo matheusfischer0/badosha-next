@@ -45,9 +45,14 @@ export const Button = styled.button`
   justify-content: center;
 
   background-color: transparent;
-  color: ${({ theme }) => theme.colors.dark_grey};
+  color: ${({ theme }) => theme.colors.grey};
   border: none;
-  font-size: ${({ theme }) => theme.font_sizes.medium_small};
+
+  font-size: ${props => props.theme.font_sizes.small};
+  padding: 10px 16px;
+  span {
+    text-align: center;
+  }
 `
 
 export const UnderlineItem = styled.a<ActiveProps>`
