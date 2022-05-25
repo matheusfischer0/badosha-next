@@ -105,10 +105,9 @@ const Menu: NextPage<HomeProps> = ({ products, categories }) => {
         {productList.map(item => {
           if (item.hide) return
 
-          console.log(item.id)
           return (
             <Item inactive={item.unavailable} key={item.id}>
-              <Button prefetch href={`/cardapio/${item.id}`} passHref>
+              <Button href={`/cardapio/${item.id}`} passHref>
                 <MenuContainer>
                   <MenuRow>
                     <MenuProduct>
