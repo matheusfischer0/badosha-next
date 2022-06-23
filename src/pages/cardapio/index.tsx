@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { GetStaticProps, NextPage } from 'next'
 
-const productsList = require('../../assets/products.json')
+// const productsList = require('../../assets/products.json')
 
 import { FiInstagram } from 'react-icons/fi'
 
@@ -194,8 +194,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 
   return {
-    props: { products, categories },
-    revalidate: 60 * 60 * 24
+    props: { products, categories }
   }
 }
 
