@@ -28,7 +28,7 @@ const Navigator: React.FC = () => {
 
   function handleLogout() {
     logout()
-    // router.push('/')
+    router.push('/')
   }
 
   return (

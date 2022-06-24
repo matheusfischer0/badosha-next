@@ -5,7 +5,6 @@ import {
   Container,
   TextContainer,
   ImageContainer,
-  LeftContainer,
   Banner
 } from '../../styles/components/Jumbotron'
 
@@ -32,7 +31,7 @@ const Jumbotron: React.FC<JumbotronProps> = ({
       </TextContainer>
       {/* <LeftContainer> */}
       <ImageContainer>
-        <Image src={image} alt={alt} layout={'fill'}></Image>
+        <Banner src={image} alt={alt} layout={'fill'} />
       </ImageContainer>
       {/* </LeftContainer> */}
     </Container>

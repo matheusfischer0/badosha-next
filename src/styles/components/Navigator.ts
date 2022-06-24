@@ -20,7 +20,7 @@ export const Logout = styled.button`
 interface ActiveProps {
   active: boolean
 }
-export const Item = styled.a<ActiveProps>`
+export const Item = styled.div<ActiveProps>`
   display: flex;
   flex-direction: column;
   flex: 1;

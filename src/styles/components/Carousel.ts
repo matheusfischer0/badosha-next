@@ -11,25 +11,11 @@ export const BannerContainer = styled.div`
   justify-content: center;
   width: 100%;
   align-items: center;
-  > div {
-    img {
-      object-fit: cover;
-    }
-  }
 `
 
 export const Banner = styled(Image)`
   height: 100%;
-  @media ${device.mobileL} {
-    object-fit: cover;
-  }
-  @media ${device.tablet} {
-    height: unset;
-  }
-  @media ${device.laptopL} {
-    height: unset;
-    width: 100%;
-  }
+  object-fit: cover;
 `
 
 export const Overlay = styled.div`
@@ -49,13 +35,11 @@ export const Logo = styled.div`
   height: 20%;
   opacity: 1;
   background-color: transparent !important;
-  > div {
-    border-radius: 20px;
-    img {
-      object-fit: contain;
-      filter: invert();
-    }
-  }
+`
+
+export const LogoImage = styled(Image)`
+  object-fit: contain;
+  filter: invert();
 `
 
 export const TextContainer = styled.div`

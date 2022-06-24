@@ -9,11 +9,7 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  z-index: -1;
-  flex: 1;
-  position: relative;
-
+  width: 100%;
   @media ${device.tablet} {
     align-items: center;
     flex-direction: ${props => (props.left ? 'row-reverse' : 'row')};
@@ -21,13 +17,10 @@ export const Container = styled.div<ContainerProps>`
 `
 
 export const TextContainer = styled.div`
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
   padding: 32px 16px;
   color: #555;
-  flex-direction: column;
+  border: 1px solid red;
+  flex: 1;
 
   @media ${device.tablet} {
     padding: 48px;
@@ -58,37 +51,17 @@ export const TextContainer = styled.div`
   }
 `
 
-export const LeftContainer = styled.div`
-  position: relative;
-`
-
 export const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  > div {
-    width: 90vw;
-    @media ${device.tablet} {
-      width: 400px;
-    }
-    @media ${device.laptop} {
-      width: 600px;
-    }
-    position: unset !important;
-  }
-
-  img {
-    object-fit: contain;
-    width: 100% !important;
-    position: relative !important;
-    height: unset !important;
-  }
+  position: relative;
+  flex: 1;
 `
 
 export const Banner = styled(Image)`
-  width: 100%;
-  height: 100%;
+  object-fit: cover;
+
   @media ${device.mobileL} {
     object-fit: cover;
   }

@@ -6,6 +6,7 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper'
 SwiperCore.use([Navigation, Pagination, Autoplay])
 
 import { SwiperSlide } from 'swiper/react'
+import useWindowSize from '../../hooks/UseWindowSize'
 
 // import Logo from '../../assets/logo_badosha.png'
 
@@ -14,7 +15,8 @@ import {
   BannerContainer,
   SwiperContainer,
   Overlay,
-  Logo
+  Logo,
+  LogoImage
 } from '../../styles/components/Carousel'
 
 interface ImageProps {
@@ -28,6 +30,10 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = ({ images, ...props }) => {
   const [imagesList, setImagesList] = useState<ImageProps[]>([])
 
+  const windowWidth = useWindowSize()
+
+  const isMobile = windowWidth.width <= 768
+
   useEffect(() => {
     setImagesList(images)
   }, [images])
@@ -40,27 +46,27 @@ const Carousel: React.FC<CarouselProps> = ({ images, ...props }) => {
         console.log(swiper)
       }}
       autoplay={{
-        delay: 2500,
+        delay: 4000,
         disableOnInteraction: true
       }}
-      speed={1000}
+      speed={1500}
       loop={true}
       pagination={{
         clickable: true
       }}
-      navigation={true}
+      navigation={!isMobile}
     >
       {imagesList.map((image, i) => (
         <SwiperSlide key={i + image.url} color="#fff">
           <BannerContainer>
-            <Image src={image.url} alt={image.alt} layout={'fill'}></Image>
+            <Banner src={image.url} alt={image.alt} layout={'fill'} />
             <Overlay></Overlay>
             <Logo>
-              <Image
+              <LogoImage
                 src={'/logo_badosha-removebg-preview.png'}
                 alt={'Logo Restaurante Badosha'}
                 layout={'fill'}
-              ></Image>
+              />
             </Logo>
           </BannerContainer>
         </SwiperSlide>

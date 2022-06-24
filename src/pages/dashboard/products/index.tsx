@@ -14,11 +14,26 @@ import { ProductTable } from '../../../dtos/ProductTable'
 import { ActionsCell } from '../../../components/ActionsCell'
 import withAuth from '../../../HOC/withAuth'
 import { useRouter } from 'next/router'
+import { ListComponent } from '../../../components/ListComponent'
 
 function Products() {
   const [categories, setCategories] = useState([])
   const [products, setProducts] = useState<ProductTable[]>([])
   const [data, setData] = useState<ProductTable[]>([])
+
+  const [width, setWidth] = useState<number>(window.innerWidth)
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth)
+  }
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange)
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange)
+    }
+  }, [])
+
+  const isMobile = width <= 1000
 
   const router = useRouter()
 
@@ -58,12 +73,6 @@ function Products() {
       { label: 'Código', accessor: 'slug', type: 'string' },
       { label: 'Nome', accessor: 'name', type: 'string' },
       { label: 'Categoria', accessor: 'category', type: 'string' },
-      { label: 'Unidade', accessor: 'unity', type: 'string' },
-      {
-        label: 'Descrição',
-        accessor: 'description',
-        type: 'string'
-      },
       {
         label: 'Preço',
         accessor: 'price',
@@ -115,12 +124,16 @@ function Products() {
     <Container>
       <Topbar />
       <Content>
-        <TableComponent
-          columns={columns}
-          data={data}
-          updateMyData={updateMyData}
-          editData={editData}
-        />
+        {isMobile ? (
+          <ListComponent data={data} />
+        ) : (
+          <TableComponent
+            columns={columns}
+            data={data}
+            updateMyData={updateMyData}
+            editData={editData}
+          />
+        )}
       </Content>
     </Container>
   )
