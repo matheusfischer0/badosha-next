@@ -148,11 +148,7 @@ const Menu: NextPage<HomeProps> = ({ products, categories }) => {
                   </MenuRow>
                   {item.images && (
                     <MenuImage>
-                      <Image
-                        src={item.images[0]}
-                        layout="fill"
-                        quality={50}
-                      ></Image>
+                      <img src={item.images[0]} />
                     </MenuImage>
                   )}
                 </MenuContainer>

@@ -45,6 +45,9 @@ function ProductScreen({ product }: ProductProps) {
 
   return (
     <MenuContainer>
+      <Button onClick={handleGoBack}>
+        <FiCornerDownLeft size={35} color="#111"></FiCornerDownLeft>
+      </Button>
       {product.images && (
         <BasicCarousel images={product.images}></BasicCarousel>
       )}
@@ -83,9 +86,6 @@ function ProductScreen({ product }: ProductProps) {
             </MenuOption>
           ))}
       </MenuRow>
-      <Button onClick={handleGoBack}>
-        <FiCornerDownLeft size={50} color="#111"></FiCornerDownLeft>
-      </Button>
     </MenuContainer>
   )
 }

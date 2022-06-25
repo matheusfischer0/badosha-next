@@ -17,18 +17,19 @@ export const Container = styled.div<ContainerProps>`
 `
 
 export const TextContainer = styled.div`
-  padding: 32px 16px;
+  padding: 50px 16px;
   color: #555;
-  border: 1px solid red;
   flex: 1;
+  height: 300px;
 
   @media ${device.tablet} {
+    height: auto;
     padding: 48px;
-    min-width: 650px;
+    min-width: 550px;
   }
   @media ${device.laptop} {
     padding: 48px;
-    min-width: 800px;
+    min-width: 650px;
   }
 
   h3 {
@@ -52,24 +53,25 @@ export const TextContainer = styled.div`
 `
 
 export const ImageContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  flex: 1;
-`
+  height: 300px;
+  overflow: hidden;
 
-export const Banner = styled(Image)`
-  object-fit: cover;
-
-  @media ${device.mobileL} {
-    object-fit: cover;
-  }
   @media ${device.tablet} {
-    height: unset;
+    height: auto;
+    padding: 40px;
   }
-  @media ${device.laptopL} {
-    height: unset;
-    width: 100%;
+
+  img {
+    flex: 1;
+    object-fit: cover;
+    @media ${device.tablet} {
+      height: 450px;
+    }
+    @media ${device.laptop} {
+      height: 500px;
+    }
   }
 `
+export const BannerContainer = styled.div``
+
+export const Banner = styled(Image)``

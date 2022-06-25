@@ -45,12 +45,12 @@ const BasicCarousel: React.FC<CarouselProps> = ({ images, ...props }) => {
       pagination={{
         clickable: true
       }}
-      navigation={true}
+      navigation={false}
     >
       {imagesList.map((image, i) => (
         <SwiperSlide key={image} color="#fff">
           <BannerContainer>
-            <Image src={image} alt={image} layout={'fill'} quality={50}></Image>
+            <img src={image} alt={image} />
           </BannerContainer>
         </SwiperSlide>
       ))}

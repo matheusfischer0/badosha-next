@@ -6,18 +6,16 @@ export const MenuRow = styled.div`
   flex-direction: column;
   justify-content: center;
   flex: 1;
-  margin-right: 10px;
-  margin-top: 20px;
+  margin: 20px 10px;
 `
 
 export const MenuContainer = styled.div`
   position: relative;
   width: 100vw;
   max-width: 720px;
-  height: 100vh;
   margin: 0px auto;
   padding-bottom: 10px;
-  padding-top: 20px;
+  padding-top: 35px;
 
   border-bottom: 1px solid #ddd;
 `
@@ -100,9 +98,10 @@ export const Button = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 0;
+  z-index: 10;
+  top: 0;
   right: 0;
-  padding: 15px;
+  padding: 6px;
   background-color: #f6c101;
-  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 `

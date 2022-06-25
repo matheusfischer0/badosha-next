@@ -3,18 +3,15 @@ import styled from 'styled-components'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 export const BannerContainer = styled.div`
-  position: relative;
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 100%;
   align-items: center;
-  > div {
-    padding: 10px;
-    img {
-      border-radius: 20px;
-      object-fit: cover;
-    }
+  border-radius: 20px;
+
+  img {
+    border-radius: 20px;
+    width: 100%;
+    object-fit: cover;
   }
 `
 
@@ -23,8 +20,7 @@ export const SwiperSlideContainer = styled(SwiperSlide)``
 export const SwiperContainer = styled(Swiper)`
   border-radius: 20px;
   width: 90%;
-
-  height: 400px;
+  max-height: 300px;
 
   .swiper-button-prev,
   .swiper-button-next {
